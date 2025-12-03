@@ -11,17 +11,819 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/main.css">
+     <script src="script.js"></script>
+   <style>
     
+        .about-section {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--color-dark-navy);
+            padding-top: 100px; /* Space for the fixed header */
+        }
+
+        /* 3.1 Left Content Area */
+        .content-left {
+            width: 40%;
+            padding: 80px 40px 80px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            background-color: var(--color-dark-navy);
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--color-yellow);
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: #fff;
+            max-width: 500px;
+        }
+
+        /* 3.2 Middle Image Gallery Area */
+        .image-gallery-container {
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            /* Ensures images fill the height of the section */
+            align-items: stretch;
+            position: relative;
+        }
+
+        .image-wrapper {
+            /* Flex properties for the vertical strips */
+            flex: 1;
+            /* Set to 100% of the container height */
+            overflow: hidden;
+            position: relative;
+            /* Animation applied here */
+        }
+
+        .image-wrapper:nth-child(1) {
+            animation: slideUpDown 6s ease-in-out infinite alternate;
+        }
+        
+        .image-wrapper:nth-child(2) {
+            animation: slideUpDown 6s ease-in-out infinite alternate;
+            animation-delay: 1.5s; /* Staggered effect */
+        }
+
+        .image-wrapper:nth-child(3) {
+            animation: slideUpDown 6s ease-in-out infinite alternate;
+            animation-delay: 0.5s; /* Staggered effect */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Prevents image scaling/skewing during container animation */
+            transition: transform 0.6s ease-in-out;
+        }
+
+        /* Placeholder styles to clearly define image strips */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .image-wrapper:nth-child(1) .image-placeholder { background-color: #2e7d32; } /* Green */
+        .image-wrapper:nth-child(2) .image-placeholder { background-color: #ffc107; } /* Yellow */
+        .image-wrapper:nth-child(3) .image-placeholder { background-color: #d32f2f; } /* Red */
+
+
+        /* 3.3 Right Content Area (Our Values) */
+        .content-right {
+            width: 30%;
+            padding: 80px 80px 80px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            background-color: var(--color-dark-navy);
+        }
+
+        .values-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-yellow);
+            margin-bottom: 30px;
+        }
+
+        .value-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .value-list li {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            position: relative;
+            /* Custom dot (optional, but cleaner than default list style) */
+        }
+
+        /*
+        * 4. CSS Animation for Images
+        */
+        @keyframes slideUpDown {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); } /* Move up slightly */
+            100% { transform: translateY(0); }
+        }
+
+        /*
+        * Optional: A secondary animation for a more dynamic look
+        */
+        @keyframes slideUpDownAlt {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(20px); } /* Move down slightly */
+            100% { transform: translateY(0); }
+        }
+
+        /* To use the secondary animation for one of the elements for variation: */
+        .image-wrapper:nth-child(3) {
+            animation: slideUpDownAlt 6s ease-in-out infinite alternate;
+            animation-delay: 0.5s;
+        }
+
+        /*
+        * 2. Main Section Layout (What We Do)
+        */
+        .what-we-do-section {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--color-dark-navy);
+            padding: 80px 0;
+            box-sizing: border-box;
+            max-width: 100vw;
+            overflow: hidden; 
+        }
+
+        /* 2.1 Left Fixed Column (What We Do Text and Talent Description) */
+        /* This column is split to hold the main title and the Talent description below it */
+        .wwd-left-column {
+            width: 35%;
+            padding: 0 40px 0 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-shrink: 0; 
+        }
+
+        .wwd-static-content {
+            margin-bottom: 50px;
+        }
+
+        .wwd-left-column h2 {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--color-yellow);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .wwd-left-column .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .appointment-link {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .appointment-link span {
+            color: var(--color-yellow);
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .talent-description-area {
+            /* Text from man2.PNG displayed in the left column */
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-top: 50px;
+            padding-right: 40px; 
+        }
+        
+        /* Image below the description */
+        .talent-image-container {
+            width: 100%;
+            height: 150px;
+            margin-top: 20px;
+            background-color: #2e7d32;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        /* 2.2 Right Sliding Track (Service Pillars) */
+        .wwd-right-track {
+            width: 60%; 
+            overflow: hidden;
+            border-left: var(--border-line); 
+        }
+
+        /* The container holding all service pillars side-by-side */
+        .services-wrapper {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 1.0s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            transform: translateX(0); /* Initial position: Show Pillar 1 */
+        }
+
+        /* Class to trigger the slide right (to show Pillar 2) */
+        .services-wrapper.slide-right {
+            /* To show the second pillar, move the wrapper left by 50% */
+            transform: translateX(-50%); 
+        }
+
+        /* Individual Service Pillar */
+        .service-pillar {
+            width: 50%;
+            height: 100%;
+            padding: 0 80px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Pillar content styling */
+        .pillar-nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-top: 50px; /* To push content down below the screen top */
+        }
+
+        .pillar-nav {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-gray);
+        }
+
+        .pillar-number {
+            font-size: 80px;
+            font-weight: 300;
+            color: var(--color-gray);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .pillar-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .pillar-image-container-right {
+            width: 60%;
+            /* Height matches the image proportion */
+            aspect-ratio: 4/3; 
+            margin-top: 40px;
+            background-color: #dc3545; /* Placeholder for Digital Solutions image */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid white;
+            box-sizing: border-box;
+        }
+        
+        .pillar-image-container-right .placeholder-text {
+             color: white;
+             font-size: 18px;
+             text-align: center;
+        }
+
+        /* Hide description and image for the first pillar to match man2.PNG's structure */
+        #pillar-one-description, #pillar-one-image {
+            display: none;
+        }
+        
+        /* Hide description for the second pillar as the Talent description is in the left column */
+        #pillar-two-description {
+            display: none;
+        }
+
+
+        /* The main container for the whole section */
+        .team-section {
+            background-color: var(--color-dark-navy);
+            padding: 100px 80px 50px 80px;
+            box-sizing: border-box;
+            max-width: 100vw;
+        }
+
+        /*
+        * 2. Top Section Layout (Heading and Hero Image)
+        */
+        .team-header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 80px;
+        }
+
+        .team-text-block {
+            width: 60%; 
+            padding-right: 40px;
+        }
+
+        .team-text-block h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--color-yellow);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .team-text-block p {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--color-text-light);
+            line-height: 1.4;
+            max-width: 80%;
+        }
+
+        .team-hero-image-container {
+            width: 40%;
+            height: 400px; /* Adjust height as needed */
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .team-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Placeholder styling to replicate the image blend/crop */
+            background-color: #313131; 
+            border-radius: 0 0 0 150px; /* Optional: adds a slight crop look */
+        }
+        
+        /* Placeholder text for the hero image */
+        .hero-image-placeholder {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background-image: linear-gradient(to top, var(--color-dark-navy) 0%, transparent 50%), url('path/to/hero-image.jpg');
+            background-size: cover;
+            background-position: center top;
+        }
+
+        /*
+        * 3. Sliding Image Gallery (Horizontal Scroll/Animation)
+        */
+        .team-gallery {
+            position: relative;
+            overflow: hidden; /* Creates the viewport for the sliding effect */
+            height: 250px; /* Height of the image strip */
+            margin-bottom: 60px;
+        }
+
+        .team-gallery-wrapper {
+            display: flex;
+            /* Animation applied here */
+            animation: slideImages 20s linear infinite; 
+            /* Double the width of the container to ensure smooth loop */
+            width: 200%; 
+            height: 100%;
+        }
+
+        /* Define the Keyframe Animation for continuous sliding */
+        @keyframes slideImages {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Slides exactly half the wrapper width */
+        }
+
+        .team-member-slide {
+            /* Width calculation: (100% of 200% wrapper) / 14 members = approx 7.14% */
+            /* Using a fixed width for consistent image size */
+            flex-shrink: 0; 
+            width: 140px; /* Width of each team member box */
+            height: 100%;
+            margin-right: 15px; /* Spacing between members */
+            overflow: hidden;
+            position: relative;
+            background-color: #2e2e2e;
+            border: 1px solid #333; /* Visual separation */
+            box-sizing: border-box;
+        }
+
+        .member-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .member-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+            text-align: center;
+        }
+
+
+        /*
+        * 4. Bottom Description
+        */
+        .bottom-description {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 90%;
+            color: var(--color-text-light);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+
+          
+        
+        .design-section {
+            background-color: var(--color-dark-navy);
+            padding: 50px 80px 80px 80px;
+            box-sizing: border-box;
+            max-width: 100vw;
+        }
+
+        /*
+        * 2. TOP SLIDING WORDS MENU (The new requirement)
+        */
+        .sliding-menu-track {
+            overflow: hidden; 
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sliding-menu-wrapper {
+            display: flex;
+            width: 200%; /* Double the width for seamless loop */
+            animation: slideWords 20s linear infinite; 
+        }
+        
+        @keyframes slideWords {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
+        .menu-slide-word {
+            flex-shrink: 0; 
+            width: 280px; /* Fixed width for consistent timing */
+            padding: 10px 15px;
+            margin-right: 25px; 
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .menu-slide-word.active {
+            color: white;
+        }
+
+        /* Custom Loading Line Effect */
+        .loading-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--color-yellow);
+            transition: width 0.3s ease-out; /* Smoothly fill the line */
+        }
+        
+        .menu-slide-word.active .loading-line {
+             /* When active, the line width can be set to 100% to simulate 'loading' */
+             width: 100%;
+        }
+
+
+        /*
+        * 3. MAIN CONTENT (Heading/Text and Dynamic Box)
+        */
+        .main-content-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 400px;
+        }
+
+        .text-block {
+            width: 45%; 
+            padding-right: 40px;
+        }
+
+        .text-block h2 {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--color-yellow);
+            margin-top: 0;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .text-block p {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--color-text-light);
+            line-height: 1.4;
+        }
+
+        /* 4. DYNAMIC BOTTOM BOX (Content changes based on active state) */
+        .dynamic-content-box {
+            width: 55%;
+            height: 500px;
+            background-color: #1a1f26; /* Slightly lighter background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            transition: background-color 0.5s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .graphic-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #A31F1F; /* Example color for the graphic */
+            color: white;
+        }
+        
+        .graphic-image-placeholder h3 {
+             margin-bottom: 10px;
+             color: var(--color-yellow);
+             font-size: 36px;
+        }
+        
+        .graphic-image-placeholder p {
+            font-size: 18px;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        /* Video container styling */
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-video-container {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+body {
+margin: 0;
+background: #0f1720;
+font-family: Arial, sans-serif;
+color: white;
+}
+
+
+.container4 {
+width: 90%;
+margin: auto;
+padding-top: 80px;
+}
+
+
+h1 {
+font-size: 70px;
+color: #ffeb00;
+margin-bottom: 10px;
+}
+
+
+.subtext {
+max-width: 600px;
+font-size: 32px;
+opacity: 0.7;
+line-height: 1.4;
+margin-bottom: 60px;
+}
+
+
+.cards-wrapper {
+display: flex;
+gap: 40px;
+overflow: hidden;
+position: relative;
+}
+
+
+.card5 {
+min-width: 350px;
+height: 520px;
+border-radius: 10px;
+overflow: hidden;
+background: #111;
+transform: translateX(0);
+transition: transform 0.5s ease-out;
+box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+
+.card5 img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+body {
+margin: 0;
+background: #0f1720;
+font-family: Arial, sans-serif;
+color: white;
+overflow-x: hidden;
+}
+
+.section1 {
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+
+h1 {
+font-size: 80px;
+max-width: 80%;
+line-height: 1.1;
+margin: 0;
+transform: translateY(0);
+transition: transform 0.6s ease-out;
+}
+
+
+.cta-btn {
+margin-top: 60px;
+font-size: 32px;
+background: none;
+border: none;
+color: #ffeb00;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 10px;
+transform: translateY(0);
+transition: transform 0.6s ease-out;
+}
+
+
+.bg-floating-img {
+position: absolute;
+width: 260px;
+height: 260px;
+object-fit: cover;
+opacity: 0.2;
+border-radius: 20px;
+filter: blur(2px);
+transition: transform 0.7s ease-out;
+}
+
+
+.img-left {
+top: 10%;
+left: 5%;
+}
+
+
+.img-right {
+bottom: 12%;
+right: 6%;
+}
+
+
+      .brand-cta-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 80px;
+        max-width: 80%;
+        line-height: 1.1;
+        margin: 0;
+        transform: translateY(0);
+        transition: transform 0.6s ease-out;
+      }
+
+      .cta-btn {
+        margin-top: 60px;
+        font-size: 32px;
+        background: none;
+        border: none;
+        color: #ffeb00;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translateY(0);
+        transition: transform 0.6s ease-out;
+      }
+
+      .bg-floating-img {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        object-fit: cover;
+        opacity: 0.2;
+        border-radius: 20px;
+        filter: blur(2px);
+        transition: transform 0.7s ease-out;
+      }
+
+      .img-left {
+        top: 10%;
+        left: 5%;
+      }
+
+      .img-right {
+        bottom: 12%;
+        right: 6%;
+      }
+</style>
    
     
     <link rel="stylesheet" href="css/main.css">
    
-    <script src="script.js"></script>.
     
      <!-- Header -->
     <header id="main-header">
         <div class="logo">
-            <img src="Assets/logo.avif" alt="MacMatlox Studio Logo">
+            <img src="assets/WhatsApp Image 2025-12-02 at 09.06.23_7ca68f28.jpg" alt="MacMatlox Studio Logo">
         </div>
         <nav>
             <a href="#home">Talent</a>
@@ -65,8 +867,9 @@
         
         <div class="hero-visual">
             <div class="hero-video-container framer-element">
-                <video class="hero-video" autoplay muted loop>
-                    <source src="Assets/video.mp4" type="video/mp4">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <!-- Fixed video path - removed duplicate "assets/" -->
+                    <source src="assets/WhatsApp Video 2025-12-02 at 09.08.18_8fc0b493.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 
@@ -82,69 +885,230 @@
     </div>
         
     <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About MacMatlox Studio</h2>
-        <div class="section-content">
-            <div class="section-text">
-                <p>We bridge the gap between exceptional talent and forward-thinking brands. Our approach combines strategic thinking with creative execution to deliver impactful results.</p>
-                <p>With years of experience in talent management and creative direction, we've developed a unique methodology that identifies potential and transforms it into success.</p>
-            </div>
-            <div class="section-visual framer-element">
-                <img src="Assets/about-image.jpg" alt="About MacMatlox Studio" class="section-image">
-            </div>
+   <section class="about-section">
+        
+        <div class="content-left">
+            <h1 class="hero-title">Your Trusted Partner with Talent Management & Digital Solutions</h1>
+            <p class="hero-subtitle">Empowering creatives and brands through expert representation, strategic alliances, and innovative digital solutions to achieve unparalleled growth and visibility.</p>
         </div>
+
+        <div class="image-gallery-container">
+            <div class="image-wrapper">
+                <div class="image-placeholder"><img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg"><br>()</div>
+                </div>
+
+            <div class="image-wrapper">
+                <div class="image-placeholder"><img src="assets/welcome.jpg"><br>()</div>
+                </div>
+
+            <div class="image-wrapper">
+                <div class="image-placeholder"><img src="assets/WhatsApp Image 2025-12-02 at 09.06.23_7ca68f28.jpg"><br>()</div>
+                </div>
+        </div>
+
+        <div class="content-right">
+            <h2 class="values-title">Our Values</h2>
+            <ul class="value-list">
+                <li>Data-Driven Decisions</li>
+                <li>Creative Storytelling</li>
+                <li>Agility & Adaptability</li>
+                <li>Unwavering Integrity</li>
+                <li>Passion for Innovation</li>
+            </ul>
+        </div>
+
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card framer-element">
-                <div class="service-icon">👤</div>
-                <h3 class="service-title">Talent Management</h3>
-                <p class="service-description">Comprehensive representation and career development for exceptional individuals across industries.</p>
+
+    <section class="what-we-do-section">
+        <div class="wwd-left-column">
+            <div class="wwd-static-content">
+                <h2 style="color: yellow;">What We Do</h2>
+                 <div class="animated-line"></div>
+                <p class="subtitle"style="color: gray;  font-weight: 900;">As a multi-disciplinary agency, MacMatlox Studio operates on two strong pillars:</p>
+                <a href="#" class="appointment-link">Schedule an Appointment <span>&#8599;</span></a>
             </div>
-            <div class="service-card framer-element">
-                <div class="service-icon">🚀</div>
-                <h3 class="service-title">Brand Strategy</h3>
-                <p class="service-description">Developing distinctive brand identities and positioning strategies that resonate with target audiences.</p>
-            </div>
-            <div class="service-card framer-element">
-                <div class="service-icon">💻</div>
-                <h3 class="service-title">Digital Solutions</h3>
-                <p class="service-description">Creating innovative digital experiences and platforms that engage and convert.</p>
-            </div>
-            <div class="service-card framer-element">
-                <div class="service-icon">🎨</div>
-                <h3 class="service-title">Creative Direction</h3>
-                <p class="service-description">Guiding visual and conceptual development to ensure cohesive and impactful creative output.</p>
-            </div>
-            <div class="service-card framer-element">
-                <div class="service-icon">📹</div>
-                <h3 class="service-title">Content Production</h3>
-                <p class="service-description">Producing high-quality content that tells compelling stories and drives engagement.</p>
-            </div>
-            <div class="service-card framer-element">
-                <div class="service-icon">📈</div>
-                <h3 class="service-title">Marketing Strategy</h3>
-                <p class="service-description">Developing data-driven marketing approaches that deliver measurable results.</p>
+
+            <div class="talent-description-area">
+                
+                
             </div>
         </div>
+
+        <div class="wwd-right-track">
+            
+            <div id="servicesWrapper" class="services-wrapper">
+                
+                <div class="service-pillar">
+                    <div class="pillar-nav-wrapper">
+                        <div class="pillar-nav" style="color: var(--color-yellow);">Digtal Solutions</div>
+                        <div class="pillar-nav">Digital Solutions</div>
+                    </div>
+                    
+                    <div class="pillar-number">01</div>
+                    <h3 class="pillar-title">Talent Management</h3>
+                    
+                    <p id="pillar-one-description"><p >We provide comprehensive talent development services, from mentorship and representation to brand 
+                    building and exposure. Whether you're an aspiring model, a gifted visual artist, or a passionate performer, 
+                    we're here to help you grow your craft and achieve your goals.</p></p>
+                    <div id="pillar-one-image"><img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg"></div>
+                    
+                <div class="talent-image-container">
+                    <img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg" alt="Talent Team Working Image">
+                </div>
+                </div>
+
+                <div class="service-pillar">
+                    <div class="pillar-nav-wrapper">
+                        <div class="pillar-nav">Talent</div>
+                        <div class="pillar-nav" style="color: var(--color-yellow);">Digital Solutions</div>
+                    </div>
+
+                    <div class="pillar-number">02</div>
+                    <h3 class="pillar-title">Digital Solutions Division</h3>
+                    
+                    <p id="pillar-two-description">Digital Solutions description...</p>
+                    
+                    <div class="pillar-image-container-right">
+                        <span class="placeholder-text"><img src="assets/WhatsApp Image 2025-12-02 at 09.06.23_7ca68f28.jpg"></span>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
     </section>
 
-    <!-- Work Section -->
-    <section id="work">
-        <h2 class="section-title">Featured Work</h2>
-        <div class="section-content">
-            <div class="section-visual framer-element">
-                <img src="Assets/work-image.jpg" alt="Featured Work" class="section-image">
+
+    <section class="team-section">
+        
+        <div class="team-header-container">
+            
+            <div class="team-text-block">
+                <h2 style="color: yellow;">Our Team</h2>
+               
+                <p style="color: grey;">Each with unique talents and a shared commitment to delivering exceptional for our clients.</p>
             </div>
-            <div class="section-text">
-                <p>Our portfolio showcases successful collaborations with brands and talent across various industries. Each project represents our commitment to excellence and innovation.</p>
-                <p>From brand transformations to digital campaigns, our work demonstrates the power of strategic creativity and exceptional talent.</p>
+            
+            <div class="team-hero-image-container">
+                <div class="hero-image-placeholder">
+                     <span style="font-size: 30px;"><img src="assets/WhatsApp Image 2025-12-02 at 09.06.23_7ca68f28.jpg"></span>
+                 </div>
             </div>
         </div>
+        
+        <div class="team-gallery">
+            <div class="team-gallery-wrapper">
+                
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 1</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 2</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 3</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 4</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 5</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 6</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 7</div>
+                </div>
+                
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 1</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 2</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 3</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 4</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 5</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 6</div>
+                </div>
+                <div class="team-member-slide">
+                    <div class="member-info">Name | Role 7</div>
+                </div>
+                
+            </div>
+        </div>
+
+        <p class="bottom-description">
+            We are a collective of passionate creatives, strategists, and technologists. Our diverse background and unified vision push impact and create craft stories for for brands worldwide. We harness the power of human connection.
+        </p>
+
     </section>
+    
+    <!-- Design Section with Unique ID -->
+    <section class="design-section" id="designServices">
+        
+        <div class="sliding-menu-track">
+            <div id="servicesMenuWrapper" class="sliding-menu-wrapper">
+                
+                <div class="menu-slide-word" data-service="New Branch" data-index="0">
+                    New Branch
+                    <span class="loading-line"></span>
+                </div>
+                <div class="menu-slide-word" data-service="Photography Special" data-index="1">
+                    Photography Special
+                    <span class="loading-line"></span>
+                </div>
+                <div class="menu-slide-word" data-service="Graphic Design" data-index="2">
+                    Graphic Design
+                    <span class="loading-line"></span>
+                </div>
+                <div class="menu-slide-word" data-service="Printing & Branding" data-index="3">
+                    Printing & Branding
+                    <span class="loading-line"></span>
+                </div>
+                
+                <div class="menu-slide-word" data-service="New Branch" data-index="4">
+                    New Branch
+                    <span class="loading-line"></span>
+                </div>
+                <div class="menu-slide-word" data-service="Photography Special" data-index="5">
+                    Photography Special
+                    <span class="loading-line"></span>
+                </div>
+                <div class="menu-slide-word" data-service="Graphic Design" data-index="6">
+                    Graphic Design
+                    <span class="loading-line"></span>
+                </div>
+                <div class="menu-slide-word" data-service="Printing & Branding" data-index="7">
+                    Printing & Branding
+                    <span class="loading-line"></span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="main-content-area">
+            
+            <div class="text-block">
+                <h2>Stand Out with Stunning Design!</h2>
+                <p>From logos to social media graphics, we bring your vision to life with bold, professional design tailored to your brand.</p>
+            </div>
+            
+            <div id="dynamicBox" class="dynamic-content-box">
+                 Select a service above to see details.
+            </div>
+        </div>
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -164,7 +1128,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="Assets/log.avif" alt="MacMatlox Studio Logo">
+                <img src="assets/WhatsApp Image 2025-12-02 at 09.06.23_7ca68f28.jpg" alt="MacMatlox Studio Logo">
             </div>
             <div class="footer-links">
                 <a href="#home">Home</a>
@@ -176,8 +1140,78 @@
         </div>
     </footer>
 
-    <!-- Framer-like Animation Script -->
-    
+
+<script>
+
+        // Simple Projects Section Animation
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            const cards = document.querySelectorAll('.card5');
+            const container = document.querySelector('.container4');
+            
+            if (cards.length && container) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Start animation when section enters viewport
+                            let scrollPosition = 0;
+                            
+                            function animateOnScroll() {
+                                if (!entry.isIntersecting) return;
+                                
+                                const rect = container.getBoundingClientRect();
+                                const viewportHeight = window.innerHeight;
+                                
+                                // Calculate how much of the section is visible
+                                const visiblePercentage = Math.max(0, Math.min(100, 
+                                    ((viewportHeight - rect.top) / viewportHeight) * 100
+                                ));
+                                
+                                // Animate each card
+                                cards.forEach((card, index) => {
+                                    const offset = (visiblePercentage * 2.1) + (index * 15);
+                                    card.style.transform = `translateX(${offset}px)`;
+                                });
+                                
+                                requestAnimationFrame(animateOnScroll);
+                            }
+                            
+                            animateOnScroll();
+                        } else {
+                            // Reset when section leaves viewport
+                            cards.forEach(card => {
+                                card.style.transform = 'translateX(0)';
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(container);
+            }
+        }, 300);
+    });
+
+    const title = document.getElementById('title');
+const cta = document.getElementById('ctaBtn');
+const images = document.querySelectorAll('.bg-floating-img');
+
+
+window.addEventListener('scroll', () => {
+let scrollPos = window.scrollY;
+
+
+title.style.transform = `translateY(${scrollPos * -0.12}px)`;
+cta.style.transform = `translateY(${scrollPos * -0.18}px)`;
+
+
+images.forEach((img, index) => {
+let direction = index % 2 === 0 ? 1 : -1;
+img.style.transform = `translateY(${scrollPos * 0.25 * direction}px)`;
+});
+});
+</script>
+
+
+
 </body>
 </html>
-
