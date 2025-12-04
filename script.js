@@ -1,21 +1,23 @@
  // Simple scroll animations
         document.addEventListener('DOMContentLoaded', function() {
             const framerElements = document.querySelectorAll('.framer-element');
-            const header = document.getElementById('main-header');
-            
-            // Header scroll effect - transparent when at top
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
+                const header = document.getElementById('main-header');
+
+                // Header scroll effect - transparent when at top (guarded)
+                if (header) {
+                    window.addEventListener('scroll', function() {
+                        if (window.scrollY > 50) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                    });
+
+                    // Initialize header state
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    }
                 }
-            });
-            
-            // Initialize header state
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            }
             
             // Intersection Observer for scroll animations
             const observer = new IntersectionObserver((entries) => {
@@ -35,30 +37,35 @@
                 observer.observe(el);
             });
             
-            // Smooth scrolling for navigation links
+            // Smooth scrolling for navigation links (guard target existence)
             document.querySelectorAll('nav a, .footer-links a').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                    if (targetId && targetId.startsWith('#')) {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
                 });
             });
             
-            // WhatsApp booking button functionality
+            // WhatsApp booking button functionality (guarded)
             const whatsappBtn = document.getElementById('whatsapp-book-btn');
-            whatsappBtn.addEventListener('click', function() {
-                // Replace with your actual WhatsApp number and message
-                const phoneNumber = '27686202423'; // Replace with your number
-                const message = 'Hello! I would like to book an appointment with MacMatlox Studio.';
-                const whatsappURL = `https://wa.me/${27686202423}?text=${encodeURIComponent(message)}`;
-                
-                window.open(whatsappURL, '_blank');
-            });
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', function() {
+                    // Replace with your actual WhatsApp number and message
+                    const phoneNumber = '27686202423'; // Replace with your number
+                    const message = 'Hello! I would like to book an appointment with MacMatlox Studio.';
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+                    window.open(whatsappURL, '_blank');
+                });
+            }
             
             // Service card animations
             const serviceCards = document.querySelectorAll('.service-card');
@@ -81,8 +88,9 @@
         // This is a manual example to demonstrate the sliding effect:
         const wrapper = document.getElementById('servicesWrapper');
         let isSlid = true; // Start showing Pillar 2, as per the initial combined screenshot
-        
+
         function toggleSlide() {
+            if (!wrapper) return; // guard if element missing
             if (isSlid) {
                 // Shows Pillar 1 (Talent Management)
                 wrapper.classList.remove('slide-right');
@@ -299,4 +307,74 @@
             });
         }
     });
+
+
+// Consolidated inline script: Projects animation and parallax
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const cards = document.querySelectorAll('.card5');
+        const container = document.querySelector('.container4');
+
+        if (cards.length && container) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start animation when section enters viewport
+                        let scrollPosition = 0;
+
+                        function animateOnScroll() {
+                            if (!entry.isIntersecting) return;
+
+                            const rect = container.getBoundingClientRect();
+                            const viewportHeight = window.innerHeight;
+
+                            // Calculate how much of the section is visible
+                            const visiblePercentage = Math.max(0, Math.min(100,
+                                ((viewportHeight - rect.top) / viewportHeight) * 100
+                            ));
+
+                            // Animate each card
+                            cards.forEach((card, index) => {
+                                const offset = (visiblePercentage * 2.1) + (index * 15);
+                                card.style.transform = `translateX(${offset}px)`;
+                            });
+
+                            requestAnimationFrame(animateOnScroll);
+                        }
+
+                        animateOnScroll();
+                    } else {
+                        // Reset when section leaves viewport
+                        cards.forEach(card => {
+                            card.style.transform = 'translateX(0)';
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(container);
+        }
+    }, 300);
+});
+
+// Parallax / floating images scroll handler (guarded)
+(function() {
+    const title = document.getElementById("title");
+    const cta = document.getElementById("ctaBtn");
+    const images = document.querySelectorAll(".bg-floating-img");
+
+    if (title || cta || images.length) {
+        window.addEventListener("scroll", () => {
+            let scrollPos = window.scrollY;
+
+            if (title) title.style.transform = `translateY(${scrollPos * -0.12}px)`;
+            if (cta) cta.style.transform = `translateY(${scrollPos * -0.18}px)`;
+
+            images.forEach((img, index) => {
+                let direction = index % 2 === 0 ? 1 : -1;
+                img.style.transform = `translateY(${scrollPos * 0.25 * direction}px)`;
+            });
+        });
+    }
+})();
 
