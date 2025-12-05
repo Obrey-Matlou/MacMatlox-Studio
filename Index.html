@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MacMatlox Studio</title>
     <meta name="description" content="We are a full-service talent agency and creative partner, we specialize in discovering, developing, and representing exceptional talent with innovative digital and branding solutions for individuals and businesses.">
-    
+     <meta name="description" content="Explore our nominated awards and collaborate with industry leaders">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
  
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,10 +132,11 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            
         }
 
         .value-list li {
-            font-size: 20px;
+           font-size: 25px;
             font-weight: 400;
             margin-bottom: 20px;
             position: relative;
@@ -340,11 +343,6 @@
             display: none;
         }
 
-
-        
-
-     
-       
         
         /* Placeholder text for the hero image */
         .hero-image-placeholder {
@@ -369,59 +367,8 @@
         /*
         * 3. Sliding Image Gallery (Horizontal Scroll/Animation)
         */
-        .team-gallery {
-            position: relative;
-            overflow: hidden; /* Creates the viewport for the sliding effect */
-            height: 250px; /* Height of the image strip */
-            margin-bottom: 60px;
-        }
-
-        .team-gallery-wrapper {
-            display: flex;
-            /* Animation applied here */
-            animation: slideImages 20s linear infinite; 
-            /* Double the width of the container to ensure smooth loop */
-            width: 200%; 
-            height: 100%;
-        }
-
-        /* Define the Keyframe Animation for continuous sliding */
-        @keyframes slideImages {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Slides exactly half the wrapper width */
-        }
-
-        .team-member-slide {
-            /* Width calculation: (100% of 200% wrapper) / 14 members = approx 7.14% */
-            /* Using a fixed width for consistent image size */
-            flex-shrink: 0; 
-            width: 140px; /* Width of each team member box */
-            height: 100%;
-            margin-right: 15px; /* Spacing between members */
-            overflow: hidden;
-            position: relative;
-            background-color: #2e2e2e;
-            border: 1px solid #333; /* Visual separation */
-            box-sizing: border-box;
-        }
-
-        .member-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .member-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 5px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 12px;
-            text-align: center;
-        }
+      
+       
 
 
         /*
@@ -492,7 +439,7 @@
             left: 0;
             width: 0;
             height: 3px;
-            background-color: var(--color-yellow);
+            background-color: yellow;
             transition: width 0.3s ease-out; /* Smoothly fill the line */
         }
         
@@ -783,7 +730,7 @@ object-fit: cover;
         }
         
         .company-name {
-            color: #FF416C;
+            color: yellow;
             font-weight: bold;
         }
         
@@ -1091,10 +1038,985 @@ object-fit: cover;
             }
         }
       
+.glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 170, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        .last-header {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .header-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0ff 50%, #ffa0ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header-text::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient();
+            bottom: -10px;
+            left: 50%;
+            border-radius: 2px;
+        }
 
         
+        .highlight {
+            color:yellow;
+            font-weight: 500;
+        }
 
-      
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff0080, #00ccff, #ff0080);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .contact-header {
+            padding: 50px 60px 30px;
+            text-align: center;
+        }
+
+        .contact-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff0080 0%, #00ccff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #b0b0d0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 600px;
+        }
+
+        .contact-info {
+            padding: 40px 60px;
+            background: rgba(10, 10, 20, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border-left: 4px solid yellow;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-left-color: #00ccff;
+        }
+
+        .info-item.nyc {
+            border-left-color: gray;
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.3);
+        }
+
+        .info-item.nyc .info-icon {
+            background: transparent;
+            box-shadow: 0 5px 15px rgba(0, 204, 255, 0.3);
+        }
+
+        .info-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .info-content .location-name {
+            color: yellow;
+            font-weight: 600;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item.nyc .info-content .location-name {
+            color: grey;
+        }
+
+        .info-content p {
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .contact-cta {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: yellow;
+            color: black;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow:yellow;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: yellow;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+           
+        }
+
+        .map-tabs {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .map-tab {
+            background: rgba(20, 20, 30, 0.9);
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .map-tab.active {
+            background: yellow;
+          color: #000;
+            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.4);
+         
+        }
+
+        .map-tab.nyc.active {
+            background: gray;
+            box-shadow: 0 5px 15px rgba(0, 204, 255, 0.4);
+        }
+
+        .map-tab i {
+            font-size: 1.2rem;
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 10, 20, 0.9));
+            padding: 40px;
+            z-index: 500;
+            pointer-events: none;
+        }
+
+        .overlay-content {
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            pointer-events: auto;
+        }
+
+        .overlay-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .overlay-content p {
+            color: #b0b0d0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            #map {
+                min-height: 500px;
+                border-left: none;
+                border-top: 2px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .contact-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-header {
+                padding: 40px 30px 20px;
+            }
+            
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                padding: 30px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .info-icon {
+                margin-bottom: 20px;
+            }
+            
+            .map-tabs {
+                top: 20px;
+                left: 20px;
+                flex-direction: column;
+                width: calc(100% - 40px);
+            }
+            
+            .map-tab {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .info-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        .pure-icons {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .pure-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .pure-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Facebook */
+        .facebook-icon {
+            background-color: #1877F2;
+        }
+        .facebook-icon::before {
+            content: 'f';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 28px;
+        }
+        
+        /* LinkedIn */
+        .linkedin-icon {
+            background-color: #0077B5;
+        }
+        .linkedin-icon::before {
+            content: 'in';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        /* YouTube */
+        .youtube-icon {
+            background-color: #FF0000;
+        }
+        .youtube-icon::before {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+        }
+        
+        /* Instagram */
+        .instagram-icon {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+        .instagram-icon::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 3px solid white;
+            border-radius: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .instagram-icon::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 50%;
+            top: 25%;
+            right: 25%;
+            background: white;
+        }
+        
+        /* TikTok */
+        .tiktok-icon {
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        .tiktok-icon::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 15px solid #25F4EE;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+        }
+        .tiktok-icon::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-right: 15px solid #FE2C55;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+        }
+.section-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #ffe91f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1.25rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+/* Container with overflow visible */
+.projects-container {
+    position: relative;
+    width: 100%;
+    overflow: visible; /* Changed from hidden */
+    padding: 40px 0;
+    margin: 40px 0;
+}
+
+/* Slider Track - Infinite width */
+.projects-slider {
+    display: flex;
+    gap: 25px;
+    padding: 20px 0;
+    width: max-content;
+    animation: autoSlide 40s linear infinite;
+    animation-play-state: running;
+    will-change: transform;
+}
+
+/* Pause animation on hover */
+.projects-container:hover .projects-slider {
+    animation-play-state: paused;
+}
+
+/* Individual Project Card */
+.project-card {
+    flex: 0 0 350px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* For seamless infinite loop - DUPLICATE cards should be added */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #ffe91f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.project-type {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.project-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.project-card:hover .project-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%);
+}
+
+/* INFINITE AUTO-SLIDE ANIMATION - FIXED */
+@keyframes autoSlide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-375px * var(--total-cards, 8)));
+    }
+}
+
+/* FOR SEAMLESS INFINITE LOOP - IMPORTANT */
+/* This creates the infinite loop effect without disappearing */
+.projects-slider {
+    display: flex;
+}
+
+/* First set of cards */
+.projects-slider .project-card:nth-child(n) {
+    animation: none;
+}
+
+/* Duplicate cards (added via JavaScript) */
+.projects-slider .project-card.duplicate {
+    animation: none;
+}
+
+/* Remove scrollbar completely */
+.projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Ensure no clipping */
+.projects-slider {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .project-card {
+        flex: 0 0 300px;
+        height: 450px;
+    }
+    
+    @keyframes autoSlide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-325px * var(--total-cards, 8)));
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-description {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
+    
+    .project-card {
+        flex: 0 0 280px;
+        height: 400px;
+    }
+    
+    @keyframes autoSlide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-305px * var(--total-cards, 8)));
+        }
+    }
+}
+
+.section-wrapper {
+width: 100%;
+height: 100vh;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 0 20px;
+}
+
+
+.floating-img {
+position: absolute;
+width: 230px;
+height: 230px;
+border-radius: 12px;
+object-fit: cover;
+opacity: 0.25;
+filter: blur(1.5px);
+animation: floatAnim 6s ease-in-out infinite alternate;
+}
+
+
+@keyframes floatAnim {
+from { transform: translateY(0); }
+to { transform: translateY(-25px); }
+}
+
+
+h1 span {
+display: block;
+font-size: 5rem;
+font-weight: 700;
+}
+
+
+.cta-btn {
+margin-top: 40px;
+font-size: 2rem;
+background: none;
+border: none;
+color: #ffffff;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+cursor: pointer;
+transition: 0.3s ease;
+}
+
+
+.cta-btn:hover {
+opacity: 0.7;
+transform: translateY(-3px);
+}
+
+
+.cta-btn i {
+font-size: 1.8rem;
+background: #ffe91f;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #000;
+font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+h1 span {
+font-size: 3rem;
+}
+.floating-img { width: 150px; height: 150px; }
+}
+
+
+          :root {
+            --gold: #e6c54a;
+            --gold-light: #f0d86a;
+            --dark-bg: #1a1d24;
+            --dark-surface: #252930;
+            --dark-surface-hover: #2d323a;
+            --text-muted: #8a8f98;
+            --text-light: #e8e9eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-muted-custom {
+            color: var(--text-muted);
+        }
+
+        .border-gold {
+            border-color: var(--gold) !important;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .section-title-sm {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .award-card {
+            background-color: var(--dark-surface);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .award-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .award-card:hover {
+            transform: translateX(5px) translateY(0);
+            background-color: var(--dark-surface-hover);
+        }
+
+        .award-title {
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .award-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .collaborate-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 0;
+        }
+
+        .collaborate-btn:hover {
+            color: var(--gold-light);
+            text-decoration: underline;
+        }
+
+        .icon-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .icon-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(230, 197, 74, 0.5);
+        }
+
+        .divider {
+            border-top: 2px solid var(--gold);
+            margin: 1rem 0;
+        }
+
+        /* Toast notification styles */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast-notification {
+            background-color: var(--dark-surface);
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .toast-notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--gold);
+            font-size: 1.25rem;
+        }
+
+        .toast-notification .toast-text {
+            color: var(--text-light);
+        }
+
+        @media (max-width: 991px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            .section-title-sm {
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-box {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        /* ULTRA MINIMAL FOOTER */
+        .ultra-minimal-footer {
+            background: var(--dark-surface);
+            border-top: 1px solid #eaeaea;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: yellow;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: #666666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: #eaeaea;
+            margin: 30px 0;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #888888;
+        }
+        
 </style>
    
     
@@ -1122,7 +2044,7 @@ object-fit: cover;
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Unleash Your Brand Potential Spark Growth</h1>
+            <h1>Unleash Your Brand <span class="highlight" style="color: grey;">Potential Spark Growth</span></h1>
             <div class="line-container">
                 <div class="animated-line"></div>
                 <div class="code-block">
@@ -1171,7 +2093,7 @@ object-fit: cover;
         
         <div class="content-left">
             <h1 class="values-title" >Your Trusted Partner with Talent Management & Digital Solutions</h1>
-            <p class="value-list">Empowering creatives and brands through expert representation, strategic alliances, and innovative digital solutions to achieve unparalleled growth and visibility.<p/>
+            <p style="font-size: 30px;">Empowering creatives and brands through expert representation, strategic alliances, and innovative digital solutions to achieve unparalleled growth and visibility.<p/>
         </div>
 
         <div class="image-gallery-container">
@@ -1236,7 +2158,7 @@ object-fit: cover;
                     <div id="pillar-one-image"><img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg"></div>
                     
                 <div class="talent-image-container">
-                    <img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg" alt="Talent Team Working Image">
+                    <img src="assets/WhatsApp Image 2025-12-02 at 12.18.04_f3ad64de.jpg" alt="Talent Team Working Image">
                 </div>
                 </div>
 
@@ -1266,8 +2188,8 @@ object-fit: cover;
 
    <div class="leadership-section">
         
-            <h1> <div class="logo">CREATIVE VISION STUDIO</div>
-            <h1>Our Leadership & Team Structure</h1>
+            <h1> <div class="logo" style="color: yellow; font-weight: 800;">CREATIVE VISION STUDIO</div>
+            <h1>Our Leadership & <span class="highlight" style="color: grey; font-weight: 800;">Team Structure</span> </h1>
             <p class="subtitle">Meet the creative minds behind <span class="company-name">Creative Vision Studio</span>, where artistry meets innovation in photography and entertainment.</p>
         
         </h1>
@@ -1371,56 +2293,23 @@ object-fit: cover;
                     <div class="department">Talent Management</div>
                 </div>
                 
-                <div class="manager-card" id="labor-manager">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-hard-hat"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Margaret Sweet</div>
-                    <div class="person-title">Production Manager</div>
-                    <div class="department">Set & Location Management</div>
-                </div>
                 
-                <div class="manager-card" id="finance-manager2">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Hannah Kobayashi</div>
-                    <div class="person-title">Financial Manager</div>
-                    <div class="department">Revenue & Growth</div>
-                </div>
-                
-                <div class="manager-card" id="accident-manager">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Margara Maxwell</div>
-                    <div class="person-title">Safety & Compliance Manager</div>
-                    <div class="department">Studio Safety</div>
-                </div>
-            </div>
             
-            <!-- Level 4: Staff -->
-            <div class="level-4">
-                <div class="staff-card" id="finance-staff">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Pearl Porter</div>
-                    <div class="person-title">Finance Coordinator</div>
-                    <div class="department">Financial Operations</div>
                 </div>
             </div>
         </div>
 
+      <div class="background-effect"></div>
+    <div class="glow-effect"></div>
     
+    <div class="last-header">
+        <h1 class="header-text" style="color: gray ;">Building the future, together.</h1>
+        
+        <p class="subtitle">
+            Discover the innovative network of partners powering our industry's biggest advancements. 
+            Through <span class="highlight">collaboration</span> and <span class="highlight">shared vision</span>, 
+            we're pushing boundaries and creating solutions that transform tomorrow.
+        </p>
     <!-- Design Section with Unique ID -->
         <!-- Design Section with Unique ID -->
     <section class="design-section" id="designServices">
@@ -1468,7 +2357,7 @@ object-fit: cover;
         <div class="main-content-area">
             
             <div class="text-block">
-                <h2>Stand Out with Stunning Design!</h2>
+                <h2 style="color: yellow;">Stand Out with Stunning Design!</h2>
                 <p>From logos to social media graphics, we bring your vision to life with bold, professional design tailored to your brand.</p>
             </div>
             
@@ -1479,40 +2368,460 @@ object-fit: cover;
     </section>
     <!-- End of Design Section -->
 </div>
-   
-    
-  
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="section-content">
-            <div class="section-text">
-                <p>Ready to elevate your brand or career? Let's discuss how we can work together to achieve your goals.</p>
-                <p>Contact us to schedule a consultation and discover the MacMatlox difference.</p>
-            </div>
-            <div class="section-visual framer-element">
-                <img src="Assets/contact-image.jpg" alt="Contact Us" class="section-image">
+   <section class="portfolio-section">
+        <h2 style="color: yellow; font-weight: 800; font-size: 49px;">Our Projects</h2>
+        <p class="section-description">Explore our latest photography and videography projects showcasing creativity and innovation.</p>
+        
+        <div class="projects-container">
+            <div class="projects-slider" id="projectsSlider">
+                <!-- Cards will be added by JavaScript -->
+                        <script>
+       // Card data
+        const projects = [
+            {
+                id: 1,
+                title: "Wedding Photography",
+                type: "Event Photography",
+                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                title: "Product Commercial",
+                type: "Videography",
+                image: "https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                title: "Corporate Branding",
+                type: "Photography",
+                image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                title: "Music Video",
+                type: "Videography",
+                image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                title: "Portrait Session",
+                type: "Photography",
+                image: "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 6,
+                title: "Architecture",
+                type: "Photography",
+                image: "https://images.unsplash.com/photo-1487750404521-0d060017c4c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 7,
+                title: "Fashion Shoot",
+                type: "Photography",
+                image: "https://images.unsplash.com/photo-1522338242990-e1a0f8e5d8f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 8,
+                title: "Documentary Film",
+                type: "Videography",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Function to create project card
+        function createProjectCard(project, isDuplicate = false) {
+            return `
+                <div class="project-card ${isDuplicate ? 'duplicate' : ''}" 
+                     style="background-image: url('${project.image}');"
+                     data-id="${project.id}">
+                    <div class="project-overlay">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-type">${project.type}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize the slider
+        function initSlider() {
+            const slider = document.getElementById('projectsSlider');
+            
+            // Clear existing content
+            slider.innerHTML = '';
+            
+            // Add original cards
+            projects.forEach(project => {
+                slider.innerHTML += createProjectCard(project);
+            });
+            
+            // Add duplicate cards for seamless loop
+            // Add 8 more duplicates (same as original count)
+            projects.forEach(project => {
+                slider.innerHTML += createProjectCard(project, true);
+            });
+            
+            // Calculate animation distance
+            const cardWidth = 350; // Should match CSS
+            const gap = 25; // Should match CSS
+            const totalOriginalCards = projects.length;
+            const totalDuplicateCards = projects.length;
+            const totalCards = totalOriginalCards + totalDuplicateCards;
+            
+            // Set CSS variable for animation calculation
+            slider.style.setProperty('--total-cards', totalOriginalCards.toString());
+            
+            // Set animation duration based on number of cards
+            const animationDuration = totalOriginalCards * 5; // 5 seconds per card
+            slider.style.animationDuration = `${animationDuration}s`;
+            
+            console.log(`Animation configured: ${totalOriginalCards} cards, ${animationDuration}s duration`);
+        }
+
+        // Alternative: JavaScript-based infinite scroll (no gaps)
+        function initInfiniteScroll() {
+            const slider = document.getElementById('projectsSlider');
+            slider.innerHTML = '';
+            
+            // Add cards multiple times to ensure seamless scrolling
+            const repetitions = 4; // Show 4 sets of cards for infinite feel
+            
+            for (let i = 0; i < repetitions; i++) {
+                projects.forEach(project => {
+                    slider.innerHTML += createProjectCard(project);
+                });
+            }
+            
+            // Set very long animation
+            const cardWidth = 350;
+            const gap = 25;
+            const totalCards = projects.length * repetitions;
+            const totalDistance = (cardWidth + gap) * totalCards;
+            
+            slider.style.setProperty('--total-cards', totalCards.toString());
+            slider.style.animationDuration = `${totalCards * 3}s`; // 3 seconds per card
+        }
+
+        // Handle animation iteration
+        function handleAnimationIteration() {
+            const slider = document.getElementById('projectsSlider');
+            
+            // Reset position when animation completes (seamless loop)
+            slider.addEventListener('animationiteration', () => {
+                // No need to reset - CSS animation handles it automatically
+                console.log('Animation looped - seamless transition');
+            });
+        }
+
+        // Start animation when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+            handleAnimationIteration();
+            
+            // Optional: Manual control buttons
+            const container = document.querySelector('.projects-container');
+            
+            // Pause on hover
+            container.addEventListener('mouseenter', () => {
+                const slider = document.getElementById('projectsSlider');
+                slider.style.animationPlayState = 'paused';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                const slider = document.getElementById('projectsSlider');
+                slider.style.animationPlayState = 'running';
+            });
+            
+            // Manual navigation with arrow keys
+            document.addEventListener('keydown', (e) => {
+                const slider = document.getElementById('projectsSlider');
+                if (e.key === 'ArrowLeft') {
+                    slider.style.animationPlayState = 'paused';
+                    // Add manual scroll logic if needed
+                } else if (e.key === 'ArrowRight') {
+                    slider.style.animationPlayState = 'paused';
+                    // Add manual scroll logic if needed
+                }
+            });
+        });
+
+        // Fallback: If animation stops, restart it
+        function ensureAnimationRunning() {
+            const slider = document.getElementById('projectsSlider');
+            const style = window.getComputedStyle(slider);
+            const animationState = style.animationPlayState;
+            
+            if (animationState === 'paused' && !document.querySelector('.projects-container:hover')) {
+                slider.style.animationPlayState = 'running';
+            }
+            
+            requestAnimationFrame(ensureAnimationRunning);
+        }
+
+        // Start animation monitor
+        setTimeout(() => {
+            ensureAnimationRunning();
+        }, 1000);
+    </script>
             </div>
         </div>
     </section>
+    <section class="section-wrapper">
+
+
+<!-- Floating Background Images -->
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" class="floating-img" style="top: 5%; left: 5%; animation-delay: 0s;" />
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" class="floating-img" style="top: 8%; right: 10%; animation-delay: 1s;" />
+<img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" class="floating-img" style="bottom: 12%; left: 8%; animation-delay: 1.5s;" />
+<img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5" class="floating-img" style="bottom: 14%; right: 5%; animation-delay: 0.7s;" />
+
+
+<!-- Center Text -->
+<div>
+<h1>
+<span>Ready to take</span>
+<span>your Brand to the</span>
+<span>next level?</span>
+</h1>
+
+
+<button class="cta-btn" onclick="scheduleCall()">
+Schedule a Call <i>↗</i>
+</button>
+</div>
+</section>
+  <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Left Column -->
+                <div class="col-lg-4">
+                    <div class="mb-5">
+                        <p class="text-muted-custom mb-2"></p>
+                        <h1 class="section-title text-gold mb-3">Nominated Awards</h1>
+                        <div class="divider"></div>
+                        <p class="text-muted-custom small">Worker to 22k solid 30 the Artivler 20</p>
+                    </div>
+
+                    <div>
+                        <p class="text-muted-custom mb-2">Left column</p>
+                        <p class="text-muted-custom small mb-1">Deft column</p>
+                        <h2 class="section-title-sm text-gold mb-3">Nominated Awards</h2>
+                        <div class="divider"></div>
+                        <p class="text-muted-custom small mb-4">Our dedication to innovation and client satisfaction has been acknowledged by the industry.</p>
+                        <p class="text-muted-custom small mb-1">Maxh ce 80% 0</p>
+                        <p class="text-muted-custom small">Our dedication to innovation and client satisfaction has been acknowledged by 00x 4000</p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-8">
+                    <p class="text-muted-custom mb-3"></p>
+                    <div id="awards-container">
+                        <script>
+        // Awards data
+        const awardsData = [
+            { title: "Most Promising Founder of the Year", icon: "arrow" },
+            { title: "Most Promising Founder of the Year – Over 30", icon: "arrow" },
+            { title: "Entertainment Founder of the Over 30", icon: "arrow" },
+            { title: "Founder of the Year – Over 30", icon: "arrow" },
+            { title: "Founder of the Year – Over 30", icon: "info" },
+            { title: "Founder of the Year – Over 30", icon: "arrow" },
+            { title: "Modeling Agency of the Year", icon: "info" },
+            { title: "It's My Time – Business Growth", icon: "arrow" }
+        ];
+
+        // Show toast notification
+        function showToast(message) {
+            const toastContainer = document.getElementById('toast-container');
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.innerHTML = `
+                <i class="bi bi-check-circle-fill toast-icon"></i>
+                <span class="toast-text">${message}</span>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            // Trigger animation
+            setTimeout(() => toast.classList.add('show'), 10);
+            
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Handle collaborate click
+        function handleCollaborate(title) {
+            showToast(`Collaboration request sent for: ${title}`);
+        }
+
+        // Create award card element
+        function createAwardCard(award, index) {
+            const card = document.createElement('div');
+            card.className = 'award-card';
+            card.style.transitionDelay = `${index * 100}ms`;
+            
+            const iconClass = award.icon === 'arrow' ? 'bi-arrow-right' : 'bi-info';
+            
+            card.innerHTML = `
+                <span class="award-title">${award.title}</span>
+                <div class="award-actions">
+                    <button class="collaborate-btn" onclick="handleCollaborate('${award.title}')">
+                        Let's Collaborate
+                    </button>
+                    <button class="icon-btn" onclick="handleCollaborate('${award.title}')">
+                        <i class="bi ${iconClass}"></i>
+                    </button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Initialize awards
+        function initAwards() {
+            const container = document.getElementById('awards-container');
+            
+            awardsData.forEach((award, index) => {
+                const card = createAwardCard(award, index);
+                container.appendChild(card);
+                
+                // Trigger animation with staggered delay
+                setTimeout(() => {
+                    card.classList.add('visible');
+                }, 100 + (index * 100));
+            });
+        }
+
+        // Run when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initAwards);
+    </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 style="color: yellow; font-weight: 800; font-size: 59px;">Get In Touch</h2>
+       <div class="contact-container">
+        <div class="contact-header">
+            <h1 style="color: gray;">Capture Your  Vision With Us</h1>
+            <p>Visit our state-of-the-art studios in Swazi Inn Branch and MacMatlox Studio Emmangweni Branch. Our creative spaces are designed to bring your Photography and entertainment projects to life.</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3><span class="location-name"><i class="fas fa-camera"></i> MacMatlox Studio Swazi Inn Branch</span></h3>
+                        <p>85 Iringa St, Teanong</p>
+                        <p>Thembisa, 1632</p>
+                        <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
+                        <p><i class="fas fa-phone"></i>  010 516 0540</p>
+                        <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item nyc">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3><span class="location-name"><i class="fas fa-film"></i> MacMatlox Studio Emmangweni Branch</span></h3>
+                        <p>35 Luba Street, Temong Section</p>
+                        <p>Tembisa, South Africa</p>
+                        <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
+                        <p><i class="fas fa-phone"></i> 010 516 0540</p>
+                        <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <a href="mailto:bookings@creativevisionstudio.com" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Appoitment
+                    </a>
+                </div>
+                <div class="pure-icons">
+        <a href="https://www.facebook.com/share/15gEt9ETPG/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><div class="pure-icon facebook-icon"></div>
+        </a>
+   <a href="https://www.linkedin.com/in/macmatlox-studio-434977336?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">     <div class="pure-icon linkedin-icon"></div>
+    </a>
+     <a href="https://www.youtube.com/channel/UCtnOR5MKpExD-yntmjKtTyQ" target="_blank" rel="noopener noreferrer">   <div class="pure-icon youtube-icon"></div>
+     </a>
+        <!-- Anchor wraps the entire icon -->
+<a href="https://www.instagram.com/macmatloxstudio" target="_blank" rel="noopener noreferrer">
+    <div class="pure-icon instagram-icon"></div>
+</a>
+     <a href="https://www.tiktok.com/@macmatlox.studio?_t=8seobEG1QD0&_r=1" target="_blank" rel="noopener noreferrer">   <div class="pure-icon tiktok-icon"></div>
+    </a>
+    </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/macmatloxstudio" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@macmatlox.studio?_t=8seobEG1QD0&_r=1" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/channel/UCtnOR5MKpExD-yntmjKtTyQ" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/15gEt9ETPG/?mibextid=wwXIfr" class="social-link"><i class="fab fa-facbook"></i></a>
+                    <a href="https://www.linkedin.com/in/macmatlox-studio-434977336?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-tabs">
+                    <div class="map-tab active"  data-location="la">
+                        <i class="fas fa-camera">
+                       MacMatlox Studio Swazi Inn Branch
+                    </div>
+                    <div class="map-tab nyc" data-location="nyc">
+                        <i class="fas fa-film"></i>
+                        MacMatlox Studio Emmangweni Branch
+                    </div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.9376380432163!2d28.207117774268305!3d-26.002860155802068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956bf7119cdfef%3A0x24a547a5b92f586e!2s85%20Iringa%20St%2C%20Teanong%2C%20Thembisa%2C%201632!5e0!3m2!1sen!2sza!4v1764919240242!5m2!1sen!2sza" width="600" 
+                            height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></i></div>
+                    
+                    <div class="map-overlay">
+                        <div class="overlay-content">
+                            <h4><i class="fas fa-info-circle"></i> Studio Features</h4>
+                            <p>• Professional photography sets</p>
+                            <p>• Digital Marketing</p>
+                            <p>• Social Media Management</p>
+                            <p>• Website Development</p>
+                            <p>• Printing and Branding</p>
+                            <p>• Content Creation</p>
+                            <p>• Graphic Design</p>
+                            <p>• Internet Cafe Services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="assets/WhatsApp Image 2025-12-02 at 09.06.23_7ca68f28.jpg" alt="MacMatlox Studio Logo">
-            </div>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
+    <footer class="ultra-minimal-footer">
+        <div class="footer-container">
+            <a href="/" class="footer-logo">MacMatlox Studio</a>
+            <p class="footer-tagline">
+                Professional photography and videography studio creating timeless visual stories.
+            </p>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+                &copy; 2026 MacMatlox Studio. All rights reserved.
             </div>
         </div>
     </footer>
+</body>
+</html>
     <script>
       // CTA Section Animation Script
       document.addEventListener('DOMContentLoaded', function() {
@@ -1537,10 +2846,43 @@ object-fit: cover;
         }
       });
 
-       
+ slider.style.setProperty('--total-cards', totalCards.toString());
+        
+        // For infinite seamless loop
+        let currentPosition = 0;
+        const cardWidth = 350; // Should match your CSS card width
+        const gap = 25;
+        const totalWidth = (cardWidth + gap) * cards.length;
+        
+        // Optional: Manual controls
+        function slideLeft() {
+            const slider = document.querySelector('.projects-slider');
+            currentPosition -= cardWidth + gap;
+            if (currentPosition < -totalWidth + (cardWidth * 3)) {
+                currentPosition = 0;
+            }
+            slider.style.transform = `translateX(${currentPosition}px)`;
+            slider.style.transition = 'transform 0.5s ease';
+        }
+        
+        function slideRight() {
+            const slider = document.querySelector('.projects-slider');
+            currentPosition += cardWidth + gap;
+            if (currentPosition > 0) {
+                currentPosition = -totalWidth + (cardWidth * 4);
+            }
+            slider.style.transform = `translateX(${currentPosition}px)`;
+            slider.style.transition = 'transform 0.5s ease';
+        }
+ 
+        
     </script>
 
     <script src="script.js"></script>
 
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
