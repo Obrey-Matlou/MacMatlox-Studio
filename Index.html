@@ -521,22 +521,18 @@
         /* Video container styling */
         .hero-video {
             width: 100%;
-            height: 100%;
+            height: 130%;
             object-fit: cover;
+            padding-top: 10%;
         }
         
         .hero-video-container {
             width: 100%;
-            height: 600px;
+            height: ;
             overflow: hidden;
             position: relative;
         }
-body {
-margin: 0;
-background: #0f1720;
-font-family: Arial, sans-serif;
-color: white;
-}
+
 
 
 .container4 {
@@ -897,8 +893,8 @@ object-fit: cover;
         }
         
         .photo-placeholder {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 160px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid;
@@ -907,7 +903,14 @@ object-fit: cover;
             display: flex;
             align-items: center;
             justify-content: center;
+            
         }
+        img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
         
         .ceo-card .photo-placeholder {
             border-color: #FF416C;
@@ -1476,8 +1479,8 @@ object-fit: cover;
         .instagram-icon::after {
             content: '';
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 5px;
+            height: 5px;
             border: 2px solid white;
             border-radius: 50%;
             top: 25%;
@@ -2016,7 +2019,15 @@ font-size: 3rem;
             font-size: 0.9rem;
             color: #888888;
         }
-        
+
+
+        /* For Solution 1 */
+.service-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
 </style>
    
     
@@ -2044,19 +2055,18 @@ font-size: 3rem;
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Unleash Your Brand <span class="highlight" style="color: grey;">Potential Spark Growth</span></h1>
-            <div class="line-container">
+            <h1 style="font-size: 60px; font-weight: 500;">Unleash Your Potential: <span class="highlight" style="color: grey; font-size: 60px;font-weight: 500;">Entertainment & Digital Solutions</span>Right Here in Tembisa.</h1>
                 <div class="animated-line"></div>
                 <div class="code-block">
                     <div class="line-title">
-                        🌐 Join a creative agency that champions talent, fuels ambition, and turns passion into success
+                        🌐 Talent, Execute Events, and Power Your Digital Growth.
                     </div>
                     <div class="Appointments">
                         <p style="margin-top: 20%; font-size: xx-large; color:white;">Schedule an Appointment </p>
                         
                         <!-- WhatsApp Booking Button -->
                         <button class="book-btn btn-primary" id="whatsapp-book-btn">
-                            <span>Book Appointment</span>
+                            <span>Book a Consultation</span>
                             <div class="arrow-circle">
                                 <div class="arrow">
                                     <div class="arrow-shaft"></div>
@@ -2064,6 +2074,7 @@ font-size: 3rem;
                                 </div>
                             </div>
                         </button>
+                        
                     </div>
                 </div>
             </div>
@@ -2089,11 +2100,15 @@ font-size: 3rem;
     </div>
         
     <!-- About Section -->
+      <h1 style="color: gray;">Why MacMatlox Studio</h1>
    <section class="about-section">
         
         <div class="content-left">
-            <h1 class="values-title" >Your Trusted Partner with Talent Management & Digital Solutions</h1>
-            <p style="font-size: 30px;">Empowering creatives and brands through expert representation, strategic alliances, and innovative digital solutions to achieve unparalleled growth and visibility.<p/>
+        
+            <h1 class="values-title" >Local Expertise, Global Standards.</h1>
+            <p style="font-size: 25px;">Tembisa Focused: Deep understanding of the local market in Tembisa and Gauteng.</p>
+                <p style="font-size: 25px;">Dual-Expertise: The unique synergy of creative entertainment and technical digital skills.</p>
+                    <p style="font-size: 25px;">Proven Results: We don't just promise; we deliver measurable success for our talent and clients.</div>
         </div>
 
         <div class="image-gallery-container">
@@ -2152,9 +2167,8 @@ font-size: 3rem;
                     <div class="pillar-number">01</div>
                     <h3 class="pillar-title">Talent Management</h3>
                     
-                    <p id="pillar-one-description"><p >We provide comprehensive talent development services, from mentorship and representation to brand 
-                    building and exposure. Whether you're an aspiring model, a gifted visual artist, or a passionate performer, 
-                    we're here to help you grow your craft and achieve your goals.</p></p>
+                    <p id="pillar-one-description">Talent Management: Discovering, developing, and promoting the next generation of South African talent..</p>
+                    <p id="pillar-one-description">Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</p>
                     <div id="pillar-one-image"><img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg"></div>
                     
                 <div class="talent-image-container">
@@ -2171,7 +2185,7 @@ font-size: 3rem;
                     <div class="pillar-number">02</div>
                     <h3 class="pillar-title">Digital Solutions Division</h3>
                     
-                    <p id="pillar-two-description">Digital Solutions description...</p>
+                    <p id="pillar-two-description">Your one-stop shop for Digital Marketing, Website Development, Social Media Management, and Graphic Design.</p>
                     
                     <div class="pillar-image-container-right">
                         <span class="placeholder-text"><img src="assets/WhatsApp Image 2025-12-02 at 12.18.05_d00c882b.jpg"></span>
@@ -2202,7 +2216,7 @@ font-size: 3rem;
                 <div class="ceo-card" id="ceo">
                     <div class="photo-container">
                         <div class="photo-placeholder">
-                            <i class="fas fa-camera-retro"></i>
+                            <i class="fas fa-camera-retro"><img src="assets/ceo.png"></i>
                         </div>
                     </div>
                     <div class="person-name">Daniel Gallego</div>
@@ -2216,7 +2230,7 @@ font-size: 3rem;
                 <div class="executive-card" id="cofounder">
                     <div class="photo-container">
                         <div class="photo-placeholder">
-                            <i class="fas fa-video"></i>
+                            <i class="fas fa-video"><img src="assets/WhatsApp Image 2025-12-08 at 09.02.03_eb333804.jpg"></i>
                         </div>
                     </div>
                     <div class="person-name">Jonathan Patterson</div>
@@ -2227,7 +2241,7 @@ font-size: 3rem;
                 <div class="executive-card" id="coo">
                     <div class="photo-container">
                         <div class="photo-placeholder">
-                            <i class="fas fa-film"></i>
+                            <i class="fas fa-film"><img src="assets/IMG-20251208-WA0008.jpg"></i>
                         </div>
                     </div>
                     <div class="person-name">Olivia Wilson</div>
@@ -2238,7 +2252,7 @@ font-size: 3rem;
                 <div class="executive-card" id="cfo">
                     <div class="photo-container">
                         <div class="photo-placeholder">
-                            <i class="fas fa-lightbulb"></i>
+                            <i class="fas fa-lightbulb"><img src="assets/IMG-20251208-WA0026.jpg"></i>
                         </div>
                     </div>
                     <div class="person-name">Pedro Fernandes</div>
@@ -2247,23 +2261,12 @@ font-size: 3rem;
                 </div>
             </div>
             
-            <!-- Level 3: Managers -->
-            <div class="level-3">
-                <div class="manager-card" id="op-manager">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-sliders-h"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Juliana Silva</div>
-                    <div class="person-title">Studio Operations Manager</div>
-                    <div class="department">Studio Management</div>
-                </div>
+            
                 
                 <div class="manager-card" id="meeting-manager">
                     <div class="photo-container">
                         <div class="photo-placeholder">
-                            <i class="fas fa-calendar-alt"></i>
+                            <i class="fas fa-calendar-alt"><img src="assets/WhatsApp Image 2025-12-02 at 12.18.04_e50ccbdd.jpg"></i>
                         </div>
                     </div>
                     <div class="person-name">Ekramir Fitzgerald</div>
@@ -2271,27 +2274,9 @@ font-size: 3rem;
                     <div class="department">Client Relations</div>
                 </div>
                 
-                <div class="manager-card" id="finance-manager1">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Kimberly Nguyen</div>
-                    <div class="person-title">Financial Manager</div>
-                    <div class="department">Budget & Accounting</div>
-                </div>
+               
                 
-                <div class="manager-card" id="all-manager">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-users-cog"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Richard Sanchez</div>
-                    <div class="person-title">Talent & Resources Manager</div>
-                    <div class="department">Talent Management</div>
-                </div>
+              
                 
                 
             
@@ -2382,49 +2367,49 @@ font-size: 3rem;
                 id: 1,
                 title: "Wedding Photography",
                 type: "Event Photography",
-                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/WhatsApp Image 2025-12-08 at 09.02.03_f015d98f.jpg"
             },
             {
                 id: 2,
                 title: "Product Commercial",
                 type: "Videography",
-                image: "https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/IMG-20251208-WA0007.jpg"
             },
             {
                 id: 3,
                 title: "Corporate Branding",
                 type: "Photography",
-                image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/IMG-20251208-WA0021.jpg"
             },
             {
                 id: 4,
                 title: "Music Video",
                 type: "Videography",
-                image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/Image.jpg"
             },
             {
                 id: 5,
                 title: "Portrait Session",
                 type: "Photography",
-                image: "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/WhatsApp Image 2025-12-02 at 12.18.05_f5185337.jpg"
             },
             {
                 id: 6,
                 title: "Architecture",
                 type: "Photography",
-                image: "https://images.unsplash.com/photo-1487750404521-0d060017c4c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/IMG-20251208-WA0019.jpg"
             },
             {
                 id: 7,
                 title: "Fashion Shoot",
                 type: "Photography",
-                image: "https://images.unsplash.com/photo-1522338242990-e1a0f8e5d8f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/welcome.jpg"
             },
             {
                 id: 8,
                 title: "Documentary Film",
                 type: "Videography",
-                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image: "assets/IMG-20251208-WA0022.jpg"
             }
         ];
 
@@ -2590,7 +2575,7 @@ Schedule a Call <i>↗</i>
 </div>
 </section>
   <section class="py-5">
-        <div class="container">
+        <div class="container2">
             <div class="row g-5">
                 <!-- Left Column -->
                 <div class="col-lg-4">
@@ -2708,8 +2693,8 @@ Schedule a Call <i>↗</i>
         <h2 style="color: yellow; font-weight: 800; font-size: 59px;">Get In Touch</h2>
        <div class="contact-container">
         <div class="contact-header">
-            <h1 style="color: gray;">Capture Your  Vision With Us</h1>
-            <p>Visit our state-of-the-art studios in Swazi Inn Branch and MacMatlox Studio Emmangweni Branch. Our creative spaces are designed to bring your Photography and entertainment projects to life.</p>
+            <h1 style="color: gray;">Let's Make Your Vision a Reality.</h1>
+            <p>Contact MacMatlox Studio in Tembisa for all Talent Management, Events Planning, and Digital Solutions inquiries. Let's start your project today.</p>
         </div>
         
         <div class="contact-content">

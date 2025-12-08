@@ -59,7 +59,7 @@
             if (whatsappBtn) {
                 whatsappBtn.addEventListener('click', function() {
                     // Replace with your actual WhatsApp number and message
-                    const phoneNumber = '27686202423'; // Replace with your number
+                    const phoneNumber = '27686451330'; // Replace with your number
                     const message = 'Hello! I would like to book an appointment with MacMatlox Studio.';
                     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -158,25 +158,26 @@
             // Content definitions for each service
             const contentMap = {
                 'New Branch': `
-                    <div class="graphic-image-placeholder" style="background-color: #2e7d32;">
-                        <h3>New Branch Opening Soon!</h3>
+                    <div class="graphic-image-placeholder" style="background-image: url('assets/WhatsApp Image 2025-12-08 at 09.02.03_d3fb4980.jpg'); background-size: cover; background-position: center;">
+                    
+                        <h3 >New Branch Opening Soon!</h3>
                         <p>We're expanding! Our new branch will offer enhanced services and better accessibility for our clients.</p>
                     </div>
                 `,
                 'Photography Special': `
-                    <div class="graphic-image-placeholder" style="background-color: #ff6b6b;">
+                    <div class="graphic-image-placeholder" style="background-image: url('assets/WhatsApp Image 2025-12-02 at 12.18.04_2be999dc.jpg'); background-size: cover; background-position: center;">
                         <h3>Photography Special</h3>
                         <p>Professional photography services for models, brands, and products. Studio and on-location shoots available.</p>
                     </div>
                 `,
                 'Graphic Design': `
-                    <div class="graphic-image-placeholder" style="background-color: #4ecdc4;">
+                    <div class="graphic-image-placeholder" style="background-image: url('assets/IMG-20251208-WA0019.jpg'); background-size: cover; background-position: center;">
                         <h3>Graphic Design</h3>
                         <p>Creative graphic design solutions for logos, branding, social media, and marketing materials.</p>
                     </div>
                 `,
                 'Printing & Branding': `
-                    <div class="graphic-image-placeholder" style="background-color: #ffd166;">
+                    <div class="graphic-image-placeholder" style="background-image: url('assets/IMG-20251208-WA0023.jpg'); background-size: cover; background-position: center;">
                         <h3>Printing & Branding</h3>
                         <p>Complete branding solutions including business cards, banners, merchandise, and corporate identity packages.</p>
                     </div>
