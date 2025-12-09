@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MacMatlox Studio</title>
-    <meta name="description" content="We are a full-service talent agency and creative partner, we specialize in discovering, developing, and representing exceptional talent with innovative digital and branding solutions for individuals and businesses.">
-     <meta name="description" content="Explore our nominated awards and collaborate with industry leaders">
+    <title>MacMatlox Studio | Tembisa's Top Entertainment & Digital Solutions Agency |Talent Management & Events Planning |</title>
+    <meta name="description" content="Elevate your brand or career with MacMatlox Studio, Tembisa's leading agency for Talent Management, Events Planning, and expert Digital Marketing solutions.">
+     <meta name="description" content="MacMatlox Studio specializes in professional Talent Management for South African artists and complete Events Planning services in Tembisa and Gauteng.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
  
@@ -398,9 +398,10 @@
         */
         .sliding-menu-track {
             overflow: hidden; 
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 30px;
+            margin-bottom: 50px;
+            border-bottom: 2px solid yellow;
+            border-top: 2px solid yellow;
         }
 
         .sliding-menu-wrapper {
@@ -429,7 +430,7 @@
         }
 
         .menu-slide-word.active {
-            color: white;
+            color: yellow;
         }
 
         /* Custom Loading Line Effect */
@@ -708,7 +709,7 @@ object-fit: cover;
             position: absolute;
             width: 80px;
             height: 4px;
-            background: linear-gradient(to right, #FF416C, #FF4B2B);
+           
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -730,129 +731,117 @@ object-fit: cover;
             font-weight: bold;
         }
         
-        .structure-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            padding: 20px 0;
-        }
+        /* Base container styling */
+.structure-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
+    min-height: 800px; /* Adjust based on your content */
+}
         
         /* Connecting lines */
         .connectors {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
         .line {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: yellow;
             border-radius: 2px;
         }
         
         .vertical-line {
             width: 3px;
-            background: linear-gradient(to bottom, rgba(255,65,108,0.6), rgba(255,75,43,0.6));
+            background: yellow;
         }
         
         .horizontal-line {
             height: 3px;
-            background: linear-gradient(to right, rgba(255,65,108,0.6), rgba(255,75,43,0.6));
+            background:yellow;
         }
         
-        /* Level 1 - Founder/CEO */
-        .level-1 {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 80px;
-            width: 100%;
-            position: relative;
-            z-index: 10;
-        }
+        /* Level containers */
+.level-1, .level-2, .level-3 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2; /* Above the connecting lines */
+    margin: 40px 0;
+    width: 100%;
+}
         
         .ceo-card {
-            background: linear-gradient(145deg, #1a1a2e, #16213e);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            width: 350px;
-            text-align: center;
-            position: relative;
-            border: 2px solid rgba(255, 65, 108, 0.7);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 10;
+             background:dark slate-gray;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3;
+    padding-top: 3%;
         }
         
         .ceo-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(255, 65, 108, 0.3);
-            border-color: #FF416C;
+            box-shadow: 0 20px 40px yellow;
+            border-color: yellowgreen;
         }
-        
-        /* Level 2 - CO-Founder & Executives */
-        .level-2 {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 80px;
-            flex-wrap: wrap;
-            width: 100%;
-            position: relative;
-            z-index: 9;
-        }
+        /* Level 2 specific - 3 executives side by side */
+.level-2 {
+    justify-content: space-around;
+    margin-top: 100px;
+}
         
         .executive-card {
-            background: linear-gradient(145deg, #1a1a2e, #16213e);
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            padding: 25px;
-            width: 280px;
-            text-align: center;
-            border: 2px solid rgba(0, 200, 255, 0.7);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 9;
+             background:dark slate-gray;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3;
+  padding-top: 3%;
         }
         
         .executive-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 200, 255, 0.3);
-            border-color: #00C8FF;
+            box-shadow: 0 15px 30px yellow;
+            border-color: grayslategray;
         }
         
-        /* Level 3 - Managers */
         .level-3 {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 80px;
-            width: 100%;
-            position: relative;
-            z-index: 8;
-        }
+    margin-top: 100px;
+}
         
         .manager-card {
-            background: linear-gradient(145deg, #1a1a2e, #16213e);
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            padding: 20px;
-            width: 220px;
-            text-align: center;
-            border: 2px solid rgba(138, 43, 226, 0.7);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 8;
+              background:dark slate-gray;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3;
+    padding-top: 3%;
         }
         
         .manager-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(138, 43, 226, 0.3);
-            border-color: #8A2BE2;
+            box-shadow: 0 12px 25px yellow;
+            border-color: yellowgreen;
         }
         
         /* Level 4 - Staff */
@@ -913,18 +902,18 @@ object-fit: cover;
 }
         
         .ceo-card .photo-placeholder {
-            border-color: #FF416C;
-            box-shadow: 0 0 20px rgba(255, 65, 108, 0.5);
+            border-color: gray;
+            box-shadow:0 0 15px yellowgreen;
         }
         
         .executive-card .photo-placeholder {
-            border-color: #00C8FF;
-            box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+            border-color: gray;
+            box-shadow: 0 0 15px yellowgreen;
         }
         
         .manager-card .photo-placeholder {
-            border-color: #8A2BE2;
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+            border-color: gray;
+            box-shadow: 0 0 15px yellowgreen;
         }
         
         .staff-card .photo-placeholder {
@@ -954,16 +943,16 @@ object-fit: cover;
         }
         
         .ceo-card .person-title {
-            color: #FF416C;
+            color: yellow;
             font-size: 1.2rem;
         }
         
         .executive-card .person-title {
-            color: #00C8FF;
+            color: yellow;
         }
         
         .manager-card .person-title {
-            color: #ba8fff;
+            color: yellow;
         }
         
         .staff-card .person-title {
@@ -1041,18 +1030,7 @@ object-fit: cover;
             }
         }
       
-.glow-effect {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0, 170, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            filter: blur(40px);
-        }
+
 
         .last-header {
             max-width: 1200px;
@@ -1066,7 +1044,7 @@ object-fit: cover;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 30px;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0ff 50%, #ffa0ff 100%);
+            background: ;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -1086,7 +1064,8 @@ object-fit: cover;
         }
 
         
-        .highlight {
+        .highlight{
+
             color:yellow;
             font-weight: 500;
         }
@@ -1098,7 +1077,7 @@ object-fit: cover;
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #ff0080, #00ccff, #ff0080);
+            background: ;
             background-size: 200% 100%;
             animation: gradientShift 3s ease infinite;
         }
@@ -1117,7 +1096,7 @@ object-fit: cover;
         .contact-header h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #ff0080 0%, #00ccff 100%);
+            background: ;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -1127,7 +1106,7 @@ object-fit: cover;
 
         .contact-header p {
             font-size: 1.2rem;
-            color: #b0b0d0;
+            color: ;
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
@@ -2026,7 +2005,34 @@ font-size: 3rem;
     display: flex;
     flex-direction: column;
 }
+ .business-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        .business-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: gray;
+        }
 
+        /* Responsive adjustments */
+@media (max-width: 768px) {
+    .level-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .executive-card {
+        margin-bottom: 30px;
+        min-width: 200px;
+    }
+    
+    /* Adjust line drawing logic for mobile */
+    .structure-container {
+        min-height: 1200px;
+    }
+}
 
 </style>
    
@@ -2100,7 +2106,8 @@ font-size: 3rem;
     </div>
         
     <!-- About Section -->
-      <h1 style="color: gray;">Why MacMatlox Studio</h1>
+      <h1 style="color: gray; font-weight: 900;    text-decoration: underline; padding-bottom: 25px; text-underline-offset: 8px;">Why MacMatlox Studio</h1>
+        <div class="animated-line" style="width: 300px; margin-left:450px;"></div>
    <section class="about-section">
         
         <div class="content-left">
@@ -2128,11 +2135,11 @@ font-size: 3rem;
         <div class="content-right">
             <h2 class="values-title">Our Values</h2>
             <ul class="value-list">
-                <li>Data-Driven Decisions</li>
-                <li>Creative Storytelling</li>
-                <li>Agility & Adaptability</li>
-                <li>Unwavering Integrity</li>
-                <li>Passion for Innovation</li>
+                <li style ="color:gray; font-weight: 900;">Entertainment (Primary Objective):</li>
+                <li>Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</li>
+                <li style="color:gray; font-weight: 900;">Digital Solutions (Secondary Objective):</li>
+                
+                <li>Your one-stop shop for Digital Marketing, Website Development, Social Media Management, and Graphic Design.</li>
             </ul>
         </div>
 
@@ -2145,7 +2152,7 @@ font-size: 3rem;
                 <h2 style="color: yellow;">What We Do</h2>
                  <div class="animated-line"></div>
                 <p class="subtitle"style="color: gray;  font-weight: 900;">As a multi-disciplinary agency, MacMatlox Studio operates on two strong pillars:</p>
-                <a href="#" class="appointment-link">Schedule an Appointment <span>&#8599;</span></a>
+                <a href="" class="appointment-link">Schedule an Appointment <span>&#8599;</span></a>
             </div>
 
             <div class="talent-description-area">
@@ -2165,7 +2172,7 @@ font-size: 3rem;
                     </div>
                     
                     <div class="pillar-number">01</div>
-                    <h3 class="pillar-title">Talent Management</h3>
+                    <h3 class="pillar-title">Elevate Your Career: Professional Talent Management.</h3>
                     
                     <p id="pillar-one-description">Talent Management: Discovering, developing, and promoting the next generation of South African talent..</p>
                     <p id="pillar-one-description">Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</p>
@@ -2203,92 +2210,90 @@ font-size: 3rem;
    <div class="leadership-section">
         
             <h1> <div class="logo" style="color: yellow; font-weight: 800;">CREATIVE VISION STUDIO</div>
-            <h1>Our Leadership & <span class="highlight" style="color: grey; font-weight: 800;">Team Structure</span> </h1>
-            <p class="subtitle">Meet the creative minds behind <span class="company-name">Creative Vision Studio</span>, where artistry meets innovation in photography and entertainment.</p>
+                 <div class="animated-line" style="width: 500px;"></div>
+      
+
+            
+                 <h1>Our Leadership & <span class="highlight" style="color: grey; font-weight: 800;    text-decoration: underline; padding-bottom: 30px; text-underline-offset: 8px; ">Team Structure</span> </h1>
+           
+                 <p class="subtitle">Meet the creative minds behind <span class="company-name">Creative Vision Studio</span>, where artistry meets innovation in photography and entertainment.</p>
         
         </h1>
         <div class="structure-container">
-            <!-- Connecting lines -->
-            <div class="connectors" id="connectors"></div>
-            
-            <!-- Level 1: Founder/CEO -->
-            <div class="level-1">
-                <div class="ceo-card" id="ceo">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-camera-retro"><img src="assets/ceo.png"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Daniel Gallego</div>
-                    <div class="person-title">Founder & Creative Director</div>
-                    <div class="department">Photography & Entertainment</div>
+    <!-- Connecting lines container -->
+    <div class="connectors" id="connectors"></div>
+    
+    <!-- Level 1: Founder/CEO -->
+    <div class="level-1">
+        <div class="ceo-card" id="ceo">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    <img src="assets/ceo.png" alt="Daniel Gallego">
                 </div>
             </div>
-            
-            <!-- Level 2: CO-Founder & Executives -->
-            <div class="level-2">
-                <div class="executive-card" id="cofounder">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-video"><img src="assets/WhatsApp Image 2025-12-08 at 09.02.03_eb333804.jpg"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Jonathan Patterson</div>
-                    <div class="person-title">CO-Founder & Production Head</div>
-                    <div class="department">Film & Entertainment</div>
-                </div>
-                
-                <div class="executive-card" id="coo">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-film"><img src="assets/IMG-20251208-WA0008.jpg"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Olivia Wilson</div>
-                    <div class="person-title">Chief Operations Officer</div>
-                    <div class="department">Studio Operations</div>
-                </div>
-                
-                <div class="executive-card" id="cfo">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-lightbulb"><img src="assets/IMG-20251208-WA0026.jpg"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Pedro Fernandes</div>
-                    <div class="person-title">Chief Financial Officer</div>
-                    <div class="department">Finance & Strategy</div>
-                </div>
-            </div>
-            
-            
-                
-                <div class="manager-card" id="meeting-manager">
-                    <div class="photo-container">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-calendar-alt"><img src="assets/WhatsApp Image 2025-12-02 at 12.18.04_e50ccbdd.jpg"></i>
-                        </div>
-                    </div>
-                    <div class="person-name">Ekramir Fitzgerald</div>
-                    <div class="person-title">Client & Event Manager</div>
-                    <div class="department">Client Relations</div>
-                </div>
-                
-               
-                
-              
-                
-                
-            
-                </div>
-            </div>
+            <div class="person-name">Daniel Gallego</div>
+            <div class="person-title">Founder & Creative Director</div>
+            <div class="department">Photography & Entertainment</div>
         </div>
+    </div>
+    
+    <!-- Level 2: CO-Founder & Executives -->
+    <div class="level-2">
+        <div class="executive-card" id="cofounder">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    <img src="assets/WhatsApp Image 2025-12-08 at 09.02.03_eb333804.jpg" alt="Jonathan Patterson">
+                </div>
+            </div>
+            <div class="person-name">Jonathan Patterson</div>
+            <div class="person-title">CO-Founder & Production Head</div>
+            <div class="department">Film & Entertainment</div>
+        </div>
+        
+        <div class="executive-card" id="coo">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    <img src="assets/IMG-20251208-WA0008.jpg" alt="Olivia Wilson">
+                </div>
+            </div>
+            <div class="person-name">Olivia Wilson</div>
+            <div class="person-title">Chief Operations Officer</div>
+            <div class="department">Studio Operations</div>
+        </div>
+        
+        <div class="executive-card" id="cfo">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    <img src="assets/IMG-20251208-WA0026.jpg" alt="Pedro Fernandes">
+                </div>
+            </div>
+            <div class="person-name">Pedro Fernandes</div>
+            <div class="person-title">Chief Financial Officer</div>
+            <div class="department">Finance & Strategy</div>
+        </div>
+    </div>
+    
+    <!-- Level 3: Managers (only one shown in your partial HTML) -->
+    <div class="level-3">
+        <div class="manager-card" id="meeting-manager">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    <img src="assets/WhatsApp Image 2025-12-02 at 12.18.04_e50ccbdd.jpg" alt="Ekramir Fitzgerald">
+                </div>
+            </div>
+            <div class="person-name">Ekramir Fitzgerald</div>
+            <div class="person-title">Client & Event Manager</div>
+            <div class="department">Client Relations</div>
+        </div>
+        <!-- Add other managers here -->
+    </div>
+</div>
 
       <div class="background-effect"></div>
     <div class="glow-effect"></div>
     
     <div class="last-header">
-        <h1 class="header-text" style="color: gray ;">Building the future, together.</h1>
+        <h1 class="header-text" style="color: gray ; text-decoration: underline; padding-bottom: 25px; text-underline-offset: 8px;">Building the future, together.</h1>
         
         <p class="subtitle">
             Discover the innovative network of partners powering our industry's biggest advancements. 
@@ -2355,6 +2360,7 @@ font-size: 3rem;
 </div>
    <section class="portfolio-section">
         <h2 style="color: yellow; font-weight: 800; font-size: 49px;">Our Projects</h2>
+        <div class="animated-line" style="width: 300px;"></div>
         <p class="section-description">Explore our latest photography and videography projects showcasing creativity and innovation.</p>
         
         <div class="projects-container">
@@ -2554,10 +2560,10 @@ font-size: 3rem;
 
 
 <!-- Floating Background Images -->
-<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" class="floating-img" style="top: 5%; left: 5%; animation-delay: 0s;" />
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" class="floating-img" style="top: 8%; right: 10%; animation-delay: 1s;" />
-<img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" class="floating-img" style="bottom: 12%; left: 8%; animation-delay: 1.5s;" />
-<img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5" class="floating-img" style="bottom: 14%; right: 5%; animation-delay: 0.7s;" />
+<img src="assets/WhatsApp Image 2025-12-02 at 12.18.04_f3ad64de.jpg" class="floating-img" style="top: 5%; left: 5%; animation-delay: 0s;" />
+<img src="assets/IMG-20251208-WA0027.jpg" class="floating-img" style="top: 8%; right: 10%; animation-delay: 1s;" />
+<img src="assets/bb.jfif.jpg" class="floating-img" style="bottom: 12%; left: 8%; animation-delay: 1.5s;" />
+<img src="assets/IMG-20251208-WA0022.jpg" class="floating-img" style="bottom: 14%; right: 5%; animation-delay: 0.7s;" />
 
 
 <!-- Center Text -->
@@ -2583,16 +2589,16 @@ Schedule a Call <i>↗</i>
                         <p class="text-muted-custom mb-2"></p>
                         <h1 class="section-title text-gold mb-3">Nominated Awards</h1>
                         <div class="divider"></div>
-                        <p class="text-muted-custom small">Worker to 22k solid 30 the Artivler 20</p>
+                        <p class="text-muted-custom small"></p>
                     </div>
 
                     <div>
-                        <p class="text-muted-custom mb-2">Left column</p>
-                        <p class="text-muted-custom small mb-1">Deft column</p>
+                        <p class="text-muted-custom mb-2"></p>
+                        <p class="text-muted-custom small mb-1"></p>
                         <h2 class="section-title-sm text-gold mb-3">Nominated Awards</h2>
                         <div class="divider"></div>
                         <p class="text-muted-custom small mb-4">Our dedication to innovation and client satisfaction has been acknowledged by the industry.</p>
-                        <p class="text-muted-custom small mb-1">Maxh ce 80% 0</p>
+                        <p class="text-muted-custom small mb-1"></p>
                         <p class="text-muted-custom small">Our dedication to innovation and client satisfaction has been acknowledged by 00x 4000</p>
                     </div>
                 </div>
@@ -2691,6 +2697,7 @@ Schedule a Call <i>↗</i>
     <!-- Contact Section -->
     <section id="contact">
         <h2 style="color: yellow; font-weight: 800; font-size: 59px;">Get In Touch</h2>
+        <div class="animated-line" style="width:335px"></div>
        <div class="contact-container">
         <div class="contact-header">
             <h1 style="color: gray;">Let's Make Your Vision a Reality.</h1>
@@ -2702,6 +2709,11 @@ Schedule a Call <i>↗</i>
                 <div class="info-item">
                     <div class="info-icon">
                         <i class="fas fa-map-marker-alt"></i>
+                        <div class="business-icon">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+    </div>
                     </div>
                     <div class="info-content">
                         <h3><span class="location-name"><i class="fas fa-camera"></i> MacMatlox Studio Swazi Inn Branch</span></h3>
@@ -2715,7 +2727,11 @@ Schedule a Call <i>↗</i>
                 
                 <div class="info-item nyc">
                     <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt"><div class="business-icon">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+    </div></i>
                     </div>
                     <div class="info-content">
                         <h3><span class="location-name"><i class="fas fa-film"></i> MacMatlox Studio Emmangweni Branch</span></h3>
@@ -2727,12 +2743,15 @@ Schedule a Call <i>↗</i>
                     </div>
                 </div>
                 
-                <div class="contact-cta">
-                    <a href="mailto:bookings@creativevisionstudio.com" class="cta-button">
-                        <i class="fas fa-calendar-check"></i>
-                        Book Appoitment
-                    </a>
-                </div>
+                <button class="book-btn btn-primary" id="whatsapp-book-btn">
+                            <span>Book a Consultation</span>
+                            <div class="arrow-circle">
+                                <div class="arrow">
+                                    <div class="arrow-shaft"></div>
+                                    <div class="arrow-head"></div>
+                                </div>
+                            </div>
+                        </button>
                 <div class="pure-icons">
         <a href="https://www.facebook.com/share/15gEt9ETPG/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><div class="pure-icon facebook-icon"></div>
         </a>
@@ -2774,7 +2793,8 @@ Schedule a Call <i>↗</i>
                     
                     <div class="map-overlay">
                         <div class="overlay-content">
-                            <h4><i class="fas fa-info-circle"></i> Studio Features</h4>
+                            <h4><i class="fas fa-info-circle"></i> Studio Spotlight: See Our Latest Successes</h4>
+                            <p>Feature a recent successful event or a piece of high-quality content creation.</p>
                             <p>• Professional photography sets</p>
                             <p>• Digital Marketing</p>
                             <p>• Social Media Management</p>
@@ -2859,7 +2879,100 @@ Schedule a Call <i>↗</i>
             slider.style.transform = `translateX(${currentPosition}px)`;
             slider.style.transition = 'transform 0.5s ease';
         }
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    drawConnectingLines();
+    
+    // Redraw on window resize
+    window.addEventListener('resize', drawConnectingLines);
+});
+
+function drawConnectingLines() {
+    const connectors = document.getElementById('connectors');
+    connectors.innerHTML = ''; // Clear existing lines
+    
+    const ceoCard = document.getElementById('ceo');
+    const executives = [
+        document.getElementById('cofounder'),
+        document.getElementById('coo'),
+        document.getElementById('cfo')
+    ];
+    const managerCard = document.getElementById('meeting-manager');
+    
+    // Get positions
+    const ceoRect = ceoCard.getBoundingClientRect();
+    const containerRect = document.querySelector('.structure-container').getBoundingClientRect();
+    
+    // Position from container perspective
+    const ceoBottom = ceoRect.bottom - containerRect.top;
+    const ceoCenterX = ceoRect.left + ceoRect.width/2 - containerRect.left;
+    
+    // Draw vertical line from CEO to middle point
+    const verticalLine1 = document.createElement('div');
+    verticalLine1.className = 'line vertical-line';
+    verticalLine1.style.top = ceoBottom + 'px';
+    verticalLine1.style.left = ceoCenterX + 'px';
+    verticalLine1.style.height = '80px'; // Distance to executives
+    connectors.appendChild(verticalLine1);
+    
+    // Draw horizontal line connecting executives
+    const executiveRects = executives.map(exec => {
+        const rect = exec.getBoundingClientRect();
+        return {
+            left: rect.left + rect.width/2 - containerRect.left,
+            top: rect.top - containerRect.top
+        };
+    });
+    
+    // Sort executives by horizontal position
+    executiveRects.sort((a, b) => a.left - b.left);
+    
+    const horizontalLine = document.createElement('div');
+    horizontalLine.className = 'line horizontal-line';
+    horizontalLine.style.top = (ceoBottom + 80) + 'px'; // Below vertical line
+    horizontalLine.style.left = executiveRects[0].left + 'px';
+    horizontalLine.style.width = (executiveRects[executiveRects.length - 1].left - executiveRects[0].left) + 'px';
+    connectors.appendChild(horizontalLine);
+    
+    // Draw vertical lines from horizontal line to each executive
+    executives.forEach(exec => {
+        const rect = exec.getBoundingClientRect();
+        const execTop = rect.top - containerRect.top;
+        const execCenterX = rect.left + rect.width/2 - containerRect.left;
+        
+        const verticalToExec = document.createElement('div');
+        verticalToExec.className = 'line vertical-line';
+        verticalToExec.style.top = (ceoBottom + 80) + 'px';
+        verticalToExec.style.left = execCenterX + 'px';
+        verticalToExec.style.height = (execTop - (ceoBottom + 80)) + 'px';
+        connectors.appendChild(verticalToExec);
+    });
+    
+    // Connect COO to Manager (example)
+    if (managerCard) {
+        const cooCard = document.getElementById('coo');
+        const cooRect = cooCard.getBoundingClientRect();
+        const managerRect = managerCard.getBoundingClientRect();
+        
+        const cooBottom = cooRect.bottom - containerRect.top;
+        const cooCenterX = cooRect.left + cooRect.width/2 - containerRect.left;
+        const managerTop = managerRect.top - containerRect.top;
+        const managerCenterX = managerRect.left + managerRect.width/2 - containerRect.left;
+        
+        // Vertical line from COO to manager
+        const verticalToManager = document.createElement('div');
+        verticalToManager.className = 'line vertical-line';
+        verticalToManager.style.top = cooBottom + 'px';
+        verticalToManager.style.left = cooCenterX + 'px';
+        verticalToManager.style.height = (managerTop - cooBottom - 40) + 'px';
+        connectors.appendChild(verticalToManager);
+    }
+}
  
+
+        
         
     </script>
 

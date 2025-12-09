@@ -138,16 +138,7 @@
             observer.observe(sectionToObserve);
         }
 
-        // 2. Fix for WhatsApp booking button
-        const whatsappBtn = document.getElementById('whatsapp-book-btn');
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', function() {
-                const phoneNumber = "+1234567890"; // Replace with actual phone number
-                const message = "Hello! I'd like to schedule an appointment with MacMatlox Studio.";
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
-            });
-        }
+        
 
         // 3. Fixed JavaScript for Design Section
         const designSection = document.getElementById('designServices');
