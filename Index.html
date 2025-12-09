@@ -2034,6 +2034,158 @@ font-size: 3rem;
     }
 }
 
+  /* Header Fixes */
+    #main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: var(--color-dark-navy);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo img {
+        height: 80px;
+        width: auto;
+        max-width: 180px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        color:yellow;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+        color: white;
+    }
+
+    /* Subscribe button adjustments */
+    .subscribe-btn {
+        display: inline-block;
+        background: yellow;
+        color: black;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-width: 140px;
+        text-align: center;
+    }
+
+    .subscribe-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        #main-header {
+            padding: 20px 30px;
+        }
+        
+        .main-nav {
+            gap: 20px;
+        }
+        
+        .nav-links {
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        #main-header {
+            padding: 15px 20px;
+        }
+        
+        .main-nav {
+            gap: 15px;
+        }
+        
+        .nav-links {
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            font-size: 15px;
+        }
+        
+        .subscribe-btn {
+            padding: 10px 20px;
+            font-size: 15px;
+            min-width: 120px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #main-header {
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .main-nav {
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .nav-links {
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .main-nav {
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-links {
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .nav-links a {
+            font-size: 14px;
+        }
+        
+        .subscribe-btn {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
 </style>
    
     
@@ -2041,21 +2193,24 @@ font-size: 3rem;
    
     
      <!-- Header -->
-    <header id="main-header">
-        <div class="logo">
+    
+        
 
-            <img src="assets/logo.avif" alt="MacMatlox Studio Logo">
-        </div>
-        <nav>
+<header id="main-header">
+    <div class="logo">
+        <img src="assets/logo.avif" alt="MacMatlox Studio Logo">
+    </div>
+    <nav class="main-nav">
+        <div class="nav-links">
             <a href="#home">Talent</a>
             <a href="#about">Digital Solutions</a>
             <a href="#work">About Us</a>
             <a href="#contact">Contact Us</a>
-        </nav>
-    </header>
-        
-
-
+        </div>
+      
+        <a href="https:///subscription.html" class="subscribe-btn">Subscribe Now</a>
+    </nav>
+</header>
    
 
     <!-- Hero Section -->
@@ -2101,12 +2256,12 @@ font-size: 3rem;
         </div>
     </section>
     
-    <div class="video-paragraphy" style="padding-left: 50%; font-size:large; margin-top: 0%; color:var(--token-gray-light); padding-right: 5%;">
+    <div class="paragraphy" style="padding-left: 50%; font-size:large ;">
         <p>Watch behind the scenes of our latest studio photoshoot and see the professional quality we bring to every project</p>
     </div>
         
     <!-- About Section -->
-      <h1 style="color: gray; font-weight: 900;    text-decoration: underline; padding-bottom: 25px; text-underline-offset: 8px;">Why MacMatlox Studio</h1>
+      <h1 style="color: gray; font-weight: 900;">Why MacMatlox Studio</h1>
         <div class="animated-line" style="width: 300px; margin-left:450px;"></div>
    <section class="about-section">
         
@@ -2168,14 +2323,14 @@ font-size: 3rem;
                 <div class="service-pillar">
                     <div class="pillar-nav-wrapper">
                         <div class="pillar-nav" style="color: var(--color-yellow);">Talent Management🎬</div>
-                        <div class="pillar-nav">Talent Management</div>
+                        <div class="pillar-nav">Events Planning</div>
                     </div>
                     
                     <div class="pillar-number">01</div>
                     <h3 class="pillar-title">Elevate Your Career: Professional Talent Management.</h3>
                     
-                    <p id="pillar-one-description">Talent Management: Discovering, developing, and promoting the next generation of South African talent..</p>
-                    <p id="pillar-one-description">Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</p>
+                    <p>Talent Management: Discovering, developing, and promoting the next generation of South African talent..</p>
+                    <p>Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</p>
                     <div id="pillar-one-image"><img src="assets/WhatsApp Image 2025-12-02 at 09.08.50_2655f362.jpg"></div>
                     
                 <div class="talent-image-container">
@@ -2190,9 +2345,9 @@ font-size: 3rem;
                     </div>
 
                     <div class="pillar-number">02</div>
-                    <h3 class="pillar-title">Digital Solutions Division</h3>
+                    <h3 class="pillar-title">Growth-Focused Digital Marketing.</h3>
                     
-                    <p id="pillar-two-description">Your one-stop shop for Digital Marketing, Website Development, Social Media Management, and Graphic Design.</p>
+                    <p >We craft strategies that turn clicks into clients. Our services include data-driven Digital Marketing, targeted advertising campaigns, and professional Social Media Management in Tembisa to build an engaged community around your brand.</p>
                     
                     <div class="pillar-image-container-right">
                         <span class="placeholder-text"><img src="assets/WhatsApp Image 2025-12-02 at 12.18.05_d00c882b.jpg"></span>
@@ -2214,7 +2369,7 @@ font-size: 3rem;
       
 
             
-                 <h1>Our Leadership & <span class="highlight" style="color: grey; font-weight: 800;    text-decoration: underline; padding-bottom: 30px; text-underline-offset: 8px; ">Team Structure</span> </h1>
+                 <h1>Our Leadership & <span class="highlight" style="color: grey; font-weight: 800;">Team Structure</span> </h1>
            
                  <p class="subtitle">Meet the creative minds behind <span class="company-name">Creative Vision Studio</span>, where artistry meets innovation in photography and entertainment.</p>
         
@@ -2293,7 +2448,7 @@ font-size: 3rem;
     <div class="glow-effect"></div>
     
     <div class="last-header">
-        <h1 class="header-text" style="color: gray ; text-decoration: underline; padding-bottom: 25px; text-underline-offset: 8px;">Building the future, together.</h1>
+        <h1 class="header-text" style="color: gray;">Building the future, together.</h1>
         
         <p class="subtitle">
             Discover the innovative network of partners powering our industry's biggest advancements. 
@@ -2971,6 +3126,23 @@ function drawConnectingLines() {
     }
 }
  
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
         
         
