@@ -8,13 +8,212 @@
      <meta name="description" content="MacMatlox Studio specializes in professional Talent Management for South African artists and complete Events Planning services in Tembisa and Gauteng.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
- 
+    
+    <!-- Fonts -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="css/main.css">
    <style>
+    /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: whatsapp-pulse 2s infinite;
+            border: 4px solid white;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            background-color: #128C7E;
+        }
+
+        .whatsapp-float i {
+            font-size: 36px;
+            color: white;
+        }
+
+        /* WhatsApp icon pulse animation */
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* WhatsApp Tooltip */
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            background-color: #075E54;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            z-index: 9998;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-tooltip:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #075E54;
+        }
+
+        .whatsapp-float:hover + .whatsapp-tooltip,
+        .whatsapp-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive WhatsApp button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 30px;
+            }
+            
+            .whatsapp-tooltip {
+                bottom: 90px;
+                right: 20px;
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    
+        /* Fix for social icons in Get In Touch section */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: yellow;
+            color: black;
+        }
+        
+        .social-link.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+        
+        .social-link.tiktok {
+            background: #000000;
+        }
+        
+        .social-link.youtube {
+            background: #FF0000;
+        }
+        
+        .social-link.facebook {
+            background: #1877F2;
+        }
+        
+        .social-link.linkedin {
+            background: #0077B5;
+        }
+        
+        /* Remove duplicate pure-icons section styles */
+        .pure-icons {
+            display: none;
+        }
+        
+        /* Hide the duplicate icon section that appears later */
+        .info-item .pure-icons {
+            display: none !important;
+        }
+    
+        .about-section {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--color-dark-navy);
+            padding-top: 100px;
+        }
+
+        /* Rest of your existing CSS remains the same */
+        .content-left {
+            width: 40%;
+            padding: 80px 40px 80px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            background-color: var(--color-dark-navy);
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 700;
+            color: yellow;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            margin-right: 150px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: #fff;
+            max-width: 500px;
+        }
+
     
         .about-section {
             display: flex;
@@ -2186,6 +2385,111 @@ font-size: 3rem;
             max-width: 200px;
         }
     }
+
+    /* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: whatsapp-pulse 2s infinite;
+    border: 4px solid white;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    background-color: #128C7E;
+}
+
+.whatsapp-float i {
+    font-size: 36px;
+    color: white;
+}
+
+/* WhatsApp icon pulse animation */
+@keyframes whatsapp-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* WhatsApp Tooltip */
+.whatsapp-tooltip {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    background-color: #075E54;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 9998;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-tooltip:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #075E54;
+}
+
+.whatsapp-float:hover + .whatsapp-tooltip,
+.whatsapp-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive WhatsApp button */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float i {
+        font-size: 30px;
+    }
+    
+    .whatsapp-tooltip {
+        bottom: 90px;
+        right: 20px;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
 </style>
    
     
@@ -2205,11 +2509,10 @@ font-size: 3rem;
             <a href="#home">Talent</a>
             <a href="#about">Digital Solutions</a>
             <a href="#work">About Us</a>
-            <a href="#contact">Contact Us</a>
+            <a href="">Contact Us</a>
         </div>
-      <a href="/MacMatloxStudio_Website/subscription.html" class="subscribe-btn">
-    Subscribe Now
-</a> 
+      <a href="https://mlungisi2930.github.io/MacMatloxStudio_Website/subscription.html" class="subscribe-btn">Subscribe Now
+</a>
     </nav>
 </header>
    
@@ -2851,122 +3154,132 @@ Schedule a Call <i>↗</i>
         </div>
     </section>
     <!-- Contact Section -->
-    <section id="contact">
+   <section id="contact">
         <h2 style="color: yellow; font-weight: 800; font-size: 59px;">Get In Touch</h2>
         <div class="animated-line" style="width:335px"></div>
-       <div class="contact-container">
-        <div class="contact-header">
-            <h1 style="color: gray;">Let's Make Your Vision a Reality.</h1>
-            <p>Contact MacMatlox Studio in Tembisa for all Talent Management, Events Planning, and Digital Solutions inquiries. Let's start your project today.</p>
-        </div>
-        
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="business-icon">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-        </svg>
-    </div>
-                    </div>
-                    <div class="info-content">
-                        <h3><span class="location-name"><i class="fas fa-camera"></i> MacMatlox Studio Swazi Inn Branch</span></h3>
-                        <p>85 Iringa St, Teanong</p>
-                        <p>Thembisa, 1632</p>
-                        <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
-                        <p><i class="fas fa-phone"></i>  010 516 0540</p>
-                        <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
-                    </div>
-                </div>
-                
-                <div class="info-item nyc">
-                    <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"><div class="business-icon">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-        </svg>
-    </div></i>
-                    </div>
-                    <div class="info-content">
-                        <h3><span class="location-name"><i class="fas fa-film"></i> MacMatlox Studio Emmangweni Branch</span></h3>
-                        <p>35 Luba Street, Temong Section</p>
-                        <p>Tembisa, South Africa</p>
-                        <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
-                        <p><i class="fas fa-phone"></i> 010 516 0540</p>
-                        <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
-                    </div>
-                </div>
-                
-                <button class="book-btn btn-primary" id="whatsapp-book-btn">
-                            <span>Book a Consultation</span>
-                            <div class="arrow-circle">
-                                <div class="arrow">
-                                    <div class="arrow-shaft"></div>
-                                    <div class="arrow-head"></div>
-                                </div>
-                            </div>
-                        </button>
-                <div class="pure-icons">
-        <a href="https://www.facebook.com/share/15gEt9ETPG/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><div class="pure-icon facebook-icon"></div>
-        </a>
-   <a href="https://www.linkedin.com/in/macmatlox-studio-434977336?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">     <div class="pure-icon linkedin-icon"></div>
-    </a>
-     <a href="https://www.youtube.com/channel/UCtnOR5MKpExD-yntmjKtTyQ" target="_blank" rel="noopener noreferrer">   <div class="pure-icon youtube-icon"></div>
-     </a>
-        <!-- Anchor wraps the entire icon -->
-<a href="https://www.instagram.com/macmatloxstudio" target="_blank" rel="noopener noreferrer">
-    <div class="pure-icon instagram-icon"></div>
-</a>
-     <a href="https://www.tiktok.com/@macmatlox.studio?_t=8seobEG1QD0&_r=1" target="_blank" rel="noopener noreferrer">   <div class="pure-icon tiktok-icon"></div>
-    </a>
-    </div>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/macmatloxstudio" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@macmatlox.studio?_t=8seobEG1QD0&_r=1" class="social-link"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.youtube.com/channel/UCtnOR5MKpExD-yntmjKtTyQ" class="social-link"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.facebook.com/share/15gEt9ETPG/?mibextid=wwXIfr" class="social-link"><i class="fab fa-facbook"></i></a>
-                    <a href="https://www.linkedin.com/in/macmatlox-studio-434977336?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="fab fa-linkedin"></i></a>
-                </div>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1 style="color: gray;">Let's Make Your Vision a Reality.</h1>
+                <p>Contact MacMatlox Studio in Tembisa for all Talent Management, Events Planning, and Digital Solutions inquiries. Let's start your project today.</p>
             </div>
             
-            <div class="map-container">
-                <div class="map-tabs">
-                    <div class="map-tab active"  data-location="la">
-                        <i class="fas fa-camera">
-                       MacMatlox Studio Swazi Inn Branch
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="business-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="info-content">
+                            <h3><span class="location-name"><i class="fas fa-camera"></i> MacMatlox Studio Swazi Inn Branch</span></h3>
+                            <p>85 Iringa St, Teanong</p>
+                            <p>Thembisa, 1632</p>
+                            <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
+                            <p><i class="fas fa-phone"></i>  010 516 0540</p>
+                            <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
+                        </div>
                     </div>
-                    <div class="map-tab nyc" data-location="nyc">
-                        <i class="fas fa-film"></i>
-                        MacMatlox Studio Emmangweni Branch
+                    
+                    <div class="info-item nyc">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="business-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="info-content">
+                            <h3><span class="location-name"><i class="fas fa-film"></i> MacMatlox Studio Emmangweni Branch</span></h3>
+                            <p>35 Luba Street, Temong Section</p>
+                            <p>Tembisa, South Africa</p>
+                            <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
+                            <p><i class="fas fa-phone"></i> 010 516 0540</p>
+                            <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <button class="book-btn btn-primary" id="whatsapp-book-btn2">
+                        <span>Book a Consultation</span>
+                        <div class="arrow-circle">
+                            <div class="arrow">
+                                <div class="arrow-shaft"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <!-- Social Media Links (Single Set) -->
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/macmatloxstudio" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@macmatlox.studio?_t=8seobEG1QD0&_r=1" target="_blank" class="social-link tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCtnOR5MKpExD-yntmjKtTyQ" target="_blank" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/15gEt9ETPG/?mibextid=wwXIfr" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/macmatlox-studio-434977336?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="map-wrapper">
-                    <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.9376380432163!2d28.207117774268305!3d-26.002860155802068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956bf7119cdfef%3A0x24a547a5b92f586e!2s85%20Iringa%20St%2C%20Teanong%2C%20Thembisa%2C%201632!5e0!3m2!1sen!2sza!4v1764919240242!5m2!1sen!2sza" width="600" 
-                            height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></i></div>
+                <div class="map-container">
+                    <div class="map-tabs">
+                        <div class="map-tab active" data-location="la">
+                            <i class="fas fa-camera"></i>
+                            MacMatlox Studio Swazi Inn Branch
+                        </div>
+                        <div class="map-tab nyc" data-location="nyc">
+                            <i class="fas fa-film"></i>
+                            MacMatlox Studio Emmangweni Branch
+                        </div>
+                    </div>
                     
-                    <div class="map-overlay">
-                        <div class="overlay-content">
-                            <h4><i class="fas fa-info-circle"></i> Studio Spotlight: See Our Latest Successes</h4>
-                            <p>Feature a recent successful event or a piece of high-quality content creation.</p>
-                            <p>• Professional photography sets</p>
-                            <p>• Digital Marketing</p>
-                            <p>• Social Media Management</p>
-                            <p>• Website Development</p>
-                            <p>• Printing and Branding</p>
-                            <p>• Content Creation</p>
-                            <p>• Graphic Design</p>
-                            <p>• Internet Cafe Services</p>
+                    <div class="map-wrapper">
+                        <div id="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.9376380432163!2d28.207117774268305!3d-26.002860155802068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956bf7119cdfef%3A0x24a547a5b92f586e!2s85%20Iringa%20St%2C%20Teanong%2C%20Thembisa%2C%201632!5e0!3m2!1sen!2sza!4v1764919240242!5m2!1sen!2sza" 
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                        <div class="map-overlay">
+                            <div class="overlay-content">
+                                <h4><i class="fas fa-info-circle"></i> Studio Spotlight: See Our Latest Successes</h4>
+                                <p>Feature a recent successful event or a piece of high-quality content creation.</p>
+                                <p>• Professional photography sets</p>
+                                <p>• Digital Marketing</p>
+                                <p>• Social Media Management</p>
+                                <p>• Website Development</p>
+                                <p>• Printing and Branding</p>
+                                <p>• Content Creation</p>
+                                <p>• Graphic Design</p>
+                                <p>• Internet Cafe Services</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/27105160540?text=Hello%20MacMatlox%20Studio!%20I'd%20like%20to%20book%20a%20consultation." 
+       target="_blank" 
+       class="whatsapp-float"
+       aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-tooltip">Chat with us on WhatsApp!</div>
 
     <!-- Footer -->
     <footer class="ultra-minimal-footer">
@@ -2981,9 +3294,64 @@ Schedule a Call <i>↗</i>
             </div>
         </div>
     </footer>
-</body>
-</html>
+
     <script>
+        // WhatsApp button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up WhatsApp booking buttons
+            const whatsappButtons = document.querySelectorAll('[id*="whatsapp-book-btn"]');
+            const whatsappNumber = "27105160540"; // Your WhatsApp number (with country code, no +)
+            const defaultMessage = "Hello MacMatlox Studio! I'd like to book a consultation.";
+            
+            whatsappButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            });
+            
+            // Show/hide WhatsApp tooltip
+            const whatsappFloat = document.querySelector('.whatsapp-float');
+            const whatsappTooltip = document.querySelector('.whatsapp-tooltip');
+            
+            let tooltipTimeout;
+            
+            whatsappFloat.addEventListener('mouseenter', function() {
+                clearTimeout(tooltipTimeout);
+                whatsappTooltip.classList.add('show');
+            });
+            
+            whatsappFloat.addEventListener('mouseleave', function() {
+                tooltipTimeout = setTimeout(() => {
+                    whatsappTooltip.classList.remove('show');
+                }, 300);
+            });
+            
+            // Hide tooltip when clicked
+            whatsappFloat.addEventListener('click', function() {
+                whatsappTooltip.classList.remove('show');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Your existing JavaScript code remains here
+        // ... (rest of your existing JavaScript)
       // CTA Section Animation Script
       document.addEventListener('DOMContentLoaded', function() {
         const title = document.getElementById("cta-title");
@@ -3153,6 +3521,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     <!-- Toast Container -->
     <div class="toast-container" id="toast-container"></div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
