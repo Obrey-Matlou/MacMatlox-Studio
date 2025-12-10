@@ -17,8 +17,8 @@
         :root {
             /* Dark Slate Gray Theme */
             --dark-slate: #2c3e50;
-            --slate-gray: #34495e;
-            --light-slate: #4a6572;
+           
+            
             --yellow: #FFD700;
             --yellow-dark: #FFC107;
             --yellow-light: #FFE44D;
@@ -32,6 +32,7 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             --radius: 12px;
             --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --dark-slate: #1a252f;
         }
         
         * {
@@ -44,7 +45,8 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--off-white);
-            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark-slate) 100%);
+            background: #1a252f;
+            
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -71,7 +73,7 @@
         }
         
         .logo img {
-            height: 50px;
+            height: 100px;
             width: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -123,6 +125,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            background-color: #1a252f;
+
         }
         
         /* Main Header Section */
@@ -149,9 +153,9 @@
         
         .studio-name {
             font-size: 2.5rem;
-            font-weight: 800;
+            font-weight: 900;
             margin-bottom: 15px;
-            color: var(--yellow);
+            color: white;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
             letter-spacing: -0.5px;
         }
@@ -251,7 +255,7 @@
         
         /* Card Styles */
         .card {
-            background: linear-gradient(145deg, rgba(44, 62, 80, 0.9) 0%, rgba(26, 37, 47, 0.9) 100%);
+            background: #1a252f;
             backdrop-filter: blur(10px);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -460,7 +464,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 50px;
-            color: var(--yellow);
+            color: white;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
         
@@ -471,7 +475,7 @@
         }
         
         .testimonial-card {
-            background: linear-gradient(145deg, rgba(44, 62, 80, 0.9) 0%, rgba(26, 37, 47, 0.9) 100%);
+            background: #1a252f;
             backdrop-filter: blur(10px);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -539,7 +543,7 @@
         }
         
         .faq-item {
-            background: linear-gradient(145deg, rgba(44, 62, 80, 0.9) 0%, rgba(26, 37, 47, 0.9) 100%);
+            background: #1a252f;
             backdrop-filter: blur(10px);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -571,7 +575,7 @@
         .stats {
             display: flex;
             justify-content: space-between;
-            background: rgba(255, 215, 0, 0.05);
+            background: #1a252f;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -808,8 +812,8 @@
     <header id="main-header">
         <div class="logo">
             <!-- Replace with actual logo image -->
-            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gray-dark); font-weight: bold; font-size: 1.2rem;">MS</div>
-            <span>MacMatlox Studio</span>
+      
+              <img src="assets/logo.avif" height="500%" width="600%" alt="MacMatlox Studio Logo">
         </div>
         <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
@@ -819,7 +823,11 @@
             <a href="#about">Digital Solutions</a>
             <a href="#work">About Us</a>
             <a href="#contact">Contact Us</a>
-            <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html" class="subscribe-btn">Subscribe now
+           <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html" 
+   class="subscribe-btn" 
+   target="_blank"
+   onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html', '_blank'); return false;">
+    Home Page
 </a>
     
         </nav>

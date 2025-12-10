@@ -2490,6 +2490,53 @@ font-size: 3rem;
     }
 }
 
+/* SUBSCRIBE BUTTON - THIS IS THE CRITICAL PART */
+/* Add this to your CSS to ensure the button is clickable */
+.subscribe-btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 100;
+}
+
+/* Optional: Add visual feedback */
+.subscribe-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.subscribe-btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #main-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 14px;
+    }
+    
+    .subscribe-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
 </style>
    
     
@@ -2511,10 +2558,14 @@ font-size: 3rem;
             <a href="#work">About Us</a>
             <a href="">Contact Us</a>
         </div>
-      <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html
-      " class="subscribe-btn">Subscribe Now
+     <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html" 
+   class="subscribe-btn" 
+   target="_blank"
+   onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html', '_blank'); return false;">
+    Subscribe Now
 </a>
     </nav>
+    
 </header>
    
 
@@ -2564,7 +2615,10 @@ font-size: 3rem;
     <div class="paragraphy" style="padding-left: 50%; font-size:large ;">
         <p>Watch behind the scenes of our latest studio photoshoot and see the professional quality we bring to every project</p>
     </div>
-        
+        <button onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html', '_self')"
+        style="padding: 10px; background: red; color: white; margin: 10px;">
+    TEST: Direct JavaScript Navigation
+</button>
     <!-- About Section -->
       <h1 style="color: gray; font-weight: 900;">Why MacMatlox Studio</h1>
         <div class="animated-line" style="width: 300px; margin-left:450px;"></div>
@@ -3154,6 +3208,9 @@ Schedule a Call <i>↗</i>
             </div>
         </div>
     </section>
+
+    <!-- Add this test button to your HTML temporarily -->
+
     <!-- Contact Section -->
    <section id="contact">
         <h2 style="color: yellow; font-weight: 800; font-size: 59px;">Get In Touch</h2>
@@ -3274,7 +3331,7 @@ Schedule a Call <i>↗</i>
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/27105160540?text=Hello%20MacMatlox%20Studio!%20I'd%20like%20to%20book%20a%20consultation." 
+    <a href="https://wa.me/27686451330?text=Hello%20MacMatlox%20Studio!%20I'd%20like%20to%20book%20a%20consultation." 
        target="_blank" 
        class="whatsapp-float"
        aria-label="Chat with us on WhatsApp">
@@ -3301,7 +3358,7 @@ Schedule a Call <i>↗</i>
         document.addEventListener('DOMContentLoaded', function() {
             // Set up WhatsApp booking buttons
             const whatsappButtons = document.querySelectorAll('[id*="whatsapp-book-btn"]');
-            const whatsappNumber = "27105160540"; // Your WhatsApp number (with country code, no +)
+            const whatsappNumber = "27686451330"; // Your WhatsApp number (with country code, no +)
             const defaultMessage = "Hello MacMatlox Studio! I'd like to book a consultation.";
             
             whatsappButtons.forEach(button => {
@@ -3404,98 +3461,24 @@ Schedule a Call <i>↗</i>
             slider.style.transform = `translateX(${currentPosition}px)`;
             slider.style.transition = 'transform 0.5s ease';
         }
-
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-    drawConnectingLines();
-    
-    // Redraw on window resize
-    window.addEventListener('resize', drawConnectingLines);
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-function drawConnectingLines() {
-    const connectors = document.getElementById('connectors');
-    connectors.innerHTML = ''; // Clear existing lines
-    
-    const ceoCard = document.getElementById('ceo');
-    const executives = [
-        document.getElementById('cofounder'),
-        document.getElementById('coo'),
-        document.getElementById('cfo')
-    ];
-    const managerCard = document.getElementById('meeting-manager');
-    
-    // Get positions
-    const ceoRect = ceoCard.getBoundingClientRect();
-    const containerRect = document.querySelector('.structure-container').getBoundingClientRect();
-    
-    // Position from container perspective
-    const ceoBottom = ceoRect.bottom - containerRect.top;
-    const ceoCenterX = ceoRect.left + ceoRect.width/2 - containerRect.left;
-    
-    // Draw vertical line from CEO to middle point
-    const verticalLine1 = document.createElement('div');
-    verticalLine1.className = 'line vertical-line';
-    verticalLine1.style.top = ceoBottom + 'px';
-    verticalLine1.style.left = ceoCenterX + 'px';
-    verticalLine1.style.height = '80px'; // Distance to executives
-    connectors.appendChild(verticalLine1);
-    
-    // Draw horizontal line connecting executives
-    const executiveRects = executives.map(exec => {
-        const rect = exec.getBoundingClientRect();
-        return {
-            left: rect.left + rect.width/2 - containerRect.left,
-            top: rect.top - containerRect.top
-        };
-    });
-    
-    // Sort executives by horizontal position
-    executiveRects.sort((a, b) => a.left - b.left);
-    
-    const horizontalLine = document.createElement('div');
-    horizontalLine.className = 'line horizontal-line';
-    horizontalLine.style.top = (ceoBottom + 80) + 'px'; // Below vertical line
-    horizontalLine.style.left = executiveRects[0].left + 'px';
-    horizontalLine.style.width = (executiveRects[executiveRects.length - 1].left - executiveRects[0].left) + 'px';
-    connectors.appendChild(horizontalLine);
-    
-    // Draw vertical lines from horizontal line to each executive
-    executives.forEach(exec => {
-        const rect = exec.getBoundingClientRect();
-        const execTop = rect.top - containerRect.top;
-        const execCenterX = rect.left + rect.width/2 - containerRect.left;
-        
-        const verticalToExec = document.createElement('div');
-        verticalToExec.className = 'line vertical-line';
-        verticalToExec.style.top = (ceoBottom + 80) + 'px';
-        verticalToExec.style.left = execCenterX + 'px';
-        verticalToExec.style.height = (execTop - (ceoBottom + 80)) + 'px';
-        connectors.appendChild(verticalToExec);
-    });
-    
-    // Connect COO to Manager (example)
-    if (managerCard) {
-        const cooCard = document.getElementById('coo');
-        const cooRect = cooCard.getBoundingClientRect();
-        const managerRect = managerCard.getBoundingClientRect();
-        
-        const cooBottom = cooRect.bottom - containerRect.top;
-        const cooCenterX = cooRect.left + cooRect.width/2 - containerRect.left;
-        const managerTop = managerRect.top - containerRect.top;
-        const managerCenterX = managerRect.left + managerRect.width/2 - containerRect.left;
-        
-        // Vertical line from COO to manager
-        const verticalToManager = document.createElement('div');
-        verticalToManager.className = 'line vertical-line';
-        verticalToManager.style.top = cooBottom + 'px';
-        verticalToManager.style.left = cooCenterX + 'px';
-        verticalToManager.style.height = (managerTop - cooBottom - 40) + 'px';
-        connectors.appendChild(verticalToManager);
-    }
-}
- 
+
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -3514,9 +3497,54 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
+
+
+// Force the subscribe button to work
+document.addEventListener('DOMContentLoaded', function() {
+    const subscribeBtn = document.querySelector('.subscribe-btn');
+    
+    if (subscribeBtn) {
+        // Remove any existing click handlers that might be blocking
+        subscribeBtn.replaceWith(subscribeBtn.cloneNode(true));
         
+        // Get the fresh button after cloning
+        const newBtn = document.querySelector('.subscribe-btn');
         
-    </script>
+        // Add a guaranteed working click handler
+        newBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html';
+        });
+        
+        console.log('Subscribe button fix applied');
+    }
+});
+
+
+// Debug script - shows what happens when you click
+document.addEventListener('DOMContentLoaded', function() {
+    const subscribeBtn = document.querySelector('.subscribe-btn');
+    
+    if (subscribeBtn) {
+        console.log('Subscribe button found:', subscribeBtn);
+        console.log('Button href:', subscribeBtn.href);
+        
+        // Check if there are any event listeners
+        const oldListeners = getEventListeners(subscribeBtn);
+        console.log('Existing click listeners:', oldListeners?.click || 'none');
+        
+        // Track clicks
+        subscribeBtn.addEventListener('click', function(e) {
+            console.log('Button clicked!');
+            console.log('Default prevented?', e.defaultPrevented);
+            console.log('Event path:', e.composedPath());
+        }, true); // Use capture phase to catch all clicks
+    }
+    
+});
+
+</script>
 
     <script src="script.js"></script>
 
