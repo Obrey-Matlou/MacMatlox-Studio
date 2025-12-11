@@ -940,104 +940,161 @@
             </div>
             
             <!-- Subscription Form Card with Web3Form Integration -->
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Join Premium Today</h2>
-                    <div style="color: var(--yellow); font-weight: 700; font-size: 1.2rem;">
-                        <i class="fas fa-shield-alt"></i> Secure Signup
-                    </div>
-                </div>
-                
-                <p style="margin-bottom: 25px; color: var(--off-white); opacity: 0.8;">Fill in your details to start your premium membership. Cancel anytime.</p>
-                
-                <!-- Web3Form Integration -->
-                <form id="subscriptionForm" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Web3Forms Access Key - Replace with your actual key -->
-                    <input type="hidden" name="access_key" value="6bcef5ca-c777-4ea0-82e6-d3b9ccc3cb7c">
-                    <!-- Subject for the email -->
-                    <input type="hidden" name="subject" value="New Premium Membership Signup - MacMatlox Internet Cafe">
-                    <!-- Redirect after submission -->
-                    <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you.html">
-                    <!-- Honeypot spam protection -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="fullName"><i class="fas fa-user"></i> Full Name</label>
-                            <input type="text" id="fullName" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="071 234 5678" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="paymentMethod"><i class="fas fa-credit-card"></i> Payment Method</label>
-                            <select id="paymentMethod" name="payment_method" required>
-                                <option value="" disabled selected>Select payment option</option>
-                                <option value="credit_card">Credit/Debit Card</option>
-                                <option value="paypal">PayPal</option>
-                                <option value="bank_transfer">Bank Transfer</option>
-                                <option value="cash">Pay at Cafe</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="referral"><i class="fas fa-user-friends"></i> Referral Code (Optional)</label>
-                            <input type="text" id="referral" name="referral_code" placeholder="Friend's code for extra benefits">
-                        </div>
-                        
-                        <!-- Additional form fields -->
-                        <input type="hidden" name="membership_type" value="Premium R50/month">
-                        <input type="hidden" name="service_type" value="Internet Cafe Membership">
-                        
-                        <div class="form-group full-width">
-                            <label for="message"><i class="fas fa-comment"></i> Additional Notes (Optional)</label>
-                            <textarea id="message" name="message" rows="3" placeholder="Any special requests or questions?"></textarea>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn">
-                        <i class="fas fa-rocket"></i> Start My Premium Membership - R50/month
-                    </button>
-                    
-                    <p style="text-align: center; margin-top: 15px; color: var(--off-white); opacity: 0.7; font-size: 0.9rem;">
-                        <i class="fas fa-lock"></i> Your information is secure. No hidden fees.
-                    </p>
-                </form>
-                
-                <div id="formSuccess" class="success-message" style="display: none;">
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Welcome to MacMatlox Premium!</h3>
-                    <p style="margin-bottom: 10px;">Thank you! Your premium membership request has been received.</p>
-                    <p style="margin-bottom: 20px;">We'll contact you shortly with confirmation details.</p>
-                    <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 10px; display: inline-block;">
-                        <p style="margin: 5px 0;">📧 Check your email for updates</p>
-                        <p style="margin: 5px 0;">📱 We'll contact you shortly</p>
-                    </div>
-                    <p style="margin-top: 20px; font-size: 0.9rem;">Visit our cafe to complete registration and get your member card!</p>
-                </div>
-                
-                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 215, 0, 0.2);">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--yellow);">Accepted Payment Methods</h3>
-                    <div class="payment-methods">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                        <i class="fas fa-university"></i>
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                </div>
+            <!-- Subscription Form Card with Web3Form Integration -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Join Premium Today</h2>
+        <div style="color: var(--yellow); font-weight: 700; font-size: 1.2rem;">
+            <i class="fas fa-shield-alt"></i> Secure Signup
+        </div>
+    </div>
+    
+    <p style="margin-bottom: 30px; color: var(--off-white); opacity: 0.9; line-height: 1.6;">
+        Fill in your details below to start your premium membership. Get instant access to all benefits. 
+        <strong style="color: var(--yellow);">Cancel anytime</strong> - no questions asked.
+    </p>
+    
+    <!-- Web3Form Integration -->
+    <form id="subscriptionForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Required Hidden Fields -->
+        <input type="hidden" name="access_key" value="d5e50bc8-d07c-4ecb-a7c8-a2d5fc26b670">
+        <input type="hidden" name="subject" value="MacMatlox Premium Membership Request">
+        <input type="hidden" name="from_name" value="MacMatlox Studio">
+        <input type="hidden" name="redirect" value="https://obrey-matlou.github.io/MacMatloxStudio_Website/thank-you.html">
+        
+        <!-- Anti-spam hidden field -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        
+        <!-- Form Fields with Clear Labels -->
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="fullName">
+                    <i class="fas fa-user"></i> Full Name *
+                </label>
+                <input type="text" id="fullName" name="name" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">
+                    <i class="fas fa-envelope"></i> Email Address *
+                </label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">
+                    <i class="fas fa-phone"></i> Phone Number *
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="paymentMethod">
+                    <i class="fas fa-credit-card"></i> Preferred Payment Method *
+                </label>
+                <select id="paymentMethod" name="payment_method" required>
+                    <option value="">-- Select Payment Method --</option>
+                    <option value="cash_at_cafe">Cash at Cafe</option>
+                    <option value="credit_debit_card">Credit/Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                </select>
+            </div>
+            
+            <!-- Additional Information -->
+            <div class="form-group full-width">
+                <label for="notes">
+                    <i class="fas fa-sticky-note"></i> Additional Notes (Optional)
+                </label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Any specific requirements or questions?"></textarea>
             </div>
         </div>
+        
+        <!-- Terms Agreement -->
+        <div style="margin: 20px 0; padding: 15px; background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" id="terms" name="terms" required style="margin-top: 3px;">
+                <label for="terms" style="font-size: 0.9rem; color: var(--off-white); opacity: 0.9; cursor: pointer;">
+                    I agree to the <a href="#" style="color: var(--yellow); text-decoration: underline;">Terms of Service</a> and 
+                    understand that this is a monthly subscription of R50, cancelable anytime.
+                </label>
+            </div>
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="btn" style="margin-top: 10px;">
+            <i class="fas fa-lock"></i> Start Premium Membership
+        </button>
+        
+        <!-- Security Assurance -->
+        <div style="text-align: center; margin-top: 15px;">
+            <p style="font-size: 0.8rem; color: var(--gray-light);">
+                <i class="fas fa-lock" style="color: var(--yellow);"></i> 
+                Your information is secure and protected
+            </p>
+        </div>
+    </form>
+    
+    <!-- Success Message (Hidden by default) -->
+    <div id="formSuccess" class="success-message" style="display: none;">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Welcome to MacMatlox Premium!</h3>
+        <p style="margin-bottom: 10px;">Thank you! Your premium membership request has been received.</p>
+        <p style="margin-bottom: 20px;">We'll contact you shortly with confirmation details.</p>
+        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 10px; display: inline-block;">
+            <p style="margin: 5px 0;"><i class="fas fa-envelope" style="color: var(--yellow);"></i> Check your email for updates</p>
+            <p style="margin: 5px 0;"><i class="fas fa-phone" style="color: var(--yellow);"></i> We'll contact you shortly</p>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(0, 0, 0, 0.8);">
+            <i class="fas fa-store" style="color: var(--gray-dark);"></i> 
+            Visit our cafe to complete registration and get your member card!
+        </p>
+    </div>
+    
+    <!-- Quick Benefits Reminder -->
+    <div style="margin-top: 40px; padding: 20px; background: rgba(255, 215, 0, 0.05); border-radius: 12px; border-left: 4px solid var(--yellow);">
+        <h4 style="color: var(--yellow); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-bolt"></i> What happens next?
+        </h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; color: var(--off-white);">
+                <i class="fas fa-check-circle" style="color: var(--yellow); font-size: 0.9rem;"></i>
+                <span>Instant form confirmation</span>
+            </li>
+            <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; color: var(--off-white);">
+                <i class="fas fa-check-circle" style="color: var(--yellow); font-size: 0.9rem;"></i>
+                <span>Email within 24 hours</span>
+            </li>
+            <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; color: var(--off-white);">
+                <i class="fas fa-check-circle" style="color: var(--yellow); font-size: 0.9rem;"></i>
+                <span>Visit cafe to activate membership</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px; color: var(--off-white);">
+                <i class="fas fa-check-circle" style="color: var(--yellow); font-size: 0.9rem;"></i>
+                <span>Start enjoying 50% off immediately</span>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Payment Methods -->
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 215, 0, 0.2);">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--yellow); display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-credit-card"></i> Accepted Payment Methods
+        </h3>
+        <div class="payment-methods">
+            <i class="fab fa-cc-visa" title="Visa"></i>
+            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fab fa-cc-paypal" title="PayPal"></i>
+            <i class="fas fa-university" title="Bank Transfer"></i>
+            <i class="fas fa-money-bill-wave" title="Cash"></i>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 0.85rem; color: var(--gray-light);">
+            First payment of R50 due upon activation at our cafe
+        </p>
+    </div>
+</div>
         
         <!-- Testimonials Section -->
         <section class="testimonials">
@@ -1172,118 +1229,61 @@
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
-        
-        // Web3Form Submission Handler
-        const form = document.getElementById('subscriptionForm');
-        const formSuccess = document.getElementById('formSuccess');
-        
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Basic form validation
-            const name = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const paymentMethod = document.getElementById('paymentMethod').value;
-            
-            if (!name || !email || !phone || !paymentMethod) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = form.querySelector('.btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-            submitBtn.disabled = true;
-            
-            try {
-                // Get form data
-                const formData = new FormData(form);
-                
-                // Submit to Web3Forms
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    // Show success message
-                    form.style.display = 'none';
-                    formSuccess.style.display = 'block';
-                    
-                    // Log to console (in real app, this would go to a server)
-                    console.log('Form submitted successfully:', {
-                        name, email, phone, paymentMethod,
-                        subscriptionType: "Premium R50/month",
-                        timestamp: new Date().toISOString()
-                    });
-                } else {
-                    // Show error message
-                    alert('There was an error submitting the form. Please try again.');
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }
-            } catch (error) {
-                // Fallback: Show success message even if form submission fails
-                // (This ensures the user sees a positive experience)
-                form.style.display = 'none';
-                formSuccess.style.display = 'block';
-                
-                console.log('Form submission attempt:', {
-                    name, email, phone, paymentMethod,
-                    subscriptionType: "Premium R50/month",
-                    timestamp: new Date().toISOString()
-                });
-                
-                console.error('Form submission error:', error);
-            }
-        });
-        
-        // Phone number formatting
-        const phoneInput = document.getElementById('phone');
-        phoneInput.addEventListener('input', function() {
-            let value = phoneInput.value.replace(/\D/g, '');
-            
-            if (value.length > 2 && value.length <= 5) {
-                value = value.replace(/(\d{2})(\d+)/, '$1 $2');
-            } else if (value.length > 5 && value.length <= 8) {
-                value = value.replace(/(\d{2})(\d{3})(\d+)/, '$1 $2 $3');
-            } else if (value.length > 8) {
-                value = value.replace(/(\d{2})(\d{3})(\d{3})(\d+)/, '$1 $2 $3 $4');
-            }
-            
-            phoneInput.value = value;
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
-            });
-        });
+    // Web3Form Submission Handler
+// SIMPLE FIXED Form Submission Handler
+const form = document.getElementById('subscriptionForm');
+const formSuccess = document.getElementById('formSuccess');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Basic form validation
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const paymentMethod = document.getElementById('paymentMethod').value;
+    
+    if (!name || !email || !phone || !paymentMethod) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = form.querySelector('.btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    submitBtn.disabled = true;
+    
+    // Simple AJAX submission
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show success message
+            form.style.display = 'none';
+            formSuccess.style.display = 'block';
+            console.log('Form submitted successfully');
+        } else {
+            // Show error from Web3Forms
+            alert(data.message || 'There was an error submitting the form. Please try again.');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Show user-friendly error
+        alert('Network error. Please check your connection and try again.');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
+});
     </script>
 </body>
 </html>
