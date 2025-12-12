@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (sectionToObserve && servicesWrapper) {
     const observerOptions = {
       root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
+      rootMargin: "10px",
+      threshold: 0.5, 
     };
 
     const observerCallback = (entries, observer) => {
@@ -158,8 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "New Branch": `
                     <div class="graphic-image-placeholder" style="background-image: url('assets/WhatsApp Image 2025-12-08 at 09.02.03_d3fb4980.jpg'); background-size: cover; background-position: center;">
                     
-                        <h3 style=" padding-bottom: 5%;">New Branch Opening Soon!</h3>
-                        <p>We're expanding! Our new branch will offer enhanced services and better accessibility for our clients.</p>
+
+                        <h3>New Branch</h3>
+                        <p>Introducing our new branch offering comprehensive digital solutions including photography, graphic design, and printing services.</p>
                     </div>
                 `,
       "Photography Special": `

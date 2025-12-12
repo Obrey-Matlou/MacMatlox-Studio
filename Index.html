@@ -517,7 +517,7 @@
             /* Height matches the image proportion */
             aspect-ratio: 4/3; 
             margin-top: 40px;
-            background-color: #dc3545; /* Placeholder for Digital Solutions image */
+            background-color: yellow; /* Placeholder for Digital Solutions image */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -702,20 +702,25 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #A31F1F; /* Example color for the graphic */
+            text-align: center;
             color: white;
         }
         
         .graphic-image-placeholder h3 {
              margin-bottom: 10px;
-             color: var(--color-yellow);
-             font-size: 36px;
+             color: yellow;
+             font-size: 40px;
+             position: absolute; bottom: 100px;
+             font-weight: 800;
         }
         
         .graphic-image-placeholder p {
             font-size: 18px;
             max-width: 80%;
             text-align: center;
+            position: absolute; bottom: 0;
+            color: gray;
+            font-weight: 400;
         }
 
         /* Video container styling */
@@ -728,7 +733,7 @@
         
         .hero-video-container {
             width: 100%;
-            height: ;
+            height: 110%;
             overflow: hidden;
             position: relative;
         }
