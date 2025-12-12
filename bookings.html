@@ -369,6 +369,11 @@
             min-height: 100px;
         }
         
+        /* Hidden form inputs for Web3Forms */
+        .hidden-inputs {
+            display: none;
+        }
+        
         /* Service Selection */
         .services-grid {
             display: grid;
@@ -533,6 +538,17 @@
             animation: partyHorn 0.5s ease 3;
         }
         
+        /* Error Message */
+        .error-message {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(231, 76, 60, 0.1) 100%);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--error);
+        }
+        
         /* Footer */
         .footer {
             background: rgba(13, 24, 36, 0.95);
@@ -680,9 +696,8 @@
             <span>MacMatlox Studio</span>
         </div>
         <nav>
-           
             <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html" style="background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%); 
-               color: var(--dark-slate); padding: 0.6rem 1.5rem; border-radius: 6px; font-weight: 600; ;">
+               color: var(--dark-slate); padding: 0.6rem 1.5rem; border-radius: 6px; font-weight: 600;">
              Home page
             </a>
         </nav>
@@ -698,7 +713,7 @@
         <div class="container">
             <h1 class="hero-title">MacMatlox Studio Booking System</h1>
             <p class="hero-subtitle">
-                🚨 Don't Miss Out! Secure Your MacMatlox Studio Slot Today.
+                🚨 Don't Miss Out! Secure Your MacMatlox Studio Slot Today. Ready in 30 Seconds. Book Your MacMatlox Studio Session.
             </p>
         </div>
     </section>
@@ -717,31 +732,28 @@
             
             <!-- Service Selection -->
             <div class="services-grid">
-                <div class="service-option selected" data-service="studio">
+                <div class="service-option selected" data-service="talent-management">
                     <div class="service-icon">
                         <i class="fas fa-headphones"></i>
                     </div>
-                    <h4>Talent Management</h4>
-                    <p>Events & Public Relation</p>
+                    <h4 style="color: yellow;">Talent Management</h4>
+                    <p>Events & Promotion & Branding, Career Development, Networking</p>
                 </div>
                 
-                <div class="service-option" data-service="internet">
+                <div class="service-option" data-service="internet-cafe">
                     <div class="service-icon">
                         <i class="fas fa-wifi"></i>
                     </div>
-                    <h4>Internet Cafe</h4>
-                    <p>Work & Printing</p>
+                    <h4 style="color: yellow;">Internet Cafe</h4>
+                    <p>Work, Professional typing CV, Printing/Scanning, IT help</p>
                 </div>
                 
-                <div class="service-option" data-service="printing">
+                <div class="service-option" data-service="digital-solution">
                     <div class="service-icon">
                         <i class="fas fa-print"></i>
                     </div>
-                    <h4>Digital Solution</h4>
-                    <p>Websites,Graphic design, Printing & branding</p>
-                </div>
-                
-                
+                    <h4 style="color: yellow;">Digital Solution</h4>
+                    <p>Digital Marketing Websites, Graphic Design, Printing & Branding</p>
                 </div>
             </div>
             
@@ -763,14 +775,28 @@
                 </div>
             </div>
             
-            <!-- Appointment Details Form -->
-            <form id="appointmentForm">
+            <!-- Appointment Details Form with Web3Forms -->
+            <form id="appointmentForm" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Required Fields -->
+                <input type="hidden" name="access_key" value="d5e50bc8-d07c-4ecb-a7c8-a2d5fc26b670">
+                <input type="hidden" name="subject" value="New Booking - MacMatlox Studio">
+                <input type="hidden" name="from_name" value="MacMatlox Studio Booking System">
+                <input type="checkbox" name="botcheck" style="display: none;">
+                
+                <!-- Hidden fields for form data -->
+                <div class="hidden-inputs">
+                    <input type="hidden" id="hiddenDate" name="appointment_date">
+                    <input type="hidden" id="hiddenTime" name="appointment_time">
+                    <input type="hidden" id="hiddenService" name="service_type">
+                    <input type="hidden" id="hiddenBookingId" name="booking_id">
+                </div>
+                
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="fullName" class="required">
                             <i class="fas fa-user"></i> Full Name
                         </label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        <input type="text" id="fullName" name="full_name" required placeholder="Enter your full name">
                     </div>
                     
                     <div class="form-group">
@@ -814,13 +840,13 @@
                         <i class="fas fa-envelope-open-text"></i> Email Preferences
                     </h4>
                     <div style="display: flex; align-items: center; gap: 15px;">
-                        <input type="checkbox" id="emailConfirmation" name="emailConfirmation" checked>
+                        <input type="checkbox" id="emailConfirmation" name="email_confirmation" checked>
                         <label for="emailConfirmation" style="font-weight: normal; cursor: pointer;">
                             Send confirmation email with appointment details
                         </label>
                     </div>
                     <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
-                        <input type="checkbox" id="reminderEmail" name="reminderEmail" checked>
+                        <input type="checkbox" id="reminderEmail" name="reminder_email" checked>
                         <label for="reminderEmail" style="font-weight: normal; cursor: pointer;">
                             Send reminder 24 hours before appointment
                         </label>
@@ -830,6 +856,9 @@
                 <button type="submit" class="btn" id="submitBtn">
                     <i class="fas fa-calendar-check"></i> Confirm Appointment
                 </button>
+                
+                <!-- Web3Forms Success/Error Messages -->
+                <div id="web3forms-result" style="display: none;"></div>
             </form>
             
             <!-- Success Message -->
@@ -858,6 +887,10 @@
                     <p style="margin: 8px 0; color: var(--yellow-light);">
                         <i class="fas fa-headphones"></i> 
                         <span id="confirmedService">Service not selected</span>
+                    </p>
+                    <p style="margin: 8px 0; color: var(--yellow-light);">
+                        <i class="fas fa-id-badge"></i> 
+                        <span id="confirmedBookingId">Booking ID: Not assigned</span>
                     </p>
                 </div>
                 <button class="btn" onclick="window.location.reload()" style="margin-top: 20px; background: var(--slate-medium); color: var(--white);">
@@ -1041,9 +1074,9 @@ MacMatlox Studio Team
                 <div class="footer-section">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-headphones"></i> Studio Recording</a></li>
+                        <li><a href="#"><i class="fas fa-headphones"></i> Talent Management</a></li>
                         <li><a href="#"><i class="fas fa-wifi"></i> Internet Cafe</a></li>
-                        <li><a href="#"><i class="fas fa-print"></i> Printing Services</a></li>
+                        <li><a href="#"><i class="fas fa-print"></i> Digital Solutions</a></li>
                         <li><a href="#"><i class="fas fa-gamepad"></i> Gaming Stations</a></li>
                         <li><a href="#"><i class="fas fa-coffee"></i> Refreshments</a></li>
                     </ul>
@@ -1061,7 +1094,7 @@ MacMatlox Studio Team
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 MacMatlox Studio. All rights reserved. | Professional Booking System v1.0</p>
+                <p>&copy; 2024 MacMatlox Studio. All rights reserved. | Professional Booking System v1.0 | Powered by Web3Forms</p>
             </div>
         </div>
     </footer>
@@ -1084,6 +1117,14 @@ MacMatlox Studio Team
             "2024-12-31", // New Year's Eve
             "2025-01-01"  // New Year's Day
         ];
+        
+        // Current booking data
+        let currentBooking = {
+            date: null,
+            time: null,
+            service: 'talent-management',
+            bookingId: null
+        };
         
         // Admin panel functionality
         document.getElementById('adminAccessBtn').addEventListener('click', function() {
@@ -1117,6 +1158,7 @@ MacMatlox Studio Team
             onChange: function(selectedDates, dateStr) {
                 loadAvailableTimeSlots(dateStr);
                 updateSelectedDate(dateStr);
+                updateHiddenFields();
             }
         });
         
@@ -1171,6 +1213,7 @@ MacMatlox Studio Team
                         });
                         this.classList.add('selected');
                         updateSelectedTime(this.dataset.time);
+                        updateHiddenFields();
                     }
                 });
                 
@@ -1180,11 +1223,13 @@ MacMatlox Studio Team
         
         // Update selected date display
         function updateSelectedDate(date) {
+            currentBooking.date = date;
             document.getElementById('confirmedDate').textContent = formatDate(date);
         }
         
         // Update selected time display
         function updateSelectedTime(time) {
+            currentBooking.time = time;
             document.getElementById('confirmedTime').textContent = time;
         }
         
@@ -1197,16 +1242,40 @@ MacMatlox Studio Team
                 this.classList.add('selected');
                 
                 const service = this.dataset.service;
-                let serviceName = 'Studio Session';
+                currentBooking.service = service;
+                
+                let serviceName = 'Talent Management';
                 switch(service) {
-                    case 'studio': serviceName = 'Studio Session'; break;
-                    case 'internet': serviceName = 'Internet Cafe'; break;
-                    case 'printing': serviceName = 'Printing Services'; break;
-                    case 'consultation': serviceName = 'Consultation'; break;
+                    case 'talent-management': serviceName = 'Talent Management'; break;
+                    case 'internet-cafe': serviceName = 'Internet Cafe'; break;
+                    case 'digital-solution': serviceName = 'Digital Solution'; break;
                 }
                 document.getElementById('confirmedService').textContent = serviceName;
+                updateHiddenFields();
             });
         });
+        
+        // Update hidden form fields for Web3Forms
+        function updateHiddenFields() {
+            // Update hidden inputs
+            document.getElementById('hiddenDate').value = currentBooking.date || '';
+            document.getElementById('hiddenTime').value = currentBooking.time || '';
+            document.getElementById('hiddenService').value = currentBooking.service || '';
+            document.getElementById('hiddenBookingId').value = currentBooking.bookingId || '';
+            
+            // Update display in success message
+            if (currentBooking.bookingId) {
+                document.getElementById('confirmedBookingId').textContent = 'Booking ID: ' + currentBooking.bookingId;
+            }
+        }
+        
+        // Generate booking ID
+        function generateBookingId() {
+            const prefix = 'MAC-';
+            const timestamp = Date.now().toString(36);
+            const random = Math.random().toString(36).substr(2, 4).toUpperCase();
+            return prefix + timestamp + random;
+        }
         
         // Block date functionality
         document.getElementById('blockDateBtn').addEventListener('click', function() {
@@ -1275,12 +1344,13 @@ MacMatlox Studio Team
             });
         }
         
-        // Form submission
+        // Web3Forms Submission Handler
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerHTML;
+            const resultDiv = document.getElementById('web3forms-result');
             
             // Validate selection
             const selectedDate = datePicker.selectedDates[0];
@@ -1291,54 +1361,102 @@ MacMatlox Studio Team
                 return;
             }
             
+            // Generate booking ID
+            currentBooking.bookingId = generateBookingId();
+            updateHiddenFields();
+            
             // Show loading
             submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                // Get form data
-                const formData = new FormData(this);
-                const appointmentData = {
-                    name: formData.get('fullName'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    date: selectedDate.toISOString().split('T')[0],
-                    time: selectedTime.dataset.time,
-                    duration: formData.get('duration'),
-                    notes: formData.get('notes'),
-                    service: document.querySelector('.service-option.selected').dataset.service,
-                    bookingId: 'MAC-' + Math.random().toString(36).substr(2, 8).toUpperCase()
-                };
-                
-                // Send confirmation email (simulated)
-                if (document.getElementById('emailConfirmation').checked) {
-                    sendConfirmationEmail(appointmentData);
+            // Prepare form data
+            const form = this;
+            const formData = new FormData(form);
+            
+            // Add additional data to form
+            formData.append('appointment_date', formatDate(currentBooking.date));
+            formData.append('appointment_time', currentBooking.time);
+            formData.append('booking_id', currentBooking.bookingId);
+            
+            // Determine service name
+            let serviceName = 'Talent Management';
+            switch(currentBooking.service) {
+                case 'talent-management': serviceName = 'Talent Management'; break;
+                case 'internet-cafe': serviceName = 'Internet Cafe'; break;
+                case 'digital-solution': serviceName = 'Digital Solution'; break;
+            }
+            formData.append('service_type', serviceName);
+            
+            // Submit to Web3Forms
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    document.getElementById('appointmentForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Log success
+                    console.log('Booking submitted successfully:', data);
+                    
+                    // Send confirmation email (simulated)
+                    if (document.getElementById('emailConfirmation').checked) {
+                        sendConfirmationEmail({
+                            name: formData.get('full_name'),
+                            email: formData.get('email'),
+                            date: currentBooking.date,
+                            time: currentBooking.time,
+                            service: serviceName,
+                            bookingId: currentBooking.bookingId,
+                            duration: formData.get('duration'),
+                            notes: formData.get('notes')
+                        });
+                    }
+                } else {
+                    // Show error message
+                    resultDiv.innerHTML = `
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h4>Submission Failed</h4>
+                            <p>${data.message || 'An error occurred. Please try again.'}</p>
+                        </div>
+                    `;
+                    resultDiv.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    console.error('Form submission failed:', data);
                 }
-                
-                // Show success message
-                document.getElementById('appointmentForm').style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
+            })
+            .catch(error => {
+                // Show error message
+                resultDiv.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h4>Network Error</h4>
+                        <p>Unable to submit form. Please check your connection and try again.</p>
+                    </div>
+                `;
+                resultDiv.style.display = 'block';
                 
                 // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 
-                // Log appointment data (in real app, send to backend)
-                console.log('Appointment booked:', appointmentData);
-                
-            }, 1500);
+                console.error('Form submission error:', error);
+            });
         });
         
         // Send confirmation email
         function sendConfirmationEmail(data) {
-            // In real app, this would be an API call to your backend/email service
-            console.log('Sending confirmation email to:', data.email);
-            
-            // Simulate email sending
-            setTimeout(() => {
-                console.log('Email sent successfully');
-            }, 500);
+            // In real app, this would be handled by Web3Forms templates
+            console.log('Confirmation email would be sent to:', data.email);
+            console.log('Email data:', data);
         }
         
         // Edit template function
@@ -1354,7 +1472,7 @@ MacMatlox Studio Team
         // Export appointments
         function exportAppointments() {
             alert('Export feature would generate CSV/Excel file of all appointments');
-            // In real app, this would fetch data and create download
+            // In real app, this would fetch data from Web3Forms API and create download
         }
         
         // View full calendar
@@ -1369,7 +1487,7 @@ MacMatlox Studio Team
             loadAvailableTimeSlots(new Date().toISOString().split('T')[0]);
             
             // Set default selections
-            document.querySelector('.service-option[data-service="studio"]').click();
+            document.querySelector('.service-option[data-service="talent-management"]').click();
             
             // Allow Enter key for admin login
             document.getElementById('adminPassword').addEventListener('keypress', function(e) {
@@ -1377,7 +1495,12 @@ MacMatlox Studio Team
                     document.getElementById('loginBtn').click();
                 }
             });
+            
+            // Initialize current booking with today's date
+            const today = new Date().toISOString().split('T')[0];
+            updateSelectedDate(today);
+            updateHiddenFields();
         });
     </script>
 </body>
-</html>
+</html> 

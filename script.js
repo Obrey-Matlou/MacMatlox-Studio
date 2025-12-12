@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "New Branch": `
                     <div class="graphic-image-placeholder" style="background-image: url('assets/WhatsApp Image 2025-12-08 at 09.02.03_d3fb4980.jpg'); background-size: cover; background-position: center;">
                     
-                        <h3 >New Branch Opening Soon!</h3>
+                        <h3 style=" padding-bottom: 5%;">New Branch Opening Soon!</h3>
                         <p>We're expanding! Our new branch will offer enhanced services and better accessibility for our clients.</p>
                     </div>
                 `,
