@@ -2541,9 +2541,22 @@ font-size: 3rem;
         font-size: 14px;
     }
 }
+.pillar-nav button, .see-more-btn {
+  background-color: yellow; /* Blue background */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  text-decoration: none; /* For link version */
+  display: inline-block; /* For link version */
+}
 
-
-
+.pillar-nav button:hover, .see-more-btn:hover {
+  background-color: yellowgreen; /* Darker blue on hover */
+}
 
 </style>
    
@@ -2684,12 +2697,16 @@ font-size: 3rem;
                 
                 <div class="service-pillar">
                     <div class="pillar-nav-wrapper">
-                        <div class="pillar-nav" style="color: var(--color-yellow);">Talent Management🎬</div>
-                        <div class="pillar-nav">Events Planning</div>
+                        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/services.html" style="text-decoration: none;">
+  <div class="pillar-nav" style="color: white; font-weight: 800; font-size: 25px;">Talent Management 🎬</div>
+</a>
+                        <div class="pillar-nav">
+  <button onclick="window.location.href='https://obrey-matlou.github.io/MacMatloxStudio_Website/services.html';">See more</button>
+</div>
                     </div>
                     
                     <div class="pillar-number">01</div>
-                    <h3 class="pillar-title">Elevate Your Career: Professional Talent Management.</h3>
+                    <h3 class="pillar-title" style="color:gray" >Elevate Your Career: Professional Talent Management.</h3>
                     
                     <p>Talent Management: Discovering, developing, and promoting the next generation of South African talent..</p>
                     <p>Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</p>
@@ -2702,12 +2719,17 @@ font-size: 3rem;
 
                 <div class="service-pillar">
                     <div class="pillar-nav-wrapper">
-                        <div class="pillar-nav">Digital Solutions</div>
-                        <div class="pillar-nav" style="color: var(--color-yellow);">Digital Solutions</div>
+                        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/services.html" style="text-decoration: none;">
+                        <div class="pillar-nav" style="color:white; font-weight: 800; font-size: 25px;">Digital Solutons 💻</div>
+                        </a>
+                      
+                        <div class="pillar-nav">
+  <button onclick="window.location.href='https://obrey-matlou.github.io/MacMatloxStudio_Website/services.html';">See more</button>
+</div>
                     </div>
 
                     <div class="pillar-number">02</div>
-                    <h3 class="pillar-title">Growth-Focused Digital Marketing.</h3>
+                    <h3 class="pillar-title" style="color:gray">Growth-Focused Digital Marketing.</h3>
                     
                     <p >We craft strategies that turn clicks into clients. Our services include data-driven Digital Marketing, targeted advertising campaigns, and professional Social Media Management in Tembisa to build an engaged community around your brand.</p>
                     
