@@ -2558,6 +2558,1263 @@ font-size: 3rem;
   background-color: yellowgreen; /* Darker blue on hover */
 }
 
+
+
+
+
+
+
+<style>
+    /* ==================== MOBILE RESPONSIVENESS ==================== */
+    
+    /* General Responsive Settings */
+    @media (max-width: 1200px) {
+        /* Adjust for tablets and small laptops */
+        .hero-title {
+            font-size: 48px;
+            margin-right: 50px;
+        }
+        
+        .values-title {
+            font-size: 36px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 48px;
+        }
+        
+        .text-block h2 {
+            font-size: 48px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 3rem;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        /* Tablet adjustments */
+        .hero-content h1 {
+            font-size: 48px;
+        }
+        
+        .highlight {
+            font-size: 48px;
+        }
+        
+        .about-section {
+            flex-direction: column;
+            min-height: auto;
+        }
+        
+        .content-left, .content-right, .image-gallery-container {
+            width: 100%;
+            padding: 40px 20px;
+        }
+        
+        .image-gallery-container {
+            height: 300px;
+            order: 2;
+        }
+        
+        .content-left {
+            order: 1;
+        }
+        
+        .content-right {
+            order: 3;
+        }
+        
+        .hero-title {
+            margin-right: 0;
+            font-size: 40px;
+        }
+        
+        .value-list li {
+            font-size: 20px;
+        }
+        
+        .what-we-do-section {
+            flex-direction: column;
+            padding: 40px 0;
+        }
+        
+        .wwd-left-column, .wwd-right-track {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 40px;
+        }
+        
+        .service-pillar {
+            padding: 0 20px;
+        }
+        
+        .pillar-title {
+            font-size: 32px;
+        }
+        
+        .design-section {
+            padding: 40px 20px;
+        }
+        
+        .main-content-area {
+            flex-direction: column;
+        }
+        
+        .text-block, .dynamic-content-box {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 30px;
+        }
+        
+        .text-block h2 {
+            font-size: 40px;
+        }
+        
+        .graphic-image-placeholder h3 {
+            font-size: 32px;
+        }
+        
+        .header-text {
+            font-size: 2.8rem;
+        }
+        
+        .contact-content {
+            grid-template-columns: 1fr;
+        }
+        
+        #map {
+            min-height: 400px;
+        }
+        
+        .leadership-section h1 {
+            font-size: 2.2rem;
+        }
+        
+        .person-name {
+            font-size: 1.3rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        /* Mobile adjustments */
+        #main-header {
+            padding: 15px 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .main-nav {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            font-size: 14px;
+        }
+        
+        .subscribe-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            min-width: 120px;
+        }
+        
+        .hero-content h1 {
+            font-size: 32px;
+            text-align: center;
+        }
+        
+        .highlight {
+            font-size: 32px;
+        }
+        
+        .hero-visual {
+            margin-top: 30px;
+        }
+        
+        .paragraphy {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .hero-title {
+            font-size: 32px;
+        }
+        
+        .hero-subtitle {
+            font-size: 16px;
+        }
+        
+        .values-title {
+            font-size: 28px;
+        }
+        
+        .value-list li {
+            font-size: 18px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+        }
+        
+        .appointment-link {
+            font-size: 16px;
+        }
+        
+        .pillar-number {
+            font-size: 60px;
+        }
+        
+        .pillar-title {
+            font-size: 24px;
+        }
+        
+        .text-block h2 {
+            font-size: 32px;
+        }
+        
+        .text-block p {
+            font-size: 18px;
+        }
+        
+        .dynamic-content-box {
+            height: 300px;
+        }
+        
+        .graphic-image-placeholder h3 {
+            font-size: 24px;
+            bottom: 70px;
+        }
+        
+        .graphic-image-placeholder p {
+            font-size: 14px;
+        }
+        
+        .menu-slide-word {
+            width: 200px;
+            font-size: 16px;
+        }
+        
+        .header-text {
+            font-size: 2.2rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .info-item {
+            flex-direction: column;
+            padding: 15px;
+        }
+        
+        .info-icon {
+            margin-bottom: 15px;
+            margin-right: 0;
+        }
+        
+        .map-tabs {
+            top: 15px;
+            left: 15px;
+            flex-direction: column;
+            width: calc(100% - 30px);
+        }
+        
+        .social-links {
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+        
+        .projects-container {
+            padding: 20px 0;
+        }
+        
+        .project-card {
+            flex: 0 0 280px;
+            height: 400px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+        }
+        
+        .section-wrapper h1 span {
+            font-size: 3rem;
+        }
+        
+        .floating-img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .cta-btn {
+            font-size: 1.5rem;
+        }
+        
+        .award-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .award-actions {
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .leadership-section h1 {
+            font-size: 1.8rem;
+        }
+        
+        .level-2, .level-3 {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .executive-card, .manager-card {
+            margin-bottom: 30px;
+            min-width: 250px;
+        }
+        
+        .ceo-card, .executive-card, .manager-card, .staff-card {
+            padding: 15px;
+        }
+        
+        .person-name {
+            font-size: 1.2rem;
+        }
+        
+        .person-title {
+            font-size: 0.95rem;
+        }
+        
+        .animated-line {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        /* Small mobile adjustments */
+        .hero-content h1 {
+            font-size: 28px;
+        }
+        
+        .highlight {
+            font-size: 28px;
+        }
+        
+        .hero-title {
+            font-size: 28px;
+        }
+        
+        .values-title {
+            font-size: 24px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 28px;
+        }
+        
+        .text-block h2 {
+            font-size: 28px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2rem;
+        }
+        
+        .info-content h3 {
+            font-size: 1.3rem;
+        }
+        
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+        
+        .section-wrapper h1 span {
+            font-size: 2.5rem;
+        }
+        
+        .floating-img {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .cta-btn {
+            font-size: 1.2rem;
+        }
+        
+        .cta-btn i {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.3rem;
+        }
+        
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .whatsapp-float i {
+            font-size: 30px;
+        }
+        
+        .whatsapp-tooltip {
+            bottom: 90px;
+            right: 20px;
+            font-size: 12px;
+            padding: 8px 12px;
+        }
+        
+        .menu-slide-word {
+            width: 160px;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        
+        .sliding-menu-track {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .project-card {
+            flex: 0 0 250px;
+            height: 350px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+        }
+        
+        .project-type {
+            font-size: 0.9rem;
+        }
+        
+        .person-name {
+            font-size: 1.1rem;
+        }
+        
+        .person-title {
+            font-size: 0.9rem;
+        }
+        
+        .photo-placeholder {
+            width: 120px;
+            height: 130px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        /* Extra small screens */
+        .nav-links a {
+            font-size: 12px;
+        }
+        
+        .hero-content h1 {
+            font-size: 24px;
+        }
+        
+        .highlight {
+            font-size: 24px;
+        }
+        
+        .hero-title {
+            font-size: 24px;
+        }
+        
+        .section-wrapper h1 span {
+            font-size: 2rem;
+        }
+        
+        .floating-img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .cta-btn {
+            font-size: 1rem;
+        }
+        
+        .menu-slide-word {
+            width: 140px;
+            font-size: 13px;
+            margin-right: 10px;
+        }
+    }
+    
+    /* Fix for image gallery on mobile */
+    @media (max-width: 768px) {
+        .image-wrapper:nth-child(1),
+        .image-wrapper:nth-child(2),
+        .image-wrapper:nth-child(3) {
+            animation: slideUpDown 4s ease-in-out infinite alternate;
+        }
+        
+        .image-wrapper:nth-child(2) {
+            animation-delay: 1s;
+        }
+        
+        .image-wrapper:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+    }
+    
+    /* Fix for sliding menu on mobile */
+    @media (max-width: 768px) {
+        .sliding-menu-wrapper {
+            animation: slideWords 15s linear infinite;
+        }
+    }
+    
+    /* Fix for projects slider on mobile */
+    @media (max-width: 768px) {
+        @keyframes autoSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-305px * var(--total-cards, 8)));
+            }
+        }
+        
+        .project-card {
+            flex: 0 0 280px;
+            height: 400px;
+        }
+    }
+    
+    /* Fix for leadership structure on mobile */
+    @media (max-width: 768px) {
+        .structure-container {
+            min-height: 1200px;
+        }
+        
+        .level-2, .level-3 {
+            gap: 20px;
+        }
+        
+        .executive-card, .manager-card {
+            min-width: 200px;
+        }
+    }
+    
+    /* Ensure all images are responsive */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Fix for iframe maps */
+    iframe {
+        max-width: 100%;
+    }
+    
+    /* Hide some elements on very small screens */
+    @media (max-width: 480px) {
+        .paragraphy {
+            font-size: 12px;
+        }
+        
+        .hero-subtitle {
+            font-size: 14px;
+        }
+        
+        .value-list li {
+            font-size: 16px;
+        }
+        
+        .pillar-title {
+            font-size: 20px;
+        }
+        
+        .graphic-image-placeholder h3 {
+            font-size: 20px;
+            bottom: 50px;
+        }
+    }
+    
+    /* Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* Ensure all sections have proper width on mobile */
+    section {
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==================== MOBILE RESPONSIVENESS ==================== */
+    
+    /* General Responsive Settings */
+    @media (max-width: 1200px) {
+        /* Adjust for tablets and small laptops */
+        .hero-title {
+            font-size: 48px;
+            margin-right: 50px;
+        }
+        
+        .values-title {
+            font-size: 36px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 48px;
+        }
+        
+        .text-block h2 {
+            font-size: 48px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 3rem;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        /* Tablet adjustments */
+        .hero-content h1 {
+            font-size: 48px;
+        }
+        
+        .highlight {
+            font-size: 48px;
+        }
+        
+        .about-section {
+            flex-direction: column;
+            min-height: auto;
+        }
+        
+        .content-left, .content-right, .image-gallery-container {
+            width: 100%;
+            padding: 40px 20px;
+        }
+        
+        .image-gallery-container {
+            height: 300px;
+            order: 2;
+        }
+        
+        .content-left {
+            order: 1;
+        }
+        
+        .content-right {
+            order: 3;
+        }
+        
+        .hero-title {
+            margin-right: 0;
+            font-size: 40px;
+        }
+        
+        .value-list li {
+            font-size: 20px;
+        }
+        
+        .what-we-do-section {
+            flex-direction: column;
+            padding: 40px 0;
+        }
+        
+        .wwd-left-column, .wwd-right-track {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 40px;
+        }
+        
+        .service-pillar {
+            padding: 0 20px;
+        }
+        
+        .pillar-title {
+            font-size: 32px;
+        }
+        
+        .design-section {
+            padding: 40px 20px;
+        }
+        
+        .main-content-area {
+            flex-direction: column;
+        }
+        
+        .text-block, .dynamic-content-box {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 30px;
+        }
+        
+        .text-block h2 {
+            font-size: 40px;
+        }
+        
+        .graphic-image-placeholder h3 {
+            font-size: 32px;
+        }
+        
+        .header-text {
+            font-size: 2.8rem;
+        }
+        
+        .contact-content {
+            grid-template-columns: 1fr;
+        }
+        
+        #map {
+            min-height: 400px;
+        }
+        
+        .leadership-section h1 {
+            font-size: 2.2rem;
+        }
+        
+        .person-name {
+            font-size: 1.3rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        /* Mobile adjustments */
+        #main-header {
+            padding: 15px 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .main-nav {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            font-size: 14px;
+        }
+        
+        .subscribe-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            min-width: 120px;
+        }
+        
+        .hero-content h1 {
+            font-size: 32px;
+            text-align: center;
+        }
+        
+        .highlight {
+            font-size: 32px;
+        }
+        
+        .hero-visual {
+            margin-top: 30px;
+        }
+        
+        .paragraphy {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .hero-title {
+            font-size: 32px;
+        }
+        
+        .hero-subtitle {
+            font-size: 16px;
+        }
+        
+        .values-title {
+            font-size: 28px;
+        }
+        
+        .value-list li {
+            font-size: 18px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+        }
+        
+        .appointment-link {
+            font-size: 16px;
+        }
+        
+        .pillar-number {
+            font-size: 60px;
+        }
+        
+        .pillar-title {
+            font-size: 24px;
+        }
+        
+        .text-block h2 {
+            font-size: 32px;
+        }
+        
+        .text-block p {
+            font-size: 18px;
+        }
+        
+        .dynamic-content-box {
+            height: 300px;
+        }
+        
+        .graphic-image-placeholder h3 {
+            font-size: 24px;
+            bottom: 70px;
+        }
+        
+        .graphic-image-placeholder p {
+            font-size: 14px;
+        }
+        
+        .menu-slide-word {
+            width: 200px;
+            font-size: 16px;
+        }
+        
+        .header-text {
+            font-size: 2.2rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .info-item {
+            flex-direction: column;
+            padding: 15px;
+        }
+        
+        .info-icon {
+            margin-bottom: 15px;
+            margin-right: 0;
+        }
+        
+        .map-tabs {
+            top: 15px;
+            left: 15px;
+            flex-direction: column;
+            width: calc(100% - 30px);
+        }
+        
+        .social-links {
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+        
+        .projects-container {
+            padding: 20px 0;
+        }
+        
+        .project-card {
+            flex: 0 0 280px;
+            height: 400px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+        }
+        
+        .section-wrapper h1 span {
+            font-size: 3rem;
+        }
+        
+        .floating-img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .cta-btn {
+            font-size: 1.5rem;
+        }
+        
+        .award-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .award-actions {
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .leadership-section h1 {
+            font-size: 1.8rem;
+        }
+        
+        .level-2, .level-3 {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .executive-card, .manager-card {
+            margin-bottom: 30px;
+            min-width: 250px;
+        }
+        
+        .ceo-card, .executive-card, .manager-card, .staff-card {
+            padding: 15px;
+        }
+        
+        .person-name {
+            font-size: 1.2rem;
+        }
+        
+        .person-title {
+            font-size: 0.95rem;
+        }
+        
+        .animated-line {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        /* Small mobile adjustments */
+        .hero-content h1 {
+            font-size: 28px;
+        }
+        
+        .highlight {
+            font-size: 28px;
+        }
+        
+        .hero-title {
+            font-size: 28px;
+        }
+        
+        .values-title {
+            font-size: 24px;
+        }
+        
+        .wwd-left-column h2 {
+            font-size: 28px;
+        }
+        
+        .text-block h2 {
+            font-size: 28px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2rem;
+        }
+        
+        .info-content h3 {
+            font-size: 1.3rem;
+        }
+        
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+        
+        .section-wrapper h1 span {
+            font-size: 2.5rem;
+        }
+        
+        .floating-img {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .cta-btn {
+            font-size: 1.2rem;
+        }
+        
+        .cta-btn i {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.3rem;
+        }
+        
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .whatsapp-float i {
+            font-size: 30px;
+        }
+        
+        .whatsapp-tooltip {
+            bottom: 90px;
+            right: 20px;
+            font-size: 12px;
+            padding: 8px 12px;
+        }
+        
+        .menu-slide-word {
+            width: 160px;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        
+        .sliding-menu-track {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .project-card {
+            flex: 0 0 250px;
+            height: 350px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+        }
+        
+        .project-type {
+            font-size: 0.9rem;
+        }
+        
+        .person-name {
+            font-size: 1.1rem;
+        }
+        
+        .person-title {
+            font-size: 0.9rem;
+        }
+        
+        .photo-placeholder {
+            width: 120px;
+            height: 130px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        /* Extra small screens */
+        .nav-links a {
+            font-size: 12px;
+        }
+        
+        .hero-content h1 {
+            font-size: 24px;
+        }
+        
+        .highlight {
+            font-size: 24px;
+        }
+        
+        .hero-title {
+            font-size: 24px;
+        }
+        
+        .section-wrapper h1 span {
+            font-size: 2rem;
+        }
+        
+        .floating-img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .cta-btn {
+            font-size: 1rem;
+        }
+        
+        .menu-slide-word {
+            width: 140px;
+            font-size: 13px;
+            margin-right: 10px;
+        }
+    }
+    
+    /* Fix for image gallery on mobile */
+    @media (max-width: 768px) {
+        .image-wrapper:nth-child(1),
+        .image-wrapper:nth-child(2),
+        .image-wrapper:nth-child(3) {
+            animation: slideUpDown 4s ease-in-out infinite alternate;
+        }
+        
+        .image-wrapper:nth-child(2) {
+            animation-delay: 1s;
+        }
+        
+        .image-wrapper:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+    }
+    
+    /* Fix for sliding menu on mobile */
+    @media (max-width: 768px) {
+        .sliding-menu-wrapper {
+            animation: slideWords 15s linear infinite;
+        }
+    }
+    
+    /* Fix for projects slider on mobile */
+    @media (max-width: 768px) {
+        @keyframes autoSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-305px * var(--total-cards, 8)));
+            }
+        }
+        
+        .project-card {
+            flex: 0 0 280px;
+            height: 400px;
+        }
+    }
+    
+    /* Fix for leadership structure on mobile */
+    @media (max-width: 768px) {
+        .structure-container {
+            min-height: 1200px;
+        }
+        
+        .level-2, .level-3 {
+            gap: 20px;
+        }
+        
+        .executive-card, .manager-card {
+            min-width: 200px;
+        }
+    }
+    
+    /* Ensure all images are responsive */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Fix for iframe maps */
+    iframe {
+        max-width: 100%;
+    }
+    
+    /* Hide some elements on very small screens */
+    @media (max-width: 480px) {
+        .paragraphy {
+            font-size: 12px;
+        }
+        
+        .hero-subtitle {
+            font-size: 14px;
+        }
+        
+        .value-list li {
+            font-size: 16px;
+        }
+        
+        .pillar-title {
+            font-size: 20px;
+        }
+        
+        .graphic-image-placeholder h3 {
+            font-size: 20px;
+            bottom: 50px;
+        }
+    }
+    
+    /* Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* Ensure all sections have proper width on mobile */
+    section {
+        width: 100%;
+        overflow: hidden;
+    }
+
 </style>
    
     
@@ -3375,7 +4632,7 @@ Schedule a Call <i>↗</i>
             </p>
             <div class="footer-divider"></div>
             <div class="footer-copyright">
-                &copy; 2026 MacMatlox Studio. All rights reserved.
+                &copy; 2026 MacMatlox Studio.| All rights reserved. | Serving Tembisa, Ekurhuleni and Gauteng
             </div>
         </div>
     </footer>
