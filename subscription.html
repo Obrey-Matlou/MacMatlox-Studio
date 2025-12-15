@@ -104,12 +104,12 @@
         }
         
         #main-header nav a:hover {
-            color: var(--yellow);
+            color: yellow;
             background: rgba(255, 215, 0, 0.1);
         }
         
         #main-header nav a:last-child {
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            background: yellow;
             color: var(--gray-dark);
             font-weight: 600;
             padding: 0.6rem 1.5rem;
@@ -184,7 +184,7 @@
         }
         
         .highlight {
-            color: var(--yellow);
+            color: yellow;
             position: relative;
             display: inline-block;
         }
@@ -268,7 +268,7 @@
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            border-color: var(--yellow);
+            border-color: yellow;
         }
         
         .card-header {
@@ -283,11 +283,11 @@
         .card-title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--yellow);
+            color: yellow;
         }
         
         .price-tag {
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            background: yellow;
             color: var(--gray-dark);
             padding: 12px 24px;
             border-radius: 50px;
@@ -333,7 +333,7 @@
         }
         
         .benefit-icon {
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            background: yellow;
             color: var(--gray-dark);
             width: 42px;
             height: 42px;
@@ -361,7 +361,7 @@
         }
         
         .discount-badge {
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-light) 100%);
+            background: yellow;
             color: var(--gray-dark);
             padding: 12px 24px;
             border-radius: 50px;
@@ -400,7 +400,7 @@
         label {
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--yellow-light);
+            color:yellow;
             font-size: 0.95rem;
             display: flex;
             align-items: center;
@@ -431,7 +431,7 @@
         
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            background: yellow;
             color: var(--gray-dark);
             border: none;
             padding: 18px 30px;
@@ -500,7 +500,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            background: yellow;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -525,7 +525,7 @@
         }
         
         .rating {
-            color: var(--yellow);
+            color:yellow;
             margin-bottom: 15px;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
@@ -628,7 +628,7 @@
         .success-message {
             text-align: center;
             padding: 40px;
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            background: yellow;
             color: var(--gray-dark);
             border-radius: 15px;
             margin: 20px 0;
@@ -919,7 +919,7 @@
         <div class="logo">
             <!-- Replace with actual logo image -->
       
-              <img src="assets/logo.avif" height="500%" width="600%" alt="MacMatlox Studio Logo">
+             <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html"><img src="assets/logo.avif" height="80px" width="100px" alt="MacMatlox Studio Logo"></a> 
         </div>
         <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
@@ -1189,11 +1189,18 @@
             <i class="fas fa-credit-card"></i> Accepted Payment Methods
         </h3>
         <div class="payment-methods">
-            <i class="fab fa-cc-visa" title="Visa"></i>
-            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-            <i class="fab fa-cc-paypal" title="PayPal"></i>
-            <i class="fas fa-university" title="Bank Transfer"></i>
-            <i class="fas fa-money-bill-wave" title="Cash"></i>
+         <a href="https://paystack.com/your-payment-link" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-credit-card" title="Pay with PayStack"></i>
+
+</a>       
+
+<a href="#" class="bank-transfer-link" onclick="showBankDetails()">
+    <i class="fas fa-university" title="Bank Transfer"></i>
+</a>
+
+<a href="#" class="bank-transfer-link" onclick="showBankDetails()">
+            <i class="fas fa-money-bill-wave" title="Cash at Cafe"></i>
+            </a>
         </div>
         <p style="text-align: center; margin-top: 10px; font-size: 0.85rem; color: var(--gray-light);">
             First payment of R50 due upon activation at our cafe
@@ -1208,10 +1215,10 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="avatar">TS</div>
+                        <div class="avatar">ZM</div>
                         <div class="testimonial-info">
-                            <h4>Thabo Sibiya</h4>
-                            <p>Student & Gamer</p>
+                            <h4>Zama Mlambo</h4>
+                            <p>Worker | Internet access/ work related</p>
                         </div>
                     </div>
                     <div class="rating">
@@ -1226,9 +1233,9 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="avatar">NM</div>
+                        <div class="avatar">DM</div>
                         <div class="testimonial-info">
-                            <h4>Nomsa Mthembu</h4>
+                            <h4>Duduzile Mgcina</h4>
                             <p>Freelance Designer</p>
                         </div>
                     </div>
@@ -1244,9 +1251,9 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="avatar">LJ</div>
+                        <div class="avatar">MM</div>
                         <div class="testimonial-info">
-                            <h4>Lungelo Johnson</h4>
+                            <h4>Mlungis Mvubu</h4> </h4>
                             <p>Gaming Enthusiast</p>
                         </div>
                     </div>
@@ -1310,9 +1317,9 @@
     <!-- Ultra Minimal Footer -->
     <footer class="ultra-minimal-footer">
         <div class="footer-container">
-            <a href="/" class="footer-logo"><img src="assets/logo.avif" height="80px" width="100px" alt="MacMatlox Studio Logo"></a>
+            <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html"><img src="assets/logo.avif" height="80px" width="100px" alt="MacMatlox Studio Logo"></a> 
             <p class="footer-tagline">
-                2026 MacMatlox Studio. | All rights reserved. | Serving Tembisa, Ekurhuleni and Gauteng.
+                2024 MacMatlox Studio. | All rights reserved. | Serving Tembisa, Ekurhuleni and Gauteng.
             </p>
             <div class="footer-divider"></div>
             
