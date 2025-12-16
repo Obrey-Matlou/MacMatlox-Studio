@@ -791,7 +791,39 @@
                 padding: 8px 12px;
             }
         }
-    
+    .button-container {
+  display: flex;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.btn-primary {
+  background: yellow;
+  color: #333;
+}
+
+.btn-secondary {
+  background: #333;
+  color: white;
+}
+.btn-outline {
+  background: transparent;
+  color: #333;
+  border-color: #333;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
         
     </style>
 </head>
@@ -802,10 +834,15 @@
   <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html"><img src="assets/logo.avif" height="80px" width="100px" alt="MacMatlox Studio Logo"></a>  
         </div>
         <nav>
-            <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html" style="background: yellow; 
-               color: var(--dark-slate); padding: 0.6rem 1.5rem; border-radius: 6px; font-weight: 600;">
-             Home
-            </a>
+ <div class="button-container">
+  <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/digital.html" 
+     class="btn btn-primary">
+    Digital
+  </a>
+  <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Talent.html" class="btn btn-secondary">
+    Talent
+  </a>
+            
         </nav>
     </header>
     
@@ -1156,14 +1193,17 @@ MacMatlox Studio Team
                     <ul class="footer-links">
                        <div class="contact-info">
                         <div class="contact-item">
+                            <a href="https://www.google.com/maps/search/?api=1&query=85+Iringa+St,+Teanong+Tembisa+Gauteng" target="_blank" style="color: #bdc3c7; text-decoration: none;">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>85 Iringa Street, | 35 Luba Street, Temong Section, Tembisa, Gauteng</span>
                         </div>
                         <div class="contact-item">
+                            <a href="tel:+270105160540" class="contact-link">
                             <i class="fas fa-phone"></i>
                             <span>010 516 0540</span>
                         </div>
                         <div class="contact-item">
+                            <a href="mailto:macmatloxstudio.a@gmail.com" style="color: #bdc3c7; text-decoration: none;">
                             <i class="fas fa-envelope"></i>
                             <span>macmatloxstudio.a@gmail.com</span>
                         </div>
@@ -1176,9 +1216,9 @@ MacMatlox Studio Team
                 <div class="footer-section">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-headphones"></i> Talent Management</a></li>
-                        <li><a href="#"><i class="fas fa-wifi"></i> Internet Cafe</a></li>
-                        <li><a href="#"><i class="fas fa-print"></i> Digital Solutions</a></li>
+                        <li><a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Talent.html"><i class="fas fa-headphones"></i> Talent Management</a></li>
+                        <li><a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html"><i class="fas fa-wifi"></i> Internet Cafe</a></li>
+                        <li><a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/digital.html"><i class="fas fa-print"></i> Digital Solutions</a></li>
                        
                     </ul>
                 </div>
@@ -1188,7 +1228,7 @@ MacMatlox Studio Team
                     <div style="color: var(--off-white); opacity: 0.8;">
                         <p><strong>Monday - Friday:</strong> 8:00 AM - 18:00 PM</p>
                         <p><strong>Saturday:</strong> 9:00 AM - 18:00 PM</p>
-                        <p><strong>Sunday:</strong> 10:00 AM - 18:00 PM</p>
+                        <p><strong>Sunday:</strong>   9:00 AM - 18:00 PM</p>
                         <p><strong>Holidays:</strong> Special Hours</p>
                     </div>
                 </div>
@@ -1204,7 +1244,7 @@ MacMatlox Studio Team
     <div class="whatsapp-tooltip">Chat with us on WhatsApp!</div>
  <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html"><img src="assets/logo.avif" height="80px" width="100px" alt="MacMatlox Studio Logo"></a> 
             <div class="footer-bottom">
-                <p> 2024 MacMatlox Studio.| All rights reserved. | Serving Tembisa, Ekurhuleni and Gauteng</p>
+                <p>2024 MacMatlox Studio | All rights reserved | Serving Tembisa, Ekurhuleni and Gauteng.</p>
             </div>
         </div>
     </footer>
