@@ -3794,177 +3794,6 @@ section {
     }
 }
 
-/* Fix WhatsApp button on mobile */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        width: 55px !important;
-        height: 55px !important;
-        bottom: 15px !important;
-        right: 15px !important;
-    }
-    
-    .whatsapp-float i {
-        font-size: 25px !important;
-    }
-    
-    .whatsapp-tooltip {
-        bottom: 75px !important;
-        right: 10px !important;
-        font-size: 12px !important;
-        padding: 8px 10px !important;
-        white-space: normal !important;
-        max-width: 150px !important;
-        text-align: center !important;
-    }
-}
-
-/* Fix images on mobile */
-@media (max-width: 768px) {
-    img, video {
-        max-width: 100% !important;
-        height: auto !important;
-        margin-right: 0 !important;
-        display: block !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-}
-
-/* Fix text alignment and spacing */
-@media (max-width: 768px) {
-    h1, h2, h3, .section-title, .hero-title, .values-title {
-        text-align: center !important;
-        padding: 0 15px !important;
-    }
-    
-    p, .subtitle, .hero-subtitle {
-        text-align: center !important;
-        padding: 0 15px !important;
-    }
-    
-    .animated-line {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-}
-
-/* Fix the design section sliding menu */
-@media (max-width: 768px) {
-    .sliding-menu-track {
-        padding: 15px 0 !important;
-    }
-    
-    .menu-slide-word {
-        width: 200px !important;
-        font-size: 14px !important;
-        padding: 8px 10px !important;
-        margin-right: 15px !important;
-    }
-    
-    .dynamic-content-box {
-        height: 300px !important;
-    }
-}
-
-/* Fix awards section */
-@media (max-width: 768px) {
-    .award-card {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 10px !important;
-        padding: 15px !important;
-    }
-    
-    .award-actions {
-        width: 100% !important;
-        justify-content: space-between !important;
-    }
-}
-
-/* Ensure all buttons are tappable on mobile */
-@media (max-width: 768px) {
-    button, .btn, .subscribe-btn, .appointment-link, .social-link {
-        min-height: 44px !important;
-        min-width: 44px !important;
-        padding: 12px 20px !important;
-        font-size: 16px !important;
-    }
-}
-
-/* Fix the "Ready to take your Brand" section */
-@media (max-width: 768px) {
-    .section-wrapper h1 span {
-        font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
-        display: block !important;
-        text-align: center !important;
-    }
-    
-    .cta-btn {
-        font-size: 1.2rem !important;
-        padding: 15px 25px !important;
-    }
-    
-    .floating-img {
-        width: 100px !important;
-        height: 100px !important;
-        opacity: 0.15 !important;
-    }
-}
-
-/* ====== ADD THESE FOR EXTRA PROFESSIONAL TOUCH ====== */
-
-/* Smooth transitions for mobile */
-* {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Better touch feedback */
-button:active, .btn:active, a:active {
-    transform: scale(0.98);
-    transition: transform 0.1s;
-}
-
-/* Prevent text size adjustment on orientation change */
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
-/* Optimize images for mobile */
-img {
-    -webkit-user-drag: none;
-    user-select: none;
-}
-
-/* Better scrolling on iOS */
-.scroll-container {
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Hide scrollbars but keep functionality */
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-/* Add this to fix hero video specifically */
-@media (max-width: 768px) {
-    .hero {
-        padding-top: 80px !important;
-    }
-    
-    .hero-visual {
-        order: 2 !important;
-        margin-top: 20px !important;
-    }
-    
-    .hero-content {
-        order: 1 !important;
-    }
-}
-
 </style>
    
     
@@ -4359,49 +4188,49 @@ img {
         const projects = [
             {
                 id: 1,
-                title: "Wedding Photography",
-                type: "Event Photography",
+                title: "Brand Design",
+                type: "Brand your product",
                 image: "assets/WhatsApp Image 2025-12-08 at 09.02.03_f015d98f.jpg"
             },
             {
                 id: 2,
-                title: "Product Commercial",
-                type: "Videography",
+                title: "Brand Design",
+                type: "Design your brand",
                 image: "assets/IMG-20251208-WA0007.jpg"
             },
             {
                 id: 3,
-                title: "Corporate Branding",
-                type: "Photography",
+                title: "Product Branding",
+                type: "Design product for marketing",
                 image: "assets/IMG-20251208-WA0021.jpg"
             },
             {
                 id: 4,
-                title: "Music Video",
-                type: "Videography",
+                title: "Outdoor Photography",
+                type: "Photograpy",
                 image: "assets/Image.jpg"
             },
             {
                 id: 5,
-                title: "Portrait Session",
-                type: "Photography",
+                title: "Our Brand",
+                type: "Branding",
                 image: "assets/WhatsApp Image 2025-12-02 at 12.18.05_f5185337.jpg"
             },
             {
                 id: 6,
-                title: "Architecture",
-                type: "Photography",
+                title: "Graphic Design",
+                type: "Poster",
                 image: "assets/IMG-20251208-WA0019.jpg"
             },
             {
                 id: 7,
-                title: "Fashion Shoot",
+                title: "Outdoor Shoot",
                 type: "Photography",
                 image: "assets/welcome.jpg"
             },
             {
                 id: 8,
-                title: "Documentary Film",
+                title: "Videography Shoot",
                 type: "Videography",
                 image: "assets/IMG-20251208-WA0022.jpg"
             }
