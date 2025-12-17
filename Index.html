@@ -2027,7 +2027,7 @@ font-size: 3rem;
         }
 
         .award-title {
-            color: var(--gold);
+            color: yellow;
             font-weight: 500;
             font-size: 1rem;
         }
@@ -2049,7 +2049,7 @@ font-size: 3rem;
         }
 
         .collaborate-btn:hover {
-            color: var(--gold-light);
+            color: yellow;
             text-decoration: underline;
         }
 
@@ -2057,7 +2057,7 @@ font-size: 3rem;
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background-color: var(--gold);
+            background-color: yellow;
             color: var(--dark-bg);
             border: none;
             display: flex;
@@ -2164,11 +2164,11 @@ font-size: 3rem;
         .ultra-minimal-footer {
             background: var(--dark-surface);
             border-top: 1px solid #eaeaea;
-            padding: 40px 20px;
+            padding: 40px 150px;
         }
 
         .footer-container {
-            max-width: 800px;
+            max-width: 3000px;
             margin: 0 auto;
             text-align: center;
         }
@@ -3149,6 +3149,7 @@ font-size: 3rem;
     img, video {
         max-width: 100%;
         height: auto;
+        margin-right: 10%;
     }
     
     /* Fix for iframe maps */
@@ -3191,6 +3192,348 @@ font-size: 3rem;
         width: 100%;
         overflow: hidden;
     }
+
+    .info-content p {
+    margin: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.address {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.address:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.contact-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* ====== FIX FOR "ENTERTAINMENT" TEXT ON MOBILE ====== */
+
+/* Target the hero section h1 specifically */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+        line-height: 1.1 !important;
+        word-break: break-word !important;
+    }
+    
+    .hero-content .highlight {
+        font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+        padding: 0 15px !important;
+        text-align: center !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .hero-content .highlight {
+        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+        display: inline !important;
+    }
+    
+    /* If "Entertainment & Digital Solutions" is in separate spans */
+    .hero-content h1 span {
+        display: inline !important;
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+        word-spacing: normal !important;
+    }
+    
+    .hero-content .highlight {
+        font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+    }
+    
+    /* For very long text like "Entertainment" */
+    .hero-content h1 br {
+        display: none !important; /* Remove line breaks if causing issues */
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        letter-spacing: -0.5px !important;
+    }
+    
+    .hero-content .highlight {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    }
+}
+
+/* Alternative: Use fluid typography for hero title */
+.hero-content h1 {
+    font-size: clamp(1.8rem, 6vw, 4rem) !important;
+}
+
+/* ====== FIX FOR VIDEO AND TEXT ALIGNMENT ON MOBILE ====== */
+
+/* Assuming your video section has classes like .video-section, .video-container, .video-description */
+
+@media (max-width: 768px) {
+    /* Center video container */
+    .video-container, 
+    .video-wrapper,
+    .video-section > div,
+    .video-player,
+    video {
+        display: block !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        float: none !important;
+    }
+    
+    /* Remove any margin-right that might be pushing content */
+    video, 
+    .video-container iframe,
+    .video-player {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 250px !important;
+    }
+    
+    /* Center text description */
+    .video-description,
+    .video-caption,
+    .video-text,
+    .video-section p {
+        text-align: center !important;
+        margin: 20px auto !important;
+        padding: 0 15px !important;
+        max-width: 90% !important;
+        display: block !important;
+        float: none !important;
+    }
+    
+    /* Remove any specific margin-right that might exist */
+    .video-description {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    
+    /* Ensure the entire video section is centered */
+    .video-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 20px 15px !important;
+    }
+    
+    /* If using flexbox */
+    .video-section > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Make video responsive */
+    video,
+    .video-container iframe {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 300px !important;
+        border-radius: 10px !important;
+    }
+    
+    /* Text description styling */
+    .video-description {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        padding: 0 10px !important;
+    }
+    
+    /* Remove any float properties */
+    .video-container,
+    .video-description {
+        float: none !important;
+        clear: both !important;
+    }
+}
+
+/* Fix for the specific issue with margin-right on video */
+@media (max-width: 768px) {
+    /* This targets the problematic margin-right you mentioned */
+    img, video, .video-container, iframe {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* If video is inside a flex container */
+@media (max-width: 768px) {
+    .video-flex-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .video-flex-item {
+        width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+/* ====== SPECIFIC FIXES ====== */
+
+/* If "Entertainment" has a specific class */
+.hero-content h1 .entertainment-text {
+    font-size: clamp(1.8rem, 6vw, 4rem) !important;
+    word-break: break-word !important;
+    display: inline-block !important;
+}
+
+/* For the exact text from your image */
+@media (max-width: 768px) {
+    /* This targets "Entertainment & Digital Solutions" */
+    .hero-title,
+    .hero-main-title,
+    .hero-heading {
+        font-size: clamp(2rem, 7vw, 3rem) !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    /* Break long words if needed */
+    .hero-title {
+        word-break: break-word !important;
+    }
+}
+
+/* For video section specifically */
+@media (max-width: 768px) {
+    /* Target any div containing video */
+    div[class*="video"],
+    section[class*="video"],
+    .media-section,
+    .content-media {
+        text-align: center !important;
+    }
+    
+    /* Target paragraph after video */
+    video + p,
+    .video-container + p,
+    iframe + p {
+        text-align: center !important;
+        margin: 15px auto !important;
+        max-width: 500px !important;
+        padding: 0 20px !important;
+    }
+}
+
+/* ====== QUICK MOBILE FIXES ====== */
+
+/* Fix Entertainment text */
+@media (max-width: 768px) {
+    h1, .hero-content h1 {
+        font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+        line-height: 1.2 !important;
+        word-break: break-word !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+}
+
+/* ========== FIX ENTERTAINMENT TEXT ON MOBILE ========== */
+@media (max-width: 992px) {
+    .hero-content h1,
+    .hero-title,
+    h1.hero-title,
+    .main-hero-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+        line-height: 1.1 !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1,
+    .hero-title,
+    h1.hero-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+        padding: 0 10px !important;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    /* If Entertainment is in a span */
+    .hero-content h1 span,
+    .hero-title span,
+    .highlight {
+        font-size: inherit !important;
+        display: inline !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1,
+    .hero-title {
+        font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+        letter-spacing: -0.3px !important;
+    }
+    
+    /* Break long word "Entertainment" */
+    .hero-content h1 br {
+        display: inline !important;
+        content: " " !important;
+    }
+}
+
+
 
 </style>
    
@@ -3790,7 +4133,7 @@ font-size: 3rem;
 </h1>
 
 
-<button class="cta-btn" onclick="scheduleCall()">
+<button  class="cta-btn" onclick="scheduleCall()">
 Schedule a Call <i>↗</i>
 </button>
 </div>
@@ -3936,11 +4279,27 @@ Schedule a Call <i>↗</i>
                         </div>
                         <div class="info-content">
                             <h3><span class="location-name"><i class="fas fa-camera"></i> MacMatlox Studio Swazi Inn Branch</span></h3>
-                            <p>85 Iringa St, Teanong</p>
-                            <p>Thembisa, 1632</p>
+                             <div class="address" onclick="openGoogleMaps(' 85 Iringa St, Temong , Tembisa, 1632')">
+        <p>
+            <i class="fas fa-map-marker-alt"></i> 
+           85 Iringa St, Teanong
+        </p>
+        <p>Thembisa, 1632</p>
+    </div>
+                            
+                            <p></p>
+                            <p></p>
                             <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
-                            <p><i class="fas fa-phone"></i>  010 516 0540</p>
-                            <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
+                            <p class="clickable-phone">
+        <a href="tel:+270105160540" class="contact-link">
+            <i class="fas fa-phone"></i> 010 516 0540
+        </a>
+    </p>
+                            <p class="clickable-email">
+        <a href="mailto:macmatloxstudio.a@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com
+        </a>
+    </p>
                         </div>
                     </div>
                     
@@ -3954,16 +4313,37 @@ Schedule a Call <i>↗</i>
                             </div>
                         </div>
                         <div class="info-content">
-                            <h3><span class="location-name"><i class="fas fa-film"></i> MacMatlox Studio Emmangweni Branch</span></h3>
-                            <p>35 Luba Street, Temong Section</p>
-                            <p>Tembisa, South Africa</p>
-                            <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
-                            <p><i class="fas fa-phone"></i> 010 516 0540</p>
-                            <p><i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com</p>
-                        </div>
+    <h3>
+        <span class="location-name">
+            <i class="fas fa-film"></i> MacMatlox Studio Emmangweni Branch
+        </span>
+    </h3>
+    
+    <div class="address" onclick="openGoogleMaps('35 Luba Street, Temong Section, Tembisa, South Africa')">
+        <p>
+            <i class="fas fa-map-marker-alt"></i> 
+            35 Luba Street, Temong Section
+        </p>
+        <p>Tembisa, South Africa</p>
+    </div>
+    
+    <p><i class="far fa-clock"></i> Mon-Fri: 8AM-6PM | Sat-Sun: 8AM-6PM</p>
+    
+    <p class="clickable-phone">
+        <a href="tel:+270105160540" class="contact-link">
+            <i class="fas fa-phone"></i> 010 516 0540
+        </a>
+    </p>
+    
+    <p class="clickable-email">
+        <a href="mailto:macmatloxstudio.a@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> macmatloxstudio.a@gmail.com
+        </a>
+    </p>
+</div>
                     </div>
                     
-                    <button class="book-btn btn-primary" id="whatsapp-book-btn2">
+                    <button class="book-btn btn-primary" style="background-color: yellow; width: 40%;" id="whatsapp-book-btn2">
                         <span>Book a Consultation</span>
                         <div class="arrow-circle">
                             <div class="arrow">
@@ -4043,14 +4423,16 @@ Schedule a Call <i>↗</i>
 
     <!-- Footer -->
     <footer class="ultra-minimal-footer">
-        <div class="footer-container">
-            <a href="/" class="footer-logo">MacMatlox Studio</a>
+       
+            <div class="logo">
+                 <div class="footer-container"> 
+       <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Index.html"><img src="assets/logo.avif" height="150px" width="160px" alt="MacMatlox Studio Logo"></a> 
             <p class="footer-tagline">
                 Professional photography and videography studio creating timeless visual stories.
             </p>
             <div class="footer-divider"></div>
             <div class="footer-copyright">
-                &copy; 2026 MacMatlox Studio.| All rights reserved. | Serving Tembisa, Ekurhuleni and Gauteng
+                &copy; 2024 MacMatlox Studio | All rights reserved | Serving Tembisa, Ekurhuleni and Gauteng.
             </div>
         </div>
     </footer>
@@ -4246,6 +4628,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
+
+function openGoogleMaps(address) {
+    const encodedAddress = encodeURIComponent(address);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+}
 </script>
 
     <script src="script.js"></script>
