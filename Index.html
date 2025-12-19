@@ -3794,6 +3794,169 @@ section {
     }
 }
 
+
+
+/* Navigation Styling */
+.main-header {
+    background-color: transparency; /* Dark Navy with transparency */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.logo-accent {
+    color: yellow;
+    font-weight: 800;
+}
+
+.nav-link {
+    color: yellow;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+/* Subscribe Button */
+.btn-subscribe {
+    background-color: yellow;
+    color: black;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-size: 13px;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-subscribe:hover {
+    background-color: white;
+    transform: scale(1.05);
+    color: black;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: #0a1420;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 2px solid yellow;
+    }
+    
+    .nav-item {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+}
+/* Mobile Hero Section Optimizations */
+@media (max-width: 768px) {
+    .about-section {
+        /* Adds extra space between navigation bar and text */
+        padding-top: 140px !important; 
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-left {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 38px !important; /* Professional size for mobile */
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+        line-height: 1.2 !important;
+       
+    }
+
+    /* Target the Tembisa text specifically to force it to a new line */
+    .hero-title span.location-text, 
+    .hero-title br + span {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 10px;
+        opacity: 0.9;
+   
+    }
+}
+
+/* Mobile spacing fix for Navigation Divider vs Content */
+@media (max-width: 768px) {
+    .about-section {
+        /* Increased padding to push text down away from the yellow divider */
+        padding-top: 300px !important; 
+    }
+
+    /* Adds breathing room to the sliding menu track borders */
+    .sliding-menu-track {
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+
+    /* Ensures the main hero title has a clean gap from the top on mobile */
+    .content-left {
+        padding-top: 40px !important;
+    }
+}
+
+/* FORCE MOBILE SPACING UPDATE */
+@media screen and (max-width: 768px) {
+    /* 1. Push the entire content area down further from the yellow line */
+    .about-section {
+        padding-top: 180px !important; 
+        margin-top: 0 !important;
+    }
+
+    /* 2. Ensure the text container has its own internal gap */
+    .content-left {
+        padding-top: 50px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    /* 3. Force "Right here in Tembisa" to a new line and add space */
+    .hero-title {
+        line-height: 1.4 !important;
+    }
+    
+    .hero-title span {
+        display: block !important;
+        margin-top: 15px !important;
+    }
+}
+
+
 </style>
    
     
@@ -3803,37 +3966,43 @@ section {
      <!-- Header -->
     
         
+<header class="main-header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark container-fluid px-4">
+        <a class="navbar-brand" href="#">
+            <span class="logo"><img src="assets/logo.avif" height="150px" width="160px" alt="MacMatlox Studio Logo"></span>
+        </a>
 
-<header id="main-header">
-    <div class="logo">
-        <img src="assets/logo.avif" alt="MacMatlox Studio Logo">
-    </div>
-    <div class="nav-links">
-    <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Talent.html">Talent</a>
-    <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/digital.html">Digital Solutions</a>
-    <a href="#about-section">About Us</a>
-    <a href="#contact">Contact Us</a>
-
+        <div class="d-flex align-items-center gap-3 order-lg-3">
+            <a href="#subscribe" class="btn btn-subscribe d-none d-sm-block">SUBSCRIBE</a>
+            
+            <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-     <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html" 
-   class="subscribe-btn" 
-   target="_blank"
-   onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/subscription.html', '_blank'); return false;">
-    Subscribe Now
-</a>
+
+        <div class="collapse navbar-collapse order-lg-2" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#talent">Talent</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item d-sm-none mt-3">
+                    <a href="#subscribe" class="btn btn-subscribe w-100">SUBSCRIBE</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    
 </header>
    
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 style="font-size: 50px; font-weight: 400;">Unleash Your Potential: <span class="highlight" style="color: grey; font-size: 60px;font-weight: 500;">Entertainment & Digital Solutions</span>Right Here in Tembisa.</h1>
+            <h1 style="font-size: 50px; font-weight: 400;">Unleash Your Potential: <span class="highlight" style="color: grey; font-size: 60px;font-weight: 500;">Entertainment & Digital Solutions.</span><br>Right Here in Tembisa.</h1>
                 <div class="animated-line"></div>
                 <div class="code-block">
                     <div class="line-title">
-                        🌐 Talent, Execute Events, and Power Your Digital Growth.
+                        
                     </div>
                     <div class="Appointments">
                         <p></p>
@@ -3843,7 +4012,7 @@ section {
    class="subscribe-btn" 
    target="_blank"
    onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html', '_blank'); return false;">
-    Schedule an Appointment🟡<span>&#8599;</span>
+    Schedule an Appointment
 </a>
                         
                     </div>
@@ -3917,9 +4086,13 @@ section {
             <div class="wwd-static-content">
                 <h2 style="color: yellow;">What We Do</h2>
                  <div class="animated-line"></div>
-                <p class="subtitle"style="color: gray;  font-weight: 900;">As a multi-disciplinary agency, MacMatlox Studio operates on two strong pillars</p>
-                <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" class="appointment-link">Schedule an Appointment🟡<span>&#8599;</span></a>
-            <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html"><img src="assets/c2.jpg" style="height: 40%; margin-top: 5%;"></a>
+                <p class="subtitle"style="color: gray;  font-weight: 900;">As a multi-disciplinary agency, MacMatlox Studio operates on two strong pillar</p>
+                
+                
+        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" class="appointment-link">Schedule an Appointment</span></a>
+            
+    
+        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html"><img src="assets/c2.jpg" style="height: 30%; margin-top: 5%;"></a>
             </div>
 
             <div class="talent-description-area">
@@ -3935,7 +4108,7 @@ section {
                 <div class="service-pillar">
                     <div class="pillar-nav-wrapper">
                         <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/Talent.html" style="text-decoration: none;">
-  <div class="pillar-nav" style="color: white; font-weight: 800; font-size: 25px;">Talent Management 🎬</div>
+  <div class="pillar-nav" style="color: white; font-weight: 800; font-size: 25px;">Talent Management </div>
 </a>
                         <div class="pillar-nav">
   <button onclick="window.location.href='https://obrey-matlou.github.io/MacMatloxStudio_Website/Talent.html';">See more</button>
@@ -3957,7 +4130,7 @@ section {
                 <div class="service-pillar">
                     <div class="pillar-nav-wrapper">
                         <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/digital.html" style="text-decoration: none;">
-                        <div class="pillar-nav" style="color:white; font-weight: 800; font-size: 25px;">Digital Solutons 💻</div>
+                        <div class="pillar-nav" style="color:white; font-weight: 800; font-size: 25px;">Digital Solutons </div>
                         </a>
                       
                         <div class="pillar-nav">
@@ -4009,7 +4182,7 @@ section {
             </div>
             <div class="person-name">Obrey Matlou </div>
             <div class="person-title"> Founder & Ceo</div>
-            <div class="department">Talent Management & Digital Solutions</div>
+           
         </div>
     </div>
     
@@ -4023,7 +4196,7 @@ section {
             </div>
             <div class="person-name">Lesedi Tjia</div>
             <div class="person-title"> COO</div>
-            <div class="department">Talent Management & Digital Solutions</div>
+            
         </div>
         
         <div class="executive-card" id="coo">
@@ -4034,7 +4207,7 @@ section {
             </div>
             <div class="person-name">Kabelo Themeli</div>
             <div class="person-title">Accountant</div>
-            <div class="department">Talent Management & Digital Solutions</div>
+          
         </div>
         
         <div class="executive-card" id="cfo">
@@ -4045,7 +4218,7 @@ section {
             </div>
             <div class="person-name">Noluthando</div>
             <div class="person-title">Administration </div>
-            <div class="department">Digital Solutions</div>
+            
         </div>
     </div>
     
@@ -4061,7 +4234,7 @@ section {
             </div>
             <div class="person-name">Khaya Mbuli</div>
             <div class="person-title">Branch Manager</div>
-            <div class="department">Talent Management & Digital Solutions</div>
+            
         </div>
         
         <div class="executive-card" id="coo">
@@ -4072,7 +4245,7 @@ section {
             </div>
             <div class="person-name">Basetsana Raphadu</div>
             <div class="person-title"> Public Relations</div>
-            <div class="department">Talent Management</div>
+        
         </div>
         
         <div class="executive-card" id="cfo">
@@ -4083,7 +4256,7 @@ section {
             </div>
             <div class="person-name">Bohlale Thobejane </div>
             <div class="person-title">Content Creator</div>
-            <div class="department">Digital Solutions</div>
+          
         </div>
     </div>
     
@@ -4097,7 +4270,6 @@ section {
             </div>
             <div class="person-name">Nick Khoza</div>
             <div class="person-title">Graphic designer</div>
-            <div class="department">Talent Management</div>
         </div>
         <!-- Add other managers here -->
     </div>
