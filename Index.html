@@ -2585,7 +2585,7 @@ font-size: 3rem;
         }
         
         .values-title {
-            font-size: 36px;
+            font-size: px;
         }
         
         .wwd-left-column h2 {
@@ -2609,6 +2609,7 @@ font-size: 3rem;
         /* Tablet adjustments */
         .hero-content h1 {
             font-size: 40px;
+    
         }
         
         .highlight {
@@ -3956,7 +3957,837 @@ section {
     }
 }
 
+/* --- MOBILE RESPONSIVE OVERRIDES --- */
+@media (max-width: 768px) {
+    /* 1. Hero Section Heading Space */
+    .hero-title {
+        font-size: 32px !important;
+        margin-top: 40px !important; /* Space between nav and heading */
+        margin-right: 0 !important;
+        text-align: center;
+    }
 
+    /* 2. Center Video Properly */
+    .hero-video-container {
+        height: 300px !important; /* Fixed height for mobile */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        padding-top: 0 !important;
+    }
+
+    /* 3. Gap & Font Size for 'Local Expert' */
+    .wwd-left-column h2 {
+        font-size: 36px !important;
+        margin-bottom: 10px !important;
+    }
+    .talent-description-area {
+        margin-top: 10px !important; /* Closes gap */
+        font-size: 14px !important; /* Matches rest of website */
+        line-height: 1.5;
+    }
+
+    /* 4. Calendar Size (Half Size) */
+    .calendar-container, #calendar-widget {
+        transform: scale(0.5);
+        transform-origin: top center;
+        margin-bottom: -150px; /* Adjust for scale pull-up */
+    }
+
+    /* 5. Sliding Content Visibility */
+    .what-we-do-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    .wwd-left-column, .wwd-right-track {
+        width: 100% !important;
+        border-left: none !important;
+    }
+    .services-wrapper {
+        width: 100% !important;
+        flex-direction: column !important; /* Stacked for visibility on mobile */
+        transform: none !important;
+    }
+    .service-pillar {
+        width: 100% !important;
+        padding: 20px 0 !important;
+    }
+
+    /* 6. Get In Touch Cards */
+    .contact-content {
+        grid-template-columns: 1fr !important; /* Stack cards */
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .info-item {
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .contact-info {
+        padding: 20px !important;
+    }
+    
+    /* Center text for brand cta */
+    .brand-cta-section h1 {
+        font-size: 36px !important;
+    }
+}
+
+/* Fix for overlapping cards in Get In Touch */
+.contact-container {
+    overflow-x: hidden;
+}
+
+/* --- COMPREHENSIVE MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    /* 1. Hero Heading Spacing & Typography */
+    .hero-title {
+        font-size: 32px !important;
+        margin-top: 60px !important; /* Creates space from the nav bar */
+        margin-right: 0 !important;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* 2. Hero Video Center Alignment & Fit */
+    .hero-video-container {
+        height: 250px !important; /* Controlled height for mobile */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Ensures it fits properly without stretching */
+        padding-top: 0 !important; /* Removes the 10% padding from original */
+    }
+
+    /* 3. Spacing: Why Macmatlox vs Local Expert & Font Size */
+    .wwd-left-column h2 {
+        font-size: 34px !important;
+        margin-bottom: 5px !important; /* Closes the gap */
+    }
+    .talent-description-area {
+        margin-top: 0 !important; /* Removes gap between heading and text */
+        font-size: 14px !important; /* Matches site-wide paragraph font size */
+        padding-right: 0 !important;
+        line-height: 1.4;
+    }
+
+    /* 4. Calendar Size (Half Size) */
+    /* Assuming your calendar is within a container with id 'calendar-widget' or class '.calendar' */
+    #calendar-widget, .calendar-container {
+        transform: scale(0.6); /* Reduced to roughly half size */
+        transform-origin: top center;
+        margin-bottom: -100px; /* Offset the scale empty space */
+        width: 100% !important;
+    }
+
+    /* 5. Sliding Talent & Digital Solutions Visibility */
+    .what-we-do-section {
+        flex-direction: column !important;
+        padding: 40px 15px !important;
+    }
+    .wwd-left-column, .wwd-right-track {
+        width: 100% !important;
+        border-left: none !important;
+    }
+    .services-wrapper {
+        display: block !important; /* Switch from flex to block to stack for visibility */
+        width: 100% !important;
+        transform: none !important; /* Disable horizontal slide for easier mobile reading */
+    }
+    .service-pillar {
+        width: 100% !important;
+        padding: 20px 0 !important;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .pillar-image-container-right {
+        width: 100% !important;
+        aspect-ratio: 16/9;
+    }
+
+    /* 6. Get In Touch Cards Responsiveness */
+    .contact-content {
+        grid-template-columns: 1fr !important; /* Single column stack */
+        padding: 10px !important;
+        gap: 20px;
+    }
+    .contact-info {
+        padding: 10px !important;
+    }
+    .info-item {
+        margin-bottom: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 20px !important;
+    }
+    .contact-header h1 {
+        font-size: 28px !important;
+    }
+    
+    /* Ensure the map doesn't break the layout */
+    #map {
+        min-height: 300px !important;
+        width: 100%;
+    }
+}
+
+/* --- Get In Touch Cards Responsiveness --- */
+@media (max-width: 768px) {
+    /* 1. Container adjustments to prevent overflow */
+    .contact-info {
+        padding: 20px 15px !important; /* Reduced padding from 30px */
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* 2. Decrease card size and spacing */
+    .info-item {
+        margin-bottom: 15px !important; /* Reduced from 40px */
+        padding: 15px !important; /* Reduced from 25px */
+        flex-direction: row !important; /* Keep icon and text side-by-side */
+        align-items: center !important;
+        border-radius: 12px !important; /* Slightly sharper corners for compact look */
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    /* 3. Scale down the icons */
+    .info-icon {
+        width: 45px !important; /* Reduced from 60px */
+        height: 45px !important; /* Reduced from 60px */
+        margin-right: 15px !important; /* Reduced from 25px */
+        font-size: 1.2rem !important; /* Smaller icon glyph */
+    }
+
+    /* 4. Adjust text sizes inside cards */
+    .info-content h3 {
+        font-size: 1.1rem !important; /* Smaller heading */
+        margin-bottom: 4px !important;
+    }
+
+    .info-content .location-name {
+        font-size: 1rem !important; /* Smaller location name */
+        gap: 6px !important;
+    }
+
+    .info-content p {
+        font-size: 0.85rem !important; /* Standardized small font for address */
+        line-height: 1.3 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 5. CTA Button responsiveness */
+    .cta-button {
+        padding: 12px 25px !important;
+        font-size: 0.9rem !important;
+        width: 100%; /* Full width button for easier tapping */
+        justify-content: center;
+    }
+}
+
+/* --- Get In Touch Cards Professional Centering & Scaling --- */
+@media (max-width: 768px) {
+    /* 1. Center the entire contact container */
+    .contact-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centers the cards horizontally */
+        justify-content: center !important;
+        padding: 20px 10px !important;
+        width: 100% !important;
+    }
+
+    .contact-info {
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Ensures the column of cards is centered */
+    }
+
+    /* 2. Decrease card size and ensure they fit the center */
+    .info-item {
+        width: 90% !important; /* Slightly smaller than screen width to show margins */
+        max-width: 350px !important; /* Keeps cards from getting too wide on tablets */
+        margin: 0 auto 15px auto !important; /* Centers card and adds bottom spacing */
+        padding: 15px !important;
+        display: flex !important;
+        flex-direction: row !important; /* Keeps icon and text side-by-side for a compact look */
+        align-items: center !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-radius: 15px !important;
+        border-left-width: 3px !important; /* Thinner accent line */
+    }
+
+    /* 3. Scale down the icons for a professional fit */
+    .info-icon {
+        width: 40px !important; 
+        height: 40px !important;
+        min-width: 40px !important;
+        margin-right: 15px !important;
+        margin-bottom: 0 !important; /* Removes vertical stacking margin */
+        font-size: 1.1rem !important;
+    }
+
+    /* 4. Optimize text for small screens */
+    .info-content h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .info-content .location-name {
+        font-size: 0.95rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .info-content p {
+        font-size: 0.85rem !important; /* Professional, readable small font */
+        margin-bottom: 0 !important;
+        line-height: 1.3 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* 5. Center the CTA Button */
+    .contact-cta {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 20px !important;
+    }
+
+    .cta-button {
+        width: 80% !important;
+        max-width: 280px !important;
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+        justify-content: center !important;
+    }
+}
+
+/* --- Get In Touch: Professional Centering Fix --- */
+@media (max-width: 768px) {
+    /* 1. Center the section heading and intro text */
+    .contact-header {
+        text-align: center !important;
+        padding: 40px 20px 20px !important;
+    }
+
+    .contact-header h1 {
+        font-size: 2.2rem !important; /* Professional mobile size */
+        margin-bottom: 10px !important;
+    }
+
+    .contact-header p {
+        font-size: 1rem !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    /* 2. Center the container and the cards */
+    .contact-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centers cards horizontally */
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    .contact-info {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Align the stack of cards to center */
+        padding: 20px 0 !important;
+    }
+
+    /* 3. Center card content (Icon + Text) */
+    .info-item {
+        width: 90% !important;
+        max-width: 340px !important;
+        margin: 0 auto !important; /* Manual centering */
+        padding: 15px !important;
+        display: flex !important;
+        flex-direction: column !important; /* Stack icon on top for centering */
+        align-items: center !important;    /* Center items inside card */
+        text-align: center !important;     /* Center all text */
+        border-left: none !important;      /* Remove side border for symmetry */
+        border-bottom: 3px solid yellow !important; /* Add bottom border instead */
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    /* 4. Center the Icon above text */
+    .info-icon {
+        margin-right: 0 !important; /* Remove side margin */
+        margin-bottom: 12px !important; /* Space below icon */
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* 5. Match text alignment inside cards */
+    .info-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .info-content .location-name {
+        justify-content: center !important; /* Center the yellow location name */
+        font-size: 1.1rem !important;
+    }
+
+    .info-content p {
+        font-size: 0.85rem !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+    }
+
+    /* 6. Professional Social Links Centering */
+    .social-links {
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 25px !important;
+    }
+}
+
+/* --- Professional Spacing & Alignment Fixes --- */
+@media (max-width: 768px) {
+    /* 1. Ensure content info text is centered above the cards */
+    .contact-header {
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    .contact-header p {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. Professional Card Alignment */
+    .contact-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centers cards horizontally */
+        padding: 20px 0 !important;
+    }
+
+    .info-item {
+        width: 90% !important;
+        max-width: 350px !important;
+        text-align: center !important; /* Centers text inside the card */
+        display: flex !important;
+        flex-direction: column !important; /* Stacks icon on top of text */
+        align-items: center !important;
+        margin-bottom: 20px !important; /* Space between individual cards */
+    }
+
+    /* 3. CENTERED CONTENT TEXT INSIDE CARDS */
+    .info-content {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .info-content .location-name {
+        justify-content: center !important;
+    }
+
+    /* 4. SPACE BETWEEN CARDS AND BOOKING BUTTON */
+    .contact-cta {
+        margin-top: 40px !important; /* Adds professional breathing room */
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .cta-button {
+        width: 85% !important;
+        max-width: 300px !important;
+        justify-content: center !important;
+    }
+}
+
+/* --- COMPREHENSIVE MOBILE RESPONSIVE UPDATES --- */
+@media (max-width: 768px) {
+    
+    /* 1. Calendar Size & Height Optimization */
+    /* Adjust this class/ID to match your actual calendar container name */
+    .calendar-container, #calendar-widget {
+        transform: scale(0.55) !important; /* Reduces width and height to roughly half */
+        transform-origin: top center !important;
+        height: auto !important;
+        max-height: 200px !important; /* Forces a cleaner, shorter vertical profile */
+        margin-bottom: -180px !important; /* Pulls up the next section to remove empty space caused by scaling */
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* 2. Professional Spacing Between Cards and Booking Button */
+    .contact-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-bottom: 20px !important;
+    }
+
+    .info-item {
+        margin-bottom: 20px !important; /* Standard spacing between address cards */
+        width: 90% !important;
+        text-align: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* 3. The "Get In Touch" Action Button Spacing */
+    .contact-cta {
+        margin-top: 50px !important; /* Added extra space for a "clean and professional" look */
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding-bottom: 40px !important; /* Extra padding at the bottom of the section */
+    }
+
+    .cta-button {
+        width: 80% !important;
+        max-width: 300px !important;
+        padding: 15px 25px !important;
+        font-size: 1rem !important;
+        justify-content: center !important;
+        border-radius: 50px !important;
+    }
+
+    /* 4. Center the Content Info Text to match the cards */
+    .info-content {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .info-content .location-name {
+        justify-content: center !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .info-content p {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* --- Professional Hero Video Mobile Alignment --- */
+@media (max-width: 768px) {
+    /* 1. Ensure the container has a professional height and is centered */
+    .hero-video-container {
+        width: 100% !important;
+        height: 350px !important; /* Defined height for a clean fit */
+        display: flex !important;
+        justify-content: center !important; /* Centers the video horizontally */
+        align-items: center !important;     /* Centers the video vertically */
+        overflow: hidden !important;
+        margin-top: 30px !important;        /* Space from heading */
+        border-radius: 12px !important;      /* Subtle rounding for a modern look */
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+    }
+
+    /* 2. Scale and fit the video perfectly */
+    .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;       /* Fills container without stretching */
+        object-position: center center !important; /* Ensures focal point stays centered */
+        padding-top: 0 !important;          /* Removes the 10% desktop padding */
+        display: block !important;
+    }
+
+    /* 3. Adjust Hero Heading to match centered video */
+    .hero-title {
+        text-align: center !important;
+        margin-right: 0 !important;         /* Reset desktop margin */
+        padding: 0 15px !important;
+        font-size: 32px !important;
+        margin-top: 40px !important;        /* Professional spacing from nav */
+    }
+}
+
+/* --- Final Fix: Center Hero Video on Mobile --- */
+@media (max-width: 768px) {
+    /* 1. Force the video container to center horizontally */
+    .hero-video-container {
+        width: 100vw !important;         /* Ensure it takes full viewport width */
+        height: 300px !important;        /* Set a professional mobile height */
+        margin-left: auto !important;    /* Critical for centering */
+        margin-right: auto !important;   /* Critical for centering */
+        left: 0 !important;              /* Reset any absolute positioning */
+        right: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        position: relative !important;
+        border-radius: 0px !important;   /* Clean edge-to-edge look on mobile */
+    }
+
+    /* 2. Scale and fit the video perfectly in the center */
+    .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;    /* Crops video to fill container without stretching */
+        object-position: center !important; /* Locks focal point to the middle */
+        padding-top: 0 !important;       /* Removes desktop padding that pushes it down */
+        margin: 0 !important;
+        transform: none !important;      /* Removes any animations that might offset it */
+    }
+
+    /* 3. Ensure the parent section doesn't push it right */
+    .content-left {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;  /* Centers the text and video stack */
+        text-align: center !important;
+    }
+
+    .hero-title {
+        margin-right: 0 !important;      /* Removes desktop offset */
+        text-align: center !important;
+        width: 100% !important;
+    }
+}
+/* --- Why Macmatlox vs Local Expert Mobile Refinement --- */
+@media (max-width: 768px) {
+    /* 1. Close the gap between the Main Heading and Sub-Heading */
+    .wwd-left-column h2 {
+        font-size: 34px !important; /* Smaller, cleaner heading */
+    
+        line-height: 1.2 !important;
+        text-align: center;
+    }
+
+    /* 2. Style the "Local Expert" paragraph to match site typography */
+    .talent-description-area {
+        margin-top: 5px !important; /* Closes the vertical gap significantly */
+        font-size: 14px !important; /* Matches standard site body font size */
+        line-height: 1.5 !important;
+        color: rgba(255, 255, 255, 0.8) !important; /* Professional muted white */
+        text-align: center;
+        padding-right: 0 !important; /* Remove desktop padding */
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 3. Ensure the container centers everything for a clean look */
+    .wwd-left-column {
+        padding: 40px 20px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .wwd-static-content {
+        margin-bottom: 25px !important; /* Space before the next element */
+        text-align: center;
+    }
+}
+
+/* --- ULTIMATE FIX FOR MACMATLOX VS LOCAL EXPERT GAP --- */
+@media (max-width: 768px) {
+    /* 1. Remove padding from the main left column container */
+    .wwd-left-column {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* 2. Target the wrapper that holds the "Why Macmatlox" heading */
+    .wwd-static-content {
+        margin-bottom: 0 !important; 
+        padding-bottom: 0 !important;
+        height: auto !important;
+    }
+
+    /* 3. Remove bottom margin from the H2 Heading */
+    .wwd-left-column h2 {
+        margin-bottom: 5px !important; /* This is the "little bit of space" you asked for */
+        padding-bottom: 0 !important;
+        line-height: 1.1 !important;
+    }
+
+    /* 4. Remove top margin/padding from the "Local Expert" paragraph area */
+    .talent-description-area {
+        margin-top: 0 !important;   /* Force the gap to close */
+        padding-top: 0 !important;
+        font-size: 14px !important; /* Matches site typography */
+        line-height: 1.4 !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 90% !important;
+    }
+    
+    /* 5. Center the sub-elements if they are using Flex */
+    .wwd-static-content, .talent-description-area {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
+/* --- CRITICAL FIX: CLOSE HEADING GAP ON MOBILE --- */
+@media (max-width: 768px) {
+    /* 1. Remove the 50px bottom margin from the heading wrapper */
+    .wwd-static-content {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* 2. Remove the 20px bottom margin from the H2 heading itself */
+    .wwd-left-column h2 {
+        margin-bottom: 5px !important; /* This is the only remaining small gap */
+        font-size: 32px !important;
+        text-align: center !important;
+    }
+
+    /* 3. Remove the 50px top margin from the description area */
+    .talent-description-area {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        font-size: 15px !important; /* Smaller font to match site typography */
+        text-align: center !important;
+        line-height: 1.4 !important;
+        width: 100% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* 4. Ensure the container doesn't force extra height */
+    .wwd-left-column {
+        justify-content: flex-start !important; /* Aligns content to top instead of center */
+        padding-top: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
+/* --- ULTIMATE GAP FIX: MACMATLOX & LOCAL EXPERT --- */
+@media (max-width: 768px) {
+    /* 1. Reset the entire section height to prevent content stretching */
+    .what-we-do-section {
+        min-height: auto !important; /* Forces the section to fit the content, not the screen */
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    /* 2. Tighten the Column Container */
+    .wwd-left-column {
+        width: 100% !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Center both headings */
+        justify-content: flex-start !important; /* Align to top */
+    }
+
+    /* 3. Remove the wrapper margin */
+    .wwd-static-content {
+        margin-bottom: 0 !important; /* Key: Removes the 50px gap below Why Macmatlox */
+        padding-bottom: 0 !important;
+        text-align: center !important;
+    }
+
+    /* 4. Reset Why Macmatlox Heading */
+    .wwd-left-column h2 {
+        font-size: 32px !important;
+    
+        
+    }
+
+    /* 5. Reset Local Expert Description area */
+    .talent-description-area {
+        margin-top: 0 !important;    /* Forces it to touch the heading above */
+        padding-top: 0 !important;
+        font-size: 15px !important;  /* Site-standard typography */
+        line-height: 1.4 !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 90% !important;
+    }
+}
+
+/* --- FINAL REPAIR: MACMATLOX & LOCAL EXPERT GAP --- */
+@media (max-width: 768px) {
+    /* 1. Reset the entire section height to stop it from forcing space */
+    .what-we-do-section {
+        min-height: auto !important; 
+        height: auto !important;
+        padding-top: 50px !important;
+        padding-bottom: 30px !important;
+    }
+
+    /* 2. Fix the Left Column container */
+    .wwd-left-column {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Forces items to touch the top */
+        align-items: center !important;
+        padding: 0 20px !important;
+    }
+
+    /* 3. Collapse the "Why Macmatlox" wrapper */
+    .wwd-static-content {
+        margin-bottom: 0 !important; /* Removes the 50px desktop gap */
+        padding-bottom: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* 4. Reset the H2 (Why Macmatlox Studio) */
+    .wwd-left-column h2 {
+        font-size: 32px !important;
+        margin-bottom: 8px !important; /* This is the ONLY gap now */
+        padding-bottom: 0 !important;
+        line-height: 1.1 !important;
+    }
+
+    /* 5. Reset the "Local Expert" description area */
+    .talent-description-area {
+        margin-top: 0 !important;    /* Closes the gap from below */
+        padding-top: 0 !important;
+        font-size: 15px !important;  /* Site-standard typography */
+        line-height: 1.5 !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
 </style>
    
     
