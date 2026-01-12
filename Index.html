@@ -4699,8 +4699,7 @@ section {
     /* 1. Reset the entire section height to prevent content stretching */
     .what-we-do-section {
         min-height: auto !important; /* Forces the section to fit the content, not the screen */
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
+        
     }
 
     /* 2. Tighten the Column Container */
@@ -4746,6 +4745,7 @@ section {
         min-height: auto !important; 
         height: auto !important;
         padding-top: 50px !important;
+        font-size: 15px
         padding-bottom: 30px !important;
     }
 
@@ -4770,6 +4770,8 @@ section {
     /* 4. Reset the H2 (Why Macmatlox Studio) */
     .wwd-left-column h2 {
         font-size: 32px !important;
+
+
         margin-bottom: 8px !important; /* This is the ONLY gap now */
         padding-bottom: 0 !important;
         line-height: 1.1 !important;
@@ -4786,6 +4788,537 @@ section {
         max-width: 90% !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+}
+
+//* --- MATCH THE "OUR VALUES" GRAY COLOR --- */
+@media (max-width: 768px) {
+    /* Match the gray from the bold items in Our Values */
+    .content-left p {
+        color: rgba(255, 255, 255, 0.7) !important; /* Same as Our Values bold text */
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Specific targeting for inline styles */
+    section.about-section .content-left p[style] {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+    
+    /* Ensure consistency with Our Values section */
+    section.about-section .content-right .value-list li {
+        color: rgba(255, 255, 255, 0.9) !important; /* Regular items */
+        font-size: 16px !important;
+    }
+    
+    /* The bold gray items in Our Values */
+    section.about-section .content-right .value-list li[style*="color:gray"],
+    section.about-section .content-right .value-list li[style*="color: gray"] {
+        color: rgba(255, 255, 255, 0.7) !important; /* Same gray as left section */
+        font-weight: 700 !important;
+    }
+}
+
+/* --- FIX FOR TAMBISA FOCUSED SECTION FONT SIZE ON MOBILE --- */
+@media (max-width: 768px) {
+    .content-left p {
+        font-size: 16px !important; /* Same as Our Values text */
+        line-height: 1.5 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .content-left p[style*="font-size: 25px"] {
+        font-size: 16px !important; /* Override inline 25px */
+        font-weight: 400 !important; /* Normal weight like Our Values */
+    }
+    
+    /* Make sure the Our Values section maintains consistent styling */
+    .content-right .value-list li {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin-bottom: 15px !important;
+        font-weight: 400 !important;
+    }
+    
+    /* Target the specific paragraphs in the left content */
+    .content-left > p:nth-child(2),
+    .content-left > p:nth-child(3),
+    .content-left > p:nth-child(4) {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+}
+
+/* --- EXTRA SAFE FIX - TARGET EXACT TEXT STRUCTURE --- */
+@media (max-width: 768px) {
+    /* This targets the paragraph immediately after the h1 */
+    .content-left h1.values-title + p,
+    .content-left h1.values-title ~ p {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+        letter-spacing: 0.2px !important;
+    }
+    
+    /* Match Our Values list items exactly */
+    .content-right .value-list li {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+        letter-spacing: 0.2px !important;
+    }
+}
+
+
+/* --- CHANGE FONT COLOR TO GRAY FOR TAMBISA FOCUSED SECTION --- */
+@media (max-width: 768px) {
+    /* Target all paragraphs in the left content */
+    .content-left p {
+        color: #808080 !important; /* Standard gray color */
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Override inline styles specifically */
+    .content-left p[style*="font-size: 25px"] {
+        color: #808080 !important; /* Gray */
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+    
+    /* Target specific paragraphs */
+    .content-left > p:nth-child(2),
+    .content-left > p:nth-child(3),
+    .content-left > p:nth-child(4) {
+        color: #808080 !important; /* Gray */
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+    
+    /* Make sure the gray is visible on dark background */
+    .content-left p {
+        opacity: 0.9 !important;
+    }
+}
+
+
+/* --- LIGHTER GRAY VERSION --- */
+@media (max-width: 768px) {
+    .content-left p {
+        color: #A0A0A0 !important; /* Lighter gray */
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+        opacity: 0.95 !important;
+    }
+    
+    .content-left p[style*="font-size: 25px"] {
+        color: #A0A0A0 !important; /* Lighter gray */
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+}
+
+/* --- CLOSE GAP BETWEEN HEADINGS ON MOBILE --- */
+@media (max-width: 768px) {
+    /* Target the #about-section specifically */
+    #about-section h1 {
+        margin-bottom: 5px !important; /* Reduced from default */
+        padding-bottom: 0 !important;
+        font-size: 32px !important;
+    }
+    
+    /* Target the animated line and reduce its spacing */
+    #about-section .animated-line {
+        margin: 5px auto 10px !important; /* Reduced spacing */
+        padding: 0 !important;
+    }
+    
+    /* Target the main about-section and reduce padding */
+    section.about-section {
+        padding-top: 40px !important; /* Reduced from 180px/300px */
+        margin-top: 0 !important;
+    }
+    
+    /* Specifically target the gap between the two sections */
+    #about-section h1 + .animated-line {
+        margin: 5px auto 10px !important;
+    }
+    
+    /* Ensure the animated line doesn't create extra space */
+    .animated-line[style*="width: 300px; margin-left:450px;"] {
+        margin: 5px auto 10px !important; /* Center and reduce spacing */
+        width: 200px !important; /* Smaller on mobile */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Reduce the space before the actual about content starts */
+    .content-left {
+        padding-top: 20px !important; /* Reduced from 40px/50px */
+        margin-top: 0 !important;
+    }
+    
+    .hero-title {
+        margin-top: 20px !important; /* Less space above the title */
+    }
+}
+
+/* --- EXTREME GAP REDUCTION VERSION --- */
+@media (max-width: 768px) {
+    /* CRITICAL: Remove all large margins and paddings */
+    #about-section {
+        margin-top: -30px !important; /* Pull everything up */
+    }
+    
+    #about-section h1 {
+        margin-bottom: 2px !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .animated-line[style*="width: 300px; margin-left:450px;"] {
+        margin: 2px auto 5px !important;
+        height: 2px !important;
+    }
+    
+    /* Bring the entire about section closer to the header */
+    section.about-section {
+        padding-top: 30px !important;
+        margin-top: -20px !important;
+    }
+    
+    .content-left {
+        padding-top: 10px !important;
+    }
+    
+    /* Ensure no extra space from the animated line */
+    .animated-line {
+        margin: 2px 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/* --- TARGETED FIX FOR EXACT GAP --- */
+@media (max-width: 768px) {
+    /* This specifically targets the space between "Why MacMatlox Studio" 
+       and "Local Expertise, Global Standards" */
+    
+    /* Reduce space after the main heading */
+    #about-section > h1:first-child {
+        margin-bottom: 5px !important;
+    }
+    
+    /* Make the animated line thinner and with less margin */
+    #about-section > .animated-line {
+        margin: 0 auto 5px !important;
+        height: 2px !important;
+        width: 150px !important;
+    }
+    
+    /* Pull up the about-section content */
+    .about-section {
+        margin-top: -15px !important;
+        padding-top: 20px !important;
+    }
+    
+    /* Reduce space in the content-left container */
+    .content-left {
+        padding-top: 5px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure the hero-title has minimal top margin */
+    .content-left .hero-title {
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* --- FINAL COMPREHENSIVE FIX --- */
+@media (max-width: 768px) {
+    /* 1. Reduce the gap between the two headings */
+    #about-section h1 {
+        margin-bottom: 5px !important;
+        padding-bottom: 0 !important;
+        font-size: 28px !important;
+    }
+    
+    /* 2. Make the divider line smaller and closer */
+    #about-section .animated-line {
+        margin: 0 auto 5px !important !important;
+        width: 120px !important;
+        height: 1px !important;
+        opacity: 0.5;
+    }
+    
+    /* 3. Pull the entire about section up */
+    .about-section {
+        margin-top: 10px !important;
+        padding-top: 20px !important;
+        min-height: auto !important;
+    }
+    
+    /* 4. Remove excess padding from content areas */
+    .content-left, .content-right {
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    /* 5. Specifically target the large animated line */
+    .animated-line[style*="width: 300px"] {
+        margin: 2px auto 5px !important !important;
+        width: 100px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* 6. Ensure the hero-title starts close to the divider */
+    .hero-title {
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+/* --- PROPER SPACING BETWEEN NAV BAR AND HERO TEXT ON MOBILE --- */
+@media (max-width: 768px) {
+    /* Add significant space below the fixed navigation */
+    .main-header.fixed-top {
+        margin-bottom: 40px !important; /* Space after nav */
+    }
+    
+    /* Add padding to the hero section itself */
+    section.hero {
+        padding-top: 40px !important; /* Clear space from top */
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure hero content has breathing room */
+    .hero-content {
+        padding-top: 30px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Make sure the heading has clear space */
+    .hero-content h1 {
+        margin-top: 20px !important;
+        padding-top: 10px !important;
+        line-height: 1.3 !important; /* Better readability */
+    }
+    
+    /* Clear space for the entire hero section */
+    #home {
+        padding-top: 50px !important; /* Generous space from top */
+    }
+}
+
+/* --- ENSURE ALL TEXT IS CLEAR AND READABLE --- */
+@media (max-width: 768px) {
+    /* 1. GENEROUS SPACING FROM NAVIGATION */
+    /* Push hero section down from fixed nav */
+    .hero {
+        margin-top: 60px !important; /* Ample space */
+        padding-top: 20px !important;
+    }
+    
+    /* 2. CLEAR TEXT HIERARCHY */
+    /* Main headline spacing */
+    .hero-content h1 {
+        margin-top: 30px !important; /* Space after any top padding */
+        margin-bottom: 20px !important; /* Space before next element */
+        padding: 15px 10px !important; /* Internal padding */
+        font-size: 32px !important; /* Appropriate mobile size */
+        line-height: 1.4 !important; /* Better line spacing */
+        text-align: center !important;
+    }
+    
+    /* 3. SPACE FOR "Entertainment & Digital Solutions" */
+    .hero-content .highlight {
+        display: block !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+        padding: 5px 0 !important;
+    }
+    
+    /* 4. SPACE FOR "Right Here in Tembisa" */
+    .hero-content h1 br + span {
+        display: block !important;
+        margin-top: 15px !important;
+        padding-top: 10px !important;
+    }
+    
+    /* 5. CLEAR SPACING FOR VIDEO SECTION */
+    .hero-visual {
+        margin-top: 40px !important; /* Clear separation from text */
+        padding-top: 20px !important;
+    }
+    
+    /* 6. SPACE FOR VIDEO DESCRIPTION */
+    .paragraphy {
+        margin-top: 30px !important;
+        padding: 20px 15px !important;
+        text-align: center !important;
+    }
+}
+
+/* --- COMPREHENSIVE MOBILE SPACING FIX --- */
+@media (max-width: 768px) {
+    /* CRITICAL: Prevent text from touching navigation */
+    
+    /* A. FIXED NAVIGATION SPACING */
+    header.main-header {
+        height: 70px !important; /* Defined height */
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+    }
+    
+    /* B. ADD SPACE EQUIVALENT TO NAV HEIGHT PLUS EXTRA */
+    .hero {
+        padding-top: 90px !important; /* nav height (70px) + 20px extra */
+        margin-top: 0 !important;
+    }
+    
+    /* C. HERO CONTENT CLEAR LAYOUT */
+    .hero-content {
+        padding: 25px 15px !important;
+        margin: 0 auto !important;
+        max-width: 95% !important;
+    }
+    
+    /* D. HEADLINE WITH AMPLE SPACING */
+    .hero-content h1 {
+        font-size: 28px !important;
+        line-height: 1.4 !important;
+        margin: 0 0 25px 0 !important;
+        padding: 15px !important;
+        background: rgba(0, 0, 0, 0.3) !important; /* Slight background for readability */
+        border-radius: 10px !important;
+    }
+    
+    /* E. ENSURE TEXT BREATHING ROOM */
+    .hero-content h1 br {
+        margin-bottom: 10px !important;
+        display: block !important;
+        content: " " !important;
+    }
+    
+    /* F. VIDEO SECTION WITH CLEAR SEPARATION */
+    .hero-visual {
+        margin-top: 30px !important;
+        padding-top: 15px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* G. VIDEO DESCRIPTION SPACING */
+    .paragraphy {
+        margin: 25px auto !important;
+        padding: 15px !important;
+        max-width: 90% !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        border-radius: 8px !important;
+    }
+}
+
+/* --- ULTIMATE CLEAR SPACING SOLUTION --- */
+@media (max-width: 768px) {
+    /* Calculate total safe area from navigation */
+    :root {
+        --nav-height: 70px;
+        --safe-spacing: 40px;
+    }
+    
+    /* 1. FIXED NAVIGATION CONTAINER */
+    .main-header {
+        height: var(--nav-height) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+    }
+    
+    /* 2. PUSH CONTENT DOWN BELOW NAVIGATION */
+    .hero {
+        min-height: calc(100vh - var(--nav-height)) !important;
+        padding-top: calc(var(--nav-height) + var(--safe-spacing)) !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+    
+    /* 3. HERO CONTENT WITH CLEAR STRUCTURE */
+    .hero-content {
+        order: 1 !important;
+        padding: 30px 20px 20px 20px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 4. HEADLINE WITH GENEROUS SPACING */
+    .hero-content h1 {
+        font-size: 30px !important;
+        line-height: 1.35 !important;
+        margin: 0 0 30px 0 !important;
+        padding: 20px 15px !important;
+        text-align: center !important;
+        background: rgba(10, 10, 10, 0.4) !important;
+        backdrop-filter: blur(5px) !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+    
+    /* 5. VISUAL SEPARATION FOR DIFFERENT TEXT PARTS */
+    .hero-content h1 .highlight {
+        display: block !important;
+        margin: 15px 0 !important;
+        padding: 10px 0 !important;
+        color: yellow !important;
+        font-size: 34px !important;
+        font-weight: 600 !important;
+    }
+    
+    .hero-content h1 br {
+        height: 15px !important;
+        display: block !important;
+    }
+    
+    /* 6. VIDEO SECTION AS SEPARATE VISUAL BLOCK */
+    .hero-visual {
+        order: 2 !important;
+        margin: 20px 0 0 0 !important;
+        padding: 25px 15px !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        border-radius: 15px !important;
+        width: 95% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* 7. VIDEO DESCRIPTION AS SEPARATE ELEMENT */
+    .paragraphy {
+        order: 3 !important;
+        margin: 25px auto !important;
+        padding: 20px !important;
+        width: 90% !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 10px !important;
+        text-align: center !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
     }
 }
 </style>
@@ -4843,8 +5376,10 @@ section {
    class="subscribe-btn" 
    target="_blank"
    onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html', '_blank'); return false;">
-    Schedule an Appointment
+    Schedule an Appointment<i>↗</i>
 </a>
+
+
                         
                     </div>
                 </div>
@@ -4901,9 +5436,9 @@ section {
         <div class="content-right">
             <h2 class="values-title">Our Values</h2>
             <ul class="value-list">
-                <li style ="color:gray; font-weight: 900;">Entertainment (Primary Objective):</li>
+                <li style ="color:gray; font-weight: 900;">Entertainment Solutions:</li>
                 <li>Events Planning: Flawless execution of corporate, private, and entertainment events in Tembisa and Gauteng.</li>
-                <li style="color:gray; font-weight: 900;">Digital Solutions (Secondary Objective):</li>
+                <li style="color:gray; font-weight: 900;">Digital Solutions:</li>
                 
                 <li>Your one-stop shop for Digital Marketing, Website Development, Social Media Management, and Graphic Design.</li>
             </ul>
@@ -4920,7 +5455,7 @@ section {
                 <p class="subtitle"style="color: gray;  font-weight: 900;">As a multi-disciplinary agency, MacMatlox Studio operates on two strong pillar</p>
                 
                 
-        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" class="appointment-link">Schedule an Appointment</span></a>
+        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" class="appointment-link">Schedule an Appointment </span></a>
             
     
         <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html"><img src="assets/c2.jpg" style="height: 30%; margin-top: 5%;"></a>
