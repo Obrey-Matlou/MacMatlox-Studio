@@ -1,20 +1,21 @@
 # MacMatlox Studio
 
-# A professional creative studio website showcasing design, development, and digital solutions.
+A professional creative studio website showcasing design, development, and digital solutions.
 
 # 🎯 About
 MacMatlox Studio is a creative agency specializing in web design, development, and digital innovation. This repository contains the official studio website.
 
 # ✨ Features
-# 🎨 Modern UI/UX: Clean, responsive design with smooth animations
 
-# ⚡ Performance Optimized: Fast loading times and SEO-friendly
+* 🎨 Modern UI/UX: Clean, responsive design with smooth animations
 
-# 📱 Fully Responsive: Mobile-first approach for all devices
+* ⚡ Performance Optimized: Fast loading times and SEO-friendly
 
-# 🔍 Accessibility: WCAG compliant for inclusive user experience
+* 📱 Fully Responsive: Mobile-first approach for all devices
 
-# 🌐 Multi-browser Support: Works seamlessly across all modern browsers
+* 🔍 Accessibility: WCAG compliant for inclusive user experience
+
+* 🌐 Multi-browser Support: Works seamlessly across all modern browsers
 
 # 🛠️ Tech Stack
 
@@ -151,4 +152,5 @@ markdown
 ## 🌐 Live Demo
 [View Live Website](https://username.github.io/MacMatloxStudio-Website/)
 [View Live Website](https://username.github.io/MacMatloxStudio-Website/)
+
 
