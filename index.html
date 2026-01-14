@@ -5321,6 +5321,438 @@ section {
         line-height: 1.5 !important;
     }
 }
+
+/* --- INCREASE CALENDAR IMAGE SIZE TO 120% ON MOBILE --- */
+@media (max-width: 768px) {
+    /* Target the calendar image and increase to 120% */
+    .wwd-left-column img[src*="c2.jpg"],
+    .wwd-left-column img[alt*="calendar"],
+    img[src="assets/c2.jpg"],
+    img[src*="c2.jpg"] {
+        height: 120% !important; /* Increased to 120% */
+        max-height: 280px !important; /* Larger maximum height */
+        width: auto !important;
+        object-fit: contain !important;
+        margin: 15px auto !important;
+        display: block !important;
+        transform: scale(1.2) !important; /* Additional scaling */
+        transform-origin: center !important;
+    }
+    
+    /* Fix the container to accommodate larger image */
+    .talent-image-container {
+        height: 280px !important; /* Increased container height */
+        overflow: visible !important;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .talent-image-container img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* Specifically target the calendar appointment image */
+    .wwd-left-column > a > img,
+    .wwd-static-content + a > img {
+        height: 180px !important; /* Increased from 120px */
+        width: auto !important;
+        max-width: 95% !important;
+        margin: 20px auto !important;
+    }
+    
+    /* Fix inline style overrides */
+    img[style*="height: 30%"] {
+        height: 180px !important; /* Override the inline 30% */
+        width: auto !important;
+    }
+}
+
+/* --- LARGER CALENDAR WITH BETTER VISIBILITY --- */
+@media (max-width: 768px) {
+    /* Make calendar image larger and more prominent */
+    img[src*="c2"] {
+        height: 200px !important; /* Significantly larger */
+        width: auto !important;
+        max-width: 95% !important;
+        margin: 20px auto 30px auto !important;
+        border-radius: 10px !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+        border: 3px solid yellow !important;
+        padding: 5px !important;
+        background: white !important;
+    }
+    
+    /* Adjust the link container for larger image */
+    .wwd-left-column a[href*="bookings.html"] {
+        display: block !important;
+        text-align: center !important;
+        margin: 20px 0 30px 0 !important;
+        padding: 10px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 12px !important;
+    }
+    
+    /* If calendar is in a flex/container, adjust spacing */
+    .wwd-static-content {
+        margin-bottom: 10px !important; /* Reduce space above calendar */
+    }
+    
+    /* Ensure enough space for larger calendar */
+    .wwd-left-column {
+        padding-bottom: 20px !important;
+        min-height: auto !important;
+    }
+}
+
+/* --- 120% SCALING FOR CALENDAR --- */
+@media (max-width: 768px) {
+    /* Apply 120% scaling to the calendar */
+    .calendar-image-container {
+        transform: scale(1.2) !important;
+        transform-origin: top center !important;
+        margin: 20px 0 !important;
+        padding: 10px !important;
+    }
+    
+    /* Target all images in what-we-do section and scale up */
+    .what-we-do-section img {
+        max-height: 250px !important;
+        height: auto !important;
+        width: 90% !important;
+        margin: 20px auto !important;
+    }
+    
+    /* Specifically for the c2.jpg image with 120% size */
+    img[src$="c2.jpg"] {
+        height: 220px !important; /* Much larger */
+        min-height: 200px !important;
+        width: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 15px !important;
+        margin-bottom: 25px !important;
+    }
+}
+
+/* --- FINAL 120% SIZE ADJUSTMENT --- */
+@media (max-width: 768px) {
+    /* This is the main fix for 120% size */
+    .wwd-left-column a img {
+        height: 220px !important; /* 120% of typical mobile size */
+        width: auto !important;
+        max-width: 100% !important;
+        transform: scale(1.2) !important;
+        transform-origin: center center !important;
+        margin: 25px auto !important;
+        display: block !important;
+        border: 2px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        padding: 5px !important;
+        background: rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Ensure the container doesn't crop the image */
+    .wwd-left-column {
+        overflow: visible !important;
+    }
+    
+    /* Add visual separation for the calendar */
+    .wwd-left-column a[href*="bookings.html"]:after {
+        content: '';
+        display: block;
+        height: 2px;
+        background: rgba(255, 255, 0, 0.2);
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+/* --- FIX SPACING BETWEEN OUR VALUES AND WHAT WE DO ON MOBILE --- */
+@media (max-width: 768px) {
+    /* 1. Target the about-section (which contains Our Values) */
+    section.about-section {
+        margin-bottom: 5px !important; /* Add 5px margin below the entire section */
+        padding-bottom: 0 !important;
+    }
+    
+    /* 2. Target the what-we-do-section and adjust its top margin */
+    section.what-we-do-section {
+        margin-top: 5px !important; /* Add 5px margin above the section */
+        padding-top: 0 !important;
+    }
+    
+    /* 3. Specifically target the gap between these two sections */
+    #about-section + .what-we-do-section,
+    .about-section + .what-we-do-section {
+        margin-top: 5px !important;
+    }
+    
+    /* 4. Ensure the last element of about-section has proper bottom spacing */
+    .content-right {
+        margin-bottom: 0 !important;
+        padding-bottom: 5px !important; /* Small padding to create the gap */
+    }
+    
+    /* 5. Ensure the first element of what-we-do-section has proper top spacing */
+    .wwd-left-column {
+        margin-top: 5px !important;
+        padding-top: 5px !important;
+    }
+    
+    /* 6. Remove any conflicting margins or padding */
+    #about-section {
+        margin-bottom: 0 !important;
+    }
+    
+    .about-section ~ .what-we-do-section {
+        margin-top: 5px !important;
+    }
+}
+
+/* --- EXTRA SAFE FIX - TARGET SPECIFIC STRUCTURE --- */
+@media (max-width: 768px) {
+    /* This targets the exact structure of your HTML */
+    /* The about-section is inside #about-section */
+    #about-section > section.about-section {
+        margin-bottom: 5px !important;
+        border-bottom: none !important;
+    }
+    
+    /* The what-we-do-section that comes after */
+    section.what-we-do-section:has(.wwd-left-column h2:contains("What We Do")) {
+        margin-top: 5px !important;
+        border-top: none !important;
+    }
+    
+    /* Ensure no extra spacing from animated lines */
+    #about-section .animated-line {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Fix for any container spacing */
+    .container, .container-fluid {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* --- FORCE THE 5PX GAP WITH CLEAR MARGINS --- */
+@media (max-width: 768px) {
+    /* Create a small but clear gap between the two sections */
+    .about-section {
+        position: relative;
+    }
+    
+    .about-section::after {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 100%;
+        background: transparent; /* Invisible spacer */
+    }
+    
+    /* Alternative: Use margin collapse */
+    .content-right .value-list {
+        margin-bottom: 0 !important;
+    }
+    
+    .what-we-do-section .wwd-left-column {
+        margin-top: 5px !important;
+        position: relative;
+        top: -5px; /* Pull up slightly to close any default gap */
+    }
+}
+
+/* --- FINAL FIX: SIMPLE MARGIN ADJUSTMENT --- */
+@media (max-width: 768px) {
+    /* The simplest solution - adjust the margins directly */
+    .about-section {
+        margin-bottom: 5px !important;
+    }
+    
+    .what-we-do-section {
+        margin-top: 5px !important;
+    }
+    
+    /* Override any other conflicting styles */
+    section {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Only apply to these specific sections */
+    section.about-section {
+        margin-bottom: 5px !important;
+    }
+    
+    section.what-we-do-section {
+        margin-top: 5px !important;
+    }
+}
+
+/* --- FIX FOR STUDIO SPOTLIGHT OVERLAY ON MOBILE --- */
+@media (max-width: 768px) {
+    /* 1. Fix the map tabs position to not overlap content */
+    .map-tabs {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        margin: 0 auto 20px auto !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .map-tab {
+        width: 48% !important; /* Two tabs side by side */
+        font-size: 0.8rem !important;
+        padding: 10px 15px !important;
+        text-align: center !important;
+        white-space: normal !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    /* 2. Fix the map overlay content to be clearly visible */
+    .map-overlay {
+        position: relative !important;
+        background: transparent !important;
+        padding: 20px 15px !important;
+        margin-top: 20px !important;
+        height: auto !important;
+    }
+    
+    .overlay-content {
+        max-width: 100% !important;
+        background: rgba(20, 20, 30, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 25px 20px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 10 !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    .overlay-content h4 {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+        color: yellow !important;
+        text-align: center !important;
+    }
+    
+    .overlay-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 8px !important;
+        padding-left: 10px !important;
+        position: relative !important;
+    }
+    
+    .overlay-content p:before {
+        content: "•";
+        position: absolute;
+        left: -5px;
+        color: yellow;
+        font-size: 1.2rem;
+    }
+    
+    /* 3. Ensure the map itself is properly sized */
+    #map {
+        min-height: 300px !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        margin-top: 10px !important;
+    }
+    
+    iframe {
+        height: 300px !important;
+        width: 100% !important;
+    }
+    
+    /* 4. Fix the map container layout */
+    .map-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    /* 5. Ensure buttons don't overlap content on scroll */
+    .map-tabs, .overlay-content {
+        pointer-events: auto !important;
+    }
+}
+
+/* --- EXTRA SMALL SCREENS --- */
+@media (max-width: 576px) {
+    .map-tab {
+        width: 100% !important; /* Stack tabs vertically */
+        margin-bottom: 8px !important;
+    }
+    
+    .overlay-content {
+        padding: 20px 15px !important;
+    }
+    
+    .overlay-content h4 {
+        font-size: 1.2rem !important;
+    }
+    
+    .overlay-content p {
+        font-size: 0.85rem !important;
+    }
+    
+    #map {
+        min-height: 250px !important;
+    }
+    
+    iframe {
+        height: 250px !important;
+    }
+}
+
+/* --- FIX FOR BUTTON Z-INDEX ISSUES --- */
+@media (max-width: 768px) {
+    .map-tabs {
+        z-index: 5 !important;
+        position: sticky !important;
+        top: 70px !important; /* Below the fixed header */
+        background: rgba(10, 10, 20, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 10px 15px !important;
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .map-overlay {
+        z-index: 4 !important;
+        position: relative !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* --- ENSURE CONTENT IS SCROLLABLE AND VISIBLE --- */
+@media (max-width: 768px) {
+    .map-container {
+        overflow: visible !important;
+        position: relative !important;
+    }
+    
+    /* Make sure the spotlight content is always accessible */
+    .overlay-content {
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+}
 </style>
    
     
