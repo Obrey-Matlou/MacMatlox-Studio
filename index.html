@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en" class="h-full">
  <head>
@@ -24,7 +22,7 @@
   <div class="blob" style="width: 300px; height: 300px; background: radial-gradient(circle, var(--accent), var(--primary)); bottom: 20%; right: 15%; animation-delay: -10s;"></div><!-- Modern Navigation -->
   <nav class="modern-nav fixed top-0 left-0 right-0 z-50 py-4 px-6" id="navbar">
    <div class="max-w-7xl mx-auto flex items-center justify-between"><!-- Logo --> <a href="#home" class="flex items-center space-x-3 group magnetic">
-     <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow" ><span class="text-gray-900 font-black text-xl font-display"> <span class="logo"><img src="assets/logo.avif" height="150px" width="160px"  alt="MacMatlox Studio Logo"></span></span>
+     <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-200 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow" ><span class="text-gray-900 font-black text-xl font-display"> <span class="logo"><img src="assets/logo.avif" height="150px" width="160px"  alt="MacMatlox Studio Logo"></span></span>
      </div>
      <div class="text-2xl font-display font-black gradient-text">
     
@@ -59,14 +57,8 @@
         <div class="hero-content">
             <h1 style="font-size: 5px; font-weight: 700; color:white;">
 Unleash Your Full Potential  <span class="highlight" style="color: grey; font-size: 50px;font-weight: 400;">With Our Entertainment & Digital Solutions</span><br></h1>
-                <div class="animated-line"></div>
-                <div class="code-block">
-                    <div class="line-title">
-                        
-                    </div>
-                   
-
-                       <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" 
+               
+<a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" 
    class="subscribe-btn" style="border-radius: 190px;"
    target="_blank"
    onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html', '_blank'); return false;">
@@ -76,6 +68,14 @@ Unleash Your Full Potential  <span class="highlight" style="color: grey; font-si
 
                         
                     </div>
+<div class="animated-line"></div>
+                <div class="code-block">
+                    <div class="line-title">
+                        
+                    </div>
+                   
+
+                       
                 </div>
             </div>
         </div>
@@ -1964,4 +1964,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  
+  <script>
+    const defaultConfig = {
+      main_heading: "MacMatlox Studio",
+      subheading: "Premium Entertainment & Digital Solutions",
+      hero_description: "Your premier Entertainment and Digital Solutions Agency. From talent management to digital marketing, we bring your vision to life.",
+      about_title: "About Our Studio",
+      services_title: "Our Premium Services",
+      membership_title: "Exclusive Membership Plans",
+      contact_title: "Let's Start Your Project",
+      background_color: "#000814",
+      accent_color: "#FFD60A",
+      text_color: "#FFFFFF",
+      font_family: "Space Grotesk",
+      font_size: 16
+    };
+
+    let allSubscribers = [];
+    let totalSubscribers = 0;
+
+    // Data SDK Handler
+    const dataHandler = {
+      onDataChanged(data) {
+        allSubscribers = data;
+        totalSubscribers = data.length;
+       
+        const countElement = document.getElementById('total-subscribers');
+        if (countElement) {
+          countElement.textContent = totalSubscribers;
+        }
+      }
+    };
+
+    // Initialize Data SDK
+    async function initializeDataSDK() {
+      if (window.dataSdk)
+
+      </script>
+<script></script>
