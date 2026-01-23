@@ -22,7 +22,7 @@
   <div class="blob" style="width: 300px; height: 300px; background: radial-gradient(circle, var(--accent), var(--primary)); bottom: 20%; right: 15%; animation-delay: -10s;"></div><!-- Modern Navigation -->
   <nav class="modern-nav fixed top-0 left-0 right-0 z-50 py-4 px-6" id="navbar">
    <div class="max-w-7xl mx-auto flex items-center justify-between"><!-- Logo --> <a href="#home" class="flex items-center space-x-3 group magnetic">
-     <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow"><span class="text-gray-900 font-black text-xl font-display"> <span class="logo"><img src="assets/logo.avif" height="150px" width="160px" alt="MacMatlox Studio Logo"></span></span>
+     <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow" ><span class="text-gray-900 font-black text-xl font-display"> <span class="logo" style="background-color:white;  height:45px;"><img src="assets/logo.avif" height="150px" width="160px"  alt="MacMatlox Studio Logo" style="background-color:white ;"></span></span>
      </div>
      <div class="text-2xl font-display font-black gradient-text">
     
@@ -33,7 +33,7 @@
      </div></a> <!-- Desktop Menu -->
     <div class="hidden lg:flex items-center space-x-8"><a href="#about" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">About</a> <a href="#services" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Services</a> <a href="#portfolio" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Portfolio</a> <a href="#team" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Team</a> <a href="#membership" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Membership</a> <a href="#contact" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Contact</a>
  <!-- CTA Button --> 
-<a href="subscription.html" class="hidden lg:block px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-bold liquid-button scale-hover text-sm no-underline">
+<a href="subscription.html" class="hidden lg:block px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-bold liquid-button scale-hover text-sm no-underline" style="background-color: yellow;">
     <span>Subscribe</span>
 </a>
   </nav><!-- Mobile Menu -->
@@ -51,11 +51,11 @@
      <div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Left Content -->
       <div class="text-center lg:text-left">
        <div class="float-animation mb-8">
-        <h1 id="main-heading" class="text-5xl md:text-7xl lg:text-8xl font-display font-black mb-6 gradient-text text-reveal leading-none" style="font-size: 60px; text-align: center;">MacMatlox Studio</h1>
+        
         <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 style="font-size: 5px; font-weight: 400; color:white;">Unleash Your Potential: <span class="highlight" style="color: grey; font-size: 50px;font-weight: 400;">Entertainment & Digital Solutions.</span><br>Right Here in Tembisa.</h1>
+            <h1 style="font-size: 5px; font-weight: 400; color:white;">Unleash Your Potential: <span class="highlight" style="color: grey; font-size: 50px;font-weight: 400;">With Our Entertainment & Digital Solutions</span><br></h1>
                 <div class="animated-line"></div>
                 <div class="code-block">
                     <div class="line-title">
@@ -64,12 +64,12 @@
                     <div class="Appointments">
                         <p></p>
                       </div>
-                        <!-- WhatsApp Booking Button -->
+
                        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" 
-   class="subscribe-btn" 
+   class="subscribe-btn" style="border-radius: 190px;"
    target="_blank"
    onclick="window.open('https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html', '_blank'); return false;">
-    Schedule an Appointment<i>↗</i>
+    Schedule an Appointment<i></i>
 </a>
 
 
@@ -92,12 +92,12 @@
                 </div>
             </div>
         </div>
-    </section>
     
-    <div class="paragraphy" style="padding-left: 50%; font-size:large ;">
-        <p>Watch behind the scenes of our latest studio photoshoot and see the professional quality we bring to every project</p>
-    </div>
-  
+    
+    <div class="paragraphy" style="text-align: left; padding-left: 10%; font-size: large; margin-top: 20px;">
+    <p>Watch behind the scenes of our latest studio photoshoot and see the professional quality we bring to every project</p>
+</div>
+  </section>
        </div>
        
 
@@ -1719,7 +1719,9 @@ function setVH() {
 setVH();
 window.addEventListener('resize', setVH);
 window.addEventListener('orientationchange', setVH);
-</script>
+
+
+
 
     <script src="script.js"></script>
 

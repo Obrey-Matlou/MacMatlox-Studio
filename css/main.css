@@ -10,9 +10,9 @@
     }
 
     :root {
-      --primary: #FEED00;
-      --secondary: #1a2332;
-      --accent: #FEED00;
+      --primary: #feed00;
+      --secondary:#1a2332;
+      --accent:#feed00;
       --text: #FFFFFF;
       --dark: #0f1419;
     }
