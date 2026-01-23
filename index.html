@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en" class="h-full">
  <head>
@@ -22,7 +24,7 @@
   <div class="blob" style="width: 300px; height: 300px; background: radial-gradient(circle, var(--accent), var(--primary)); bottom: 20%; right: 15%; animation-delay: -10s;"></div><!-- Modern Navigation -->
   <nav class="modern-nav fixed top-0 left-0 right-0 z-50 py-4 px-6" id="navbar">
    <div class="max-w-7xl mx-auto flex items-center justify-between"><!-- Logo --> <a href="#home" class="flex items-center space-x-3 group magnetic">
-     <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow" ><span class="text-gray-900 font-black text-xl font-display"> <span class="logo" style="background-color:white;  height:45px;"><img src="assets/logo.avif" height="150px" width="160px"  alt="MacMatlox Studio Logo" style="background-color:white ;"></span></span>
+     <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow" ><span class="text-gray-900 font-black text-xl font-display"> <span class="logo"><img src="assets/logo.avif" height="150px" width="160px"  alt="MacMatlox Studio Logo"></span></span>
      </div>
      <div class="text-2xl font-display font-black gradient-text">
     
@@ -55,15 +57,14 @@
         <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 style="font-size: 5px; font-weight: 400; color:white;">Unleash Your Potential: <span class="highlight" style="color: grey; font-size: 50px;font-weight: 400;">With Our Entertainment & Digital Solutions</span><br></h1>
+            <h1 style="font-size: 5px; font-weight: 700; color:white;">
+Unleash Your Full Potential  <span class="highlight" style="color: grey; font-size: 50px;font-weight: 400;">With Our Entertainment & Digital Solutions</span><br></h1>
                 <div class="animated-line"></div>
                 <div class="code-block">
                     <div class="line-title">
                         
                     </div>
-                    <div class="Appointments">
-                        <p></p>
-                      </div>
+                   
 
                        <a href="https://obrey-matlou.github.io/MacMatloxStudio_Website/bookings.html" 
    class="subscribe-btn" style="border-radius: 190px;"
@@ -1722,8 +1723,237 @@ window.addEventListener('orientationchange', setVH);
 
 
 
+// Add this JavaScript to handle smooth section scrolling
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all sections with scroll-section class
+    const sections = document.querySelectorAll('.scroll-section');
+    const scrollContainer = document.getElementById('app');
+    
+    // Function to check if element is in viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    
+    // Function to scroll to next section
+    function scrollToNextSection() {
+        const currentScroll = scrollContainer.scrollTop;
+        const windowHeight = window.innerHeight;
+        
+        // Find the next section
+        let nextSection = null;
+        for (let section of sections) {
+            const sectionTop = section.offsetTop;
+            if (sectionTop > currentScroll + 100) { // 100px buffer
+                nextSection = section;
+                break;
+            }
+        }
+        
+        if (nextSection) {
+            scrollContainer.scrollTo({
+                top: nextSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Function to scroll to previous section
+    function scrollToPrevSection() {
+        const currentScroll = scrollContainer.scrollTop;
+        
+        // Find the previous section
+        let prevSection = null;
+        for (let i = sections.length - 1; i >= 0; i--) {
+            const section = sections[i];
+            if (section.offsetTop < currentScroll - 100) { // 100px buffer
+                prevSection = section;
+                break;
+            }
+        }
+        
+        if (prevSection) {
+            scrollContainer.scrollTo({
+                top: prevSection.offsetTop,
+                behavior: 'smooth'
+            });
+        } else {
+            // If no previous section, scroll to top
+            scrollContainer.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Handle wheel/touch events for section scrolling
+    let isScrolling = false;
+    
+    scrollContainer.addEventListener('wheel', function(e) {
+        if (isScrolling) return;
+        
+        isScrolling = true;
+        
+        if (e.deltaY > 0) {
+            // Scrolling down
+            scrollToNextSection();
+        } else {
+            // Scrolling up
+            scrollToPrevSection();
+        }
+        
+        // Prevent default scrolling
+        e.preventDefault();
+        
+        // Reset scrolling flag after delay
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1000);
+    }, { passive: false });
+    
+    // Handle touch events for mobile
+    let touchStartY = 0;
+    
+    scrollContainer.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    scrollContainer.addEventListener('touchend', function(e) {
+        if (isScrolling) return;
+        
+        const touchEndY = e.changedTouches[0].clientY;
+        const diff = touchStartY - touchEndY;
+        
+        if (Math.abs(diff) > 50) { // Minimum swipe distance
+            isScrolling = true;
+            
+            if (diff > 0) {
+                // Swiped up
+                scrollToNextSection();
+            } else {
+                // Swiped down
+                scrollToPrevSection();
+            }
+            
+            // Reset scrolling flag after delay
+            setTimeout(() => {
+                isScrolling = false;
+            }, 1000);
+        }
+    }, { passive: true });
+    
+    // Handle keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (isScrolling) return;
+        
+        isScrolling = true;
+        
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+            e.preventDefault();
+            scrollToNextSection();
+        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+            e.preventDefault();
+            scrollToPrevSection();
+        }
+        
+        // Reset scrolling flag after delay
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1000);
+    });
+    
+    // Fix initial load - ensure first section is visible
+    setTimeout(() => {
+        if (sections.length > 0) {
+            scrollContainer.scrollTo({
+                top: 0,
+                behavior: 'instant'
+            });
+        }
+    }, 100);
+    
+    // Fix for mobile menu - close when section is clicked
+    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a[href^="#"]');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
+            
+            // Wait for menu to close then scroll
+            setTimeout(() => {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    scrollContainer.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300);
+        });
+    });
+    
+    // Update active section indicator (optional)
+    function updateActiveSection() {
+        const scrollPosition = scrollContainer.scrollTop + (window.innerHeight / 3);
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                section.classList.add('active-section');
+            } else {
+                section.classList.remove('active-section');
+            }
+        });
+    }
+    
+    // Throttle scroll event for performance
+    let scrollTimeout;
+    scrollContainer.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        scrollTimeout = setTimeout(updateActiveSection, 100);
+    });
+    
+    // Initialize
+    updateActiveSection();
+});
 
-    <script src="script.js"></script>
+// Fix for navigation links in desktop menu
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.modern-nav a[href^="#"]');
+    const scrollContainer = document.getElementById('app');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                scrollContainer.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+  
 
     <!-- Toast Container -->
     <div class="toast-container" id="toast-container"></div>
@@ -1734,41 +1964,4 @@ window.addEventListener('orientationchange', setVH);
 
 
 
-  <script>
-    const defaultConfig = {
-      main_heading: "MacMatlox Studio",
-      subheading: "Premium Entertainment & Digital Solutions",
-      hero_description: "Your premier Entertainment and Digital Solutions Agency. From talent management to digital marketing, we bring your vision to life.",
-      about_title: "About Our Studio",
-      services_title: "Our Premium Services",
-      membership_title: "Exclusive Membership Plans",
-      contact_title: "Let's Start Your Project",
-      background_color: "#000814",
-      accent_color: "#FFD60A",
-      text_color: "#FFFFFF",
-      font_family: "Space Grotesk",
-      font_size: 16
-    };
-
-    let allSubscribers = [];
-    let totalSubscribers = 0;
-
-    // Data SDK Handler
-    const dataHandler = {
-      onDataChanged(data) {
-        allSubscribers = data;
-        totalSubscribers = data.length;
-       
-        const countElement = document.getElementById('total-subscribers');
-        if (countElement) {
-          countElement.textContent = totalSubscribers;
-        }
-      }
-    };
-
-    // Initialize Data SDK
-    async function initializeDataSDK() {
-      if (window.dataSdk)
-
-      </script>
-<script></script>
+  
