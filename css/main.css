@@ -85,7 +85,7 @@
       background-image:
         linear-gradient(rgba(254, 237, 0, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(254, 237, 0, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
+      background-size: 40px 40px;
       animation: gridMove 20s linear infinite;
     }
 
@@ -99,13 +99,14 @@
       transform-style: preserve-3d;
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       position: relative;
+
     }
 
     .card-3d::before {
       content: '';
       position: absolute;
       inset: -2px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      background: gray;
       border-radius: inherit;
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -2254,7 +2255,7 @@ object-fit: cover;
 /* Individual Project Card */
 .project-card {
     flex: 0 0 350px;
-    height: 500px;
+    height: 400px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
