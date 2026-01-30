@@ -30,31 +30,36 @@
   <div class="blob" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--primary), var(--accent)); top: 10%; left: 10%;"></div>
   <div class="blob" style="width: 300px; height: 300px; background: radial-gradient(circle, var(--accent), var(--primary)); bottom: 20%; right: 15%; animation-delay: -10s;"></div><!-- Modern Navigation -->
   <nav class="modern-nav fixed top-0 left-0 right-0 z-50 py-4 px-6" id="navbar">
-   <div class="max-w-7xl mx-auto flex items-center justify-between"><!-- Logo --> <a href="#home" class="flex items-center space-x-3 group magnetic">
-     <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-200 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 pulse-glow" ><span class="text-gray-900 font-black text-xl font-display"> <span class="logo"><img src="assets/logo.avif" height="150px" width="160px"  alt="MacMatlox Studio Logo"></span></span>
-     </div>
-     <!-- Desktop Menu -->
-  <div class="items-center space-x-8">
-    <a href="#about-section" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">About</a> 
-    <a href="#services" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Services</a> 
-    <a href="#portfolio" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Portfolio</a> 
-    <a href="#team" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Team</a> 
-    <a href="#membership" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Membership</a> 
-    <a href="#contact" class="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-all duration-300 text-hover-gradient">Contact</a>
-</div>
- <!-- CTA Button --> 
-<a href="subscription.html" class="hidden lg:block px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-bold liquid-button scale-hover text-sm no-underline" style="background-color: yellow;">
-    <span>Subscribe</span>
-</a>
-  </nav><!-- Mobile Menu -->
-  <div id="mobile-menu" class="mobile-menu-slide fixed top-0 right-0 h-full w-80 glass-modern z-50 p-8 lg:hidden"><button id="close-menu" class="absolute top-6 right-6 text-white text-3xl hover:text-yellow-400 transition-colors scale-hover">×</button>
-   <a href="subscription.html" class="px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-bold liquid-button mt-4 text-center no-underline">
-    <span>Subscribe</span>
-</a>
-   
-    <div class="flex flex-col space-y-6 mt-16"><a href="#about" class="text-white hover:text-yellow-400 transition-all text-lg font-medium hover-lift">About</a> <a href="#services" class="text-white hover:text-yellow-400 transition-all text-lg font-medium hover-lift">Services</a> <a href="#portfolio" class="text-white hover:text-yellow-400 transition-all text-lg font-medium hover-lift">Portfolio</a> <a href="#team" class="text-white hover:text-yellow-400 transition-all text-lg font-medium hover-lift">Team</a> <a href="#membership" class="text-white hover:text-yellow-400 transition-all text-lg font-medium hover-lift">Membership</a> <a href="#contact" class="text-white hover:text-yellow-400 transition-all text-lg font-medium hover-lift">Contact</a> <button onclick="openMembershipModal()" class="px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-bold liquid-button mt-4"> <span>Get Started</span> </button>
-   </div>
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#home" class="flex items-center space-x-3 group magnetic">
+      <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-200 rounded-2xl flex items-center justify-center pulse-glow">
+        <img src="assets/logo.avif" width="40" alt="MacMatlox Studio Logo">
+      </div>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex items-center space-x-8">
+      <a href="#about-section" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="#membership" class="nav-link">Membership</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Subscribe Button -->
+    <a href="subscription.html"
+       class="hidden lg:block px-6 py-3  text-gray-900 rounded-full font-bold no-underline" style="background-color:yellow;">
+       Subscribe
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="lg:hidden text-white text-3xl">☰</button>
   </div>
+</nav>
+
   <div id="app" class="h-full w-full overflow-auto scroll-container"><!-- Hero Section with Parallax -->
    <section id="home" class="scroll-section min-h-screen flex items-center justify-center px-6 py-32 relative grid-bg">
     <div class="max-w-7xl mx-auto w-full relative z-10">
@@ -182,6 +187,7 @@ Unleash Your Full Potential  <span class="highlight" style="color: grey; font-si
                 </div>
                 
                 <div class="pillar-number">01</div>
+                
                 <h3 class="pillar-title" style="color:gray">Elevate Your Career: Professional Talent Management.</h3>
                 
                 <p>Talent Management: Discovering, developing, and promoting the next generation of South African talent.</p>
@@ -803,7 +809,7 @@ Unleash Your Full Potential  <span class="highlight" style="color: grey; font-si
 
             
 
-                 <span class="highlight" style="color: grey; font-weight: 900; font-size: 45px;">Team Structure</span> </h1>
+                 <span class="highlight" style="color: grey; font-weight: 900; font-size: 45px;">Our Team </span> </h1>
            
                  <p class="subtitle">Meet the creative minds behind <span class="company-name">Creative Vision Studio</span>, where artistry meets innovation in photography and entertainment.</p>
         
@@ -856,7 +862,7 @@ Unleash Your Full Potential  <span class="highlight" style="color: grey; font-si
                     <img src="assets/WhatsApp Image 2025-12-02 at 12.18.04_e50ccbdd.jpg" alt="Pedro Fernandes">
                 </div>
             </div>
-            <div class="person-name">Noluthando</div>
+            <div class="person-name">Noluthando Nxumalo</div>
             <div class="person-title">Administration </div>
             
         </div>
@@ -1280,10 +1286,28 @@ Schedule a Call <i>↗</i>
                 </div>
             </div>
         </div>
-    </section>
-     </div>
+    </section>  
+
+</div>
     </div>
-    <section id="contact"></section>
+    <section id="contact" class="scroll-section py-24 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 style="color: yellow; font-weight: 900; font-size: 45px;">Contact Us</h2>
+    <div class="animated-line mx-auto"></div>
+
+    <p class="text-gray-300 mt-6">
+      Let’s talk about your next project. We respond fast.
+    </p>
+
+    <div class="mt-10 space-y-4 text-gray-300">
+      <p><strong>Email:</strong> info@macmatloxstudio.com</p>
+      <p><strong>Phone:</strong> 0686451330/010 516 0540</p>
+      <p><strong>Location:</strong> Tembisa, Gauteng</p>
+    </div>
+  </div>
+</section>
+
+    
    <!-- Footer -->
    <footer class="py-16 px-6 glass-modern border-t border-yellow-400/20">
     <div class="max-w-7xl mx-auto">
@@ -1419,7 +1443,60 @@ Schedule a Call <i>↗</i>
   </div><!-- WhatsApp Float Button --> <a href="https://wa.me/27686451330" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center z-40 hover-lift pulse-glow scale-hover">
    <svg class="w-10 h-10 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
    </svg></a>
+
      <script>
+
+     window.addEventListener("error", e => {
+  console.warn("Non-critical error caught:", e.message);
+});
+//nav links and section id
+document.addEventListener("DOMContentLoaded", () => {
+
+  const menu = document.getElementById("mobile-menu");
+  const openBtn = document.getElementById("menu-toggle");
+  const closeBtn = document.getElementById("close-menu");
+  const links = document.querySelectorAll(".nav-link");
+
+  if (openBtn) {
+    openBtn.onclick = () => menu.classList.add("active");
+  }
+
+  if (closeBtn) {
+    closeBtn.onclick = () => menu.classList.remove("active");
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+  });
+
+  // Active link highlighting
+  const sections = document.querySelectorAll("section[id]");
+
+  window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY + 120;
+    sections.forEach(sec => {
+      if (
+        scrollPos >= sec.offsetTop &&
+        scrollPos < sec.offsetTop + sec.offsetHeight
+      ) {
+        links.forEach(l => l.classList.remove("active"));
+        document
+          .querySelectorAll(`a[href="#${sec.id}"]`)
+          .forEach(l => l.classList.add("active"));
+      }
+    });
+  });
+
+});
+
+// Prevent JS crash
+function openMembershipModal() {
+  window.location.href = "subscription.html";
+}
+
+
         // WhatsApp button functionality
         document.addEventListener('DOMContentLoaded', function() {
             // Set up WhatsApp booking buttons
